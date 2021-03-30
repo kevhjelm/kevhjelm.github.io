@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jerry</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+	img  {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1><a href="index.html" id="logo">Jerry walkthrough</a></h1><br>
+							<img src="images//jerry/jerry.jpg" alt="" width="100" height="100" />
+						</div>
+					</div>
+				</header>
+									
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="index.html">Home</a></li>
+						<li>
+							<a href="walkthrough.html">Walkthroughs</a>
+							<ul>
+								
+									<li><a href="walkthroug.html">Walkthroug</a></li>
+									
+								
+								<li><a href="#">TryHackMe</a></li>
+								<li>
+									<a href="#">Phasellus consequat</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										
+										
+										<li><a href="#">Phasellus consequat</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Veroeros feugiat</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About me</a></li>
+						
+						<li><a class="icon brands fa-github" href="https://github.com/kevhjelm"><span class="label"></a></li>
+						<li><a class="icon brands fa-linkedin" href="https://linkedin.com/in/kevhjelm/"><span class="label"></a></li>
+					</ul>
+				</nav>>
+			
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+					<h2>Jerry</h2>
+					<img src="images//jerry/jerry1.png" alt="" width="500" height="200" />
+					<img src="images//jerry/jerry2.png" alt="" width="500" height="200" />
+					</div>
+				</section>
+			<!-- Main -->
+				<section id="main">
+				<h1 style="text-align:center;"> Introduction </h1>
+				<p style="text-align:center;">dsdsdasdafafa  </p>
+				<h1 style="text-align:center;"> Nmap results  </h1>
+				<p style="text-align:center;"> nmap -A -T4 -p- 10.10.10.95</p>
+				<img src="images//jerry/nmap.PNG" alt="nmap" class="center">
+				<p style="text-align:center;">From the NMAP result we see port 8080 which is http
+					we can see apache tomcat which is a webserver first thing to do is to try accessing it on the web browser
+					10.10.10.95:8080 We do get a website, it seens to be a default apache webserver </p>
+				<img src="images//jerry/image.png" width="600" height="348" />
+				<p style="text-align:center;">We look through the source code and inspected elemets to find any comments for hints
+				Since it is a web site we tried to run dirbuster to find any hidden directories or files</p>
+				<img src="images//jerry/image 2.png" />
+				<p style="text-align:center;">We could find anything with the wordlist, so we changed wordlist</p>
+				<img src="images//jerry/image 3.png" />&nbsp; &nbsp; &nbsp; <img src="images//jerry/image 6.png" />
+				<p style="text-align:center;"Dirbuster get errors but finds some directories and files, but these are just the tomcat userguides</p>
+				<img src="images//jerry/image 7.png" width="300" height="315" />
+				<p style="text-align:center;"> When clicking server status on the website we get a login window</p>
+				<img src="images//jerry/image 4.png" />
+				<p style="text-align:center;">We tried guessing username/password, Tomcat/Tomcat</p><
+				<p style="text-align:center;">We tried admin/admin and manage to get in
+				<img src="images//jerry/image 5.png" width="600" height="271" />
+				<p style="text-align:center;">We can see some clue in the error page</p>
+				<img src="images//jerry/image 8.png" />
+				<img src="images//jerry/image 9.png" />
+				<p style="text-align:center;">We login on manager app using the info above</p>
+				<p style="text-align:center;">username/password, tomcat/s3cret</p>
+				<img src="images//jerry/image 10.png" />
+				<p style="text-align:center;">We manage to login on the application manager site</p>
+				<img src="images//jerry/image 11.png" />
+				<p style="text-align:center;">at the buttom we can see that we are able to upload a war-file to the tomcat web server, we did some digging around and found a way to create a war-file</p>
+				<img src="images//jerry/image 13.png" />
+				<p style="text-align:center;">source: https://netsec.ws/?p=331</p>
+				
+				<img src="images//jerry/image 12.png" />
+				
+				<p style="text-align:center;">We then uploaded the shell.war file to the website</p>
+				
+				<img src="images//jerry/image 14.png" />
+				<p style="text-align:center;">What we need to do now is to creat a lisner from our pc to the server using netcat</p>
+				<img src="images//jerry/image 15.png" />
+				
+				<p style="text-align:center;">We then click the /shell on the website and we got in</p> <
+				<img src="images//jerry/image 16.png" />
+				<p style="text-align:center;">We are on the hunt for flags</p>
+				<img src="images//jerry/image 17.png" /><img src="images//jerry/image 18.png" /><img src="images//jerry/image 19.png" />
+				<p style="text-align:center;">we found the text file</p> 
+				<img src="images//jerry/image 20.png" />
+				<p style="text-align:center;">user: 7004dbcef0f854e0fb401875f26ebd00</p>
+				<p style="text-align:center;">root: 04a8b36e1545a455393d067e772fe90e</p>
+
+			</div>	
+			
+	</body
+</html>
