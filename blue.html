@@ -1,0 +1,156 @@
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Blue Writeup</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Graham Helton" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="web2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup"/>
+<meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted."/>
+
+    <meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
+<meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.grahamhelton.com/blog/ecpptblog/" />
+<meta property="article:published_time" content="2021-05-16T21:53:31-04:00" />
+<meta property="article:modified_time" content="2021-05-16T21:53:31-04:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me.png" alt="kevhjelm" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="home.html">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="blog.html">Blog</a>
+      </nav>
+      <p>  </p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+         <!-- <a href="https://www.twitter.com/grahamhelton3" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path> -->
+</svg>
+          </a>
+        
+          <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">Blue Writeup</h1>
+      <img src="images//blue/blue00.PNG" alt="" width="100" height="100" />
+      <!--<img src="images//blue/blue00_0.PNG" alt="" width="100" height="100" />-->
+      <!--<img src="images//blue/blue00_1.PNG" alt="" width="100" height="100" />-->
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 16, 2021
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          13 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="who-am-i">Who am I?</h1> 
+      Blue is rated as an easy beginner machine
+<p>
+  <!--<img src="images//blue/blue.PNG" alt="" width="500" height="200" />-->
+  <img src="images//blue/blue00_0.PNG" alt="" width="500" height="200" />
+  <img src="images//blue/blue00_1.PNG" alt="" width="500" height="200" />
+  
+
+</p>
+<h1 id="exam-timeline">NMAP result</h1>
+<img src="images//blue/image_nmap.png" alt="nmap" class="center">
+<p>Vi kjenner igjen netbios fra windows
+Vi ser også noe intersant som "HARIS-PC" dette kan være en bruker
+vi har mye informasjon om smb som versjon, account, Workgroup etc
+
+intresant her er port 135,138 og 445
+De andre er service porter for rpc </p>
+<h2>Port 139</h2>
+<img src="images//blue/image_netbios1.PNG" width="600" height="348" />
+<p>we manage to get the workgroup.We try to get into one of the shares</p>
+<img src="images//blue/image_netbios2.PNG" />
+<p>we manage to get into the share and users shares. Tried to see if there is a way to find the flags
+but no luck</p>
+<img src="images//blue/image_netbios3.PNG" /><br>
+<img src="images//blue/image_netbios4.PNG" />
+<p>Since we know one of the users name is haris, we can try to login as haris. We had no luck</p>
+<h2>Port 135</h2>
+<p>We tried to use rpcclient with no username</p>
+<img src="images//blue/rpc_image.PNG" />
+<p>All we got was error accecc denied</p>
+<img src="images//blue/rpc_image_2.PNG" />
+<h2>Port 445</h2>
+<p>After some research we found that the windwos 7 professional 7601 service pack 1 is a known vulnerability. EternalBlue</p>
+<img src="images//blue/445_image.PNG" />
+<img src="images//blue/445_image1.PNG" />
+<img src="images//blue/445_image_2.PNG" />
+<p>we got access to a meterpreter now lets see if we can find some flags. We do get a windows shell</p>
+<img src="images//blue/445_image_3.PNG" /><br>
+<img src="images//blue/445_image_4.PNG" />
+<p>We want to use a meterpreter shel and convert it from windows shell</p>
+<img src="images//blue/445_image_5.PNG" />
+<p>we exit out of windos and but the sessions in the background (1)
+we use the shell_to_meterpreter</p>
+<img src="images//blue/445_image_6.PNG" />
+<p><b>we seadd the session, we can now try to interact with the session </b></p>
+<img src="images//blue/445_image_7.PNG" />
+<p>We can now use the meterpreter shell instead and move around</p>
+<img src="images//blue/445_image_8.PNG" />
+<img src="images//blue/445_image_9.PNG" />
+<img src="images//blue/445_image_10.PNG" />
+<p> We got the flag for root: ( ff548eb71e920ff6c08843ce9df4e717 )</p>
+<img src="images//blue/445_image_11.PNG" />
+<p>We also see Haris as a user</p>
+<img src="images//blue/445_image_12.PNG" />
+<p>We can now submit our flags</p>
+<img src="images//blue/445_image_13.PNG" />
+
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

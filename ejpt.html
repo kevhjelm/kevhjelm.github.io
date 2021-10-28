@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>eJPT Writeup</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Graham Helton" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="web2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup"/>
+<meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted."/>
+
+    <meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
+<meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.grahamhelton.com/blog/ecpptblog/" />
+<meta property="article:published_time" content="2021-05-16T21:53:31-04:00" />
+<meta property="article:modified_time" content="2021-05-16T21:53:31-04:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me.png" alt="kevhjelm" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="home.html">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="blog.html">Blog</a>
+      </nav>
+      <p>  </p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+         <!-- <a href="https://www.twitter.com/grahamhelton3" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path> -->
+</svg>
+          </a>
+        
+          <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">eLearnSecurity Junior Penetration Tester (eJPT) Writeup</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Dec 20, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          4 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="introduction">Introduction</h1>
+<p>I bought the eJPT exam during blackfridy sale oktober 2019. When buying it you have 6 monh untill you have to take the exaam, the package does include one free retake.
+I’ve  passed my eJPT exam oktober 2020 with an 85% in around 5 hours. This is before eLearnSecurity and INE merge. I hope this review will be useful to anyone who is considering taking the eJPT course/exam.</p>
+<h1 id="my-background">My Background</h1>
+<p>eJPT is an entry-level course for junior penetration testers. It covers basic networking (TCP/IP, routing/switch, firewalls etc.), some programming in C++ and Python, basic information gathering and reconnaissance, tools for target scanning and profiling, and basic vulnerability assessment of networks and web apps. More about the syllabus in their website here. The exam was about 200 dollars and came with one free retake and 60 hours lab time.</p>
+
+<h1 id="how-i-studied-for-the-ejpt">How I Studied For The eJPT</h1>
+<p>Most of the course content is presented on slides, but there are also a few training videos. 
+The content is beginner-friendly and has plenty of examples on how to use different tools with the right switches. I definitely learned a thing or two about nmap and how to speed up my scans by using the right flags. One downside is that some of the materials are slightly outdated. 
+What really makes this course stand out are the labs. Unlike other networking or security courses, the eJPT gives you the opportunity to practice what you learn in a dedicated virtual environment. You simply click a button to start or stop the lab. After downloading an OVPN file you connect to the VPN. The lab description includes several goals you have to achieve. This is great for beginners who may not be ready yet to use different tools in a black-box penetration test.
+<img src="/Pasted-image-20210612150907.png" alt=""></p>
+<h1 id="the-exam">The Exam</h1>
+<p>You have 72 hours to conduct a black-box penetration test on a corporate network. In order to pass the exam, you need to complete a quiz that includes 20 questions. You need to correctly answer 15 questions or more to pass your exam.The eJPT covers everything you need to pass the exam. There is no need to do boxes on HTB, TryHackMe or similar platforms. Just focus on the things you learned in the course and you’ll do great. (Make sure you understand basic routing/switching!)</p>
+<h1 id="my-advice">My Advice</h1>
+<p> One thing to keep in mind, though, is that the labs are not simply about popping shells and getting user or root access. The goal is to follow the penetration testing process in its entirety and discover as many vulnerabilities as possible. The training materials make it very clear that these labs are not CTF challenges, so you shouldn’t consider them as such</p>
+<h1 id="where-am-i-going-now">Where am I going now?</h1>
+<p>Since I loved this course and feel like I learned a ton from it, I’m already working my way through eLearn’s Penetration Testing Professional course so I can take the eCPPT exam. After that I will probably move to OSCP even though I have heard many people say eCPPT has better training but unfortunately it does not having the same name recognition as OSCP.</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
