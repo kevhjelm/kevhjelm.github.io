@@ -64,7 +64,7 @@
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">Netmon Writeup</h1>
-      <img src="images//netmon/netmon000.PNG" alt="" width="100" height="100" />
+      <img src="images//netmon/netmon000.png" alt="" width="100" height="100" />
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -91,58 +91,58 @@
 
 </p>
 <h1 id="exam-timeline">NMAP result</h1>
-<img src="images//netmon/nmap_image.PNG" alt="nmap" class="center">
+<img src="images//netmon/nmap_image.png" alt="nmap" class="center">
 <p>From the NMAP result we see port 8080 which is HTTP
 we can see Apache Tomcat which is a webserver first thing to do is to try accessing it on the web browser 10.10.10.95:8080. We do get a website, it seens to be a default Apache webserver </p>
 
 <h3>FTP</h3>
 <p>We tried to login with no credentials</p>
-<img src="images//netmon/ftp_image_1.PNG" width="600" height="348" />
+<img src="images//netmon/ftp_image_1.png" width="600" height="348" />
 <p>Then we tried with Anonymous as userlogin</p>
-<img src="images//netmon/ftp_image_2.PNG" width="600" height="348" />
+<img src="images//netmon/ftp_image_2.png" width="600" height="348" />
 <p>WE got in</p>
-<img src="images//netmon/ftp_image_3.PNG" />
+<img src="images//netmon/ftp_image_3.png" />
 <p>We can see there is a Users directory we tried to go ther, we got stopped at the admin directory</p>
-<img src="images//netmon/ftp_image_4.PNG" />
+<img src="images//netmon/ftp_image_4.png" />
 <p>Since the Administrator directory goes no where We take a look at the Public directory</p>
-<img src="images//netmon/ftp_image_5.PNG" />
+<img src="images//netmon/ftp_image_5.png" />
 <p>We found our first flag in user.txt
 We can download the user.txt and open it on our own machine</p>
-<img src="images//netmon/ftp_image_5.PNG" />
-<img src="images//netmon/ftp_image_6.PNG" />
-<img src="images//netmon/ftp_image_7.PNG" />
+<img src="images//netmon/ftp_image_5.png" />
+<img src="images//netmon/ftp_image_6.png" />
+<img src="images//netmon/ftp_image_7.png" />
 <p>WE investigate futher, usin ls -la we can see hidden files aswell</p>
-<img src="images//netmon/ftp_image_8.PNG" />
-<img src="images//netmon/ftp_image_9.PNG" />
+<img src="images//netmon/ftp_image_8.png" />
+<img src="images//netmon/ftp_image_9.png" />
 
 <p>We see the directory paessler to see whats inside, we gidt some old configuration files we can download the paessler folder to our machine</p>
-<img src="images//netmon/image_10.PNG" />
+<img src="images//netmon/image_10.png" />
 <p>We downloaded all the configuration files</p>
-<img src="images//netmon/image_11.PNG" />
+<img src="images//netmon/image_11.png" />
 <p>We can now try to grep for "password" or username "prtgadmin" which we know is the netmon defautlt</p>
-<img src="images//netmon/image_12.PNG" />
+<img src="images//netmon/image_12.png" />
 <p>Something fishy in the .old.bak, we need to look into that. We opend the file in a text editor and search for "password"</p>
-<img src="images//netmon/image_13.PNG" />
+<img src="images//netmon/image_13.png" />
 <p>PrTg@dmin2018
 PrTg@dmin2019
 PrTg@dmin2021</p>
-<img src="images//netmon/image_14.PNG" />
+<img src="images//netmon/image_14.png" />
 <p>But still error, we tried with different year PrTg@dmin2019, seem to work</p>
-<img src="images//netmon/image_15.PNG" />
+<img src="images//netmon/image_15.png" />
 <p>
 WE did some digging around and read som write ups and found a cve for it CVE-2018-9276 (https://0xrick.github.io/hack-the-box/netmon/ )
 We created a script that creates a new admin user, in order to do that we needed some few things
 we need cookies for our session from burpsuit</p>
-<img src="images//netmon/image_16.PNG" />
+<img src="images//netmon/image_16.png" />
 <p>we copied the scrip from (https://www.exploit-db.com/exploits/46527) and made a bash script with our credentials and called it exploite1.sh</p>
-<img src="images//netmon/image_17.PNG" />
+<img src="images//netmon/image_17.png" />
 <p>The bash scripe creadted a new admin user</p>
-<img src="images//netmon/image_18.PNG" />
+<img src="images//netmon/image_18.png" />
 <p>We then tried to escalate using the new user and password</p>
-<img src="images//netmon/image_19.PNG" />
-<img src="images//netmon/image_20.PNG" />
+<img src="images//netmon/image_19.png" />
+<img src="images//netmon/image_20.png" />
 <p>we then went to the c root (cd ..) and found our flag</p>
-<img src="images//netmon/image_21.PNG" />
+<img src="images//netmon/image_21.png" />
 <p><b>3018977fb944bf1878f75b879fba67cc</b></p>
 
 <h3 id="looking-back-5">Conclusion</h3>
