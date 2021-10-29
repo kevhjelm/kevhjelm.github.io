@@ -25,7 +25,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me2.png" alt="kevhjelm" /></a>
+      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" /></a>
       <h1>Kevin Hjelmtveit</h1>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="home.html">Home</a>
@@ -103,44 +103,44 @@ vi har mye informasjon om smb som versjon, account, Workgroup etc
 intresant her er port 135,138 og 445
 De andre er service porter for rpc </p>
 <h2>Port 139</h2>
-<img src="images//blue/image_netbios1.PNG" width="600" height="348" />
+<img src="images//blue/image_netbios1.png" width="600" height="348" />
 <p>we manage to get the workgroup.We try to get into one of the shares</p>
-<img src="images//blue/image_netbios2.PNG" />
+<img src="images//blue/image_netbios2.png" />
 <p>we manage to get into the share and users shares. Tried to see if there is a way to find the flags
 but no luck</p>
-<img src="images//blue/image_netbios3.PNG" /><br>
-<img src="images//blue/image_netbios4.PNG" />
+<img src="images//blue/image_netbios3.png" /><br>
+<img src="images//blue/image_netbios4.png" />
 <p>Since we know one of the users name is haris, we can try to login as haris. We had no luck</p>
 <h2>Port 135</h2>
 <p>We tried to use rpcclient with no username</p>
-<img src="images//blue/rpc_image.PNG" />
+<img src="images//blue/rpc_image.png" />
 <p>All we got was error accecc denied</p>
-<img src="images//blue/rpc_image_2.PNG" />
+<img src="images//blue/rpc_image_2.png" />
 <h2>Port 445</h2>
 <p>After some research we found that the windwos 7 professional 7601 service pack 1 is a known vulnerability. EternalBlue</p>
-<img src="images//blue/445_image.PNG" />
-<img src="images//blue/445_image1.PNG" />
-<img src="images//blue/445_image_2.PNG" />
+<img src="images//blue/445_image.png" />
+<img src="images//blue/445_image1.png" />
+<img src="images//blue/445_image_2.png" />
 <p>we got access to a meterpreter now lets see if we can find some flags. We do get a windows shell</p>
-<img src="images//blue/445_image_3.PNG" /><br>
-<img src="images//blue/445_image_4.PNG" />
+<img src="images//blue/445_image_3.png" /><br>
+<img src="images//blue/445_image_4.png" />
 <p>We want to use a meterpreter shel and convert it from windows shell</p>
-<img src="images//blue/445_image_5.PNG" />
+<img src="images//blue/445_image_5.png" />
 <p>we exit out of windos and but the sessions in the background (1)
 we use the shell_to_meterpreter</p>
-<img src="images//blue/445_image_6.PNG" />
+<img src="images//blue/445_image_6.png" />
 <p><b>we seadd the session, we can now try to interact with the session </b></p>
-<img src="images//blue/445_image_7.PNG" />
+<img src="images//blue/445_image_7.png" />
 <p>We can now use the meterpreter shell instead and move around</p>
-<img src="images//blue/445_image_8.PNG" />
-<img src="images//blue/445_image_9.PNG" />
-<img src="images//blue/445_image_10.PNG" />
+<img src="images//blue/445_image_8.png" />
+<img src="images//blue/445_image_9.png" />
+<img src="images//blue/445_image_10.png" />
 <p> We got the flag for root: ( ff548eb71e920ff6c08843ce9df4e717 )</p>
-<img src="images//blue/445_image_11.PNG" />
+<img src="images//blue/445_image_11.png" />
 <p>We also see Haris as a user</p>
-<img src="images//blue/445_image_12.PNG" />
+<img src="images//blue/445_image_12.png" />
 <p>We can now submit our flags</p>
-<img src="images//blue/445_image_13.PNG" />
+<img src="images//blue/445_image_13.png" />
 
 
     </div>
