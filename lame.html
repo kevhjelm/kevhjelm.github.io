@@ -25,7 +25,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me.jpg" alt="kevhjelm" /></a>
+      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" /></a>
       <h1>Kevin Hjelmtveit</h1>
       <nav class="app-header-menu">
           <a class="app-header-menu-item" href="home.html">Home</a>
@@ -64,7 +64,7 @@
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">Jerry Writeup</h1>
-      <img src="images//lame/lame00.PNG" alt="" width="100" height="100" />
+      <img src="images//lame/lame00.png" alt="" width="100" height="100" />
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -94,49 +94,49 @@
 export IP =10.10.10.3 $IP <br>
 The namp result yells:
 nmap -A -T4  -Pn $IP</p>
-<img src="images//lame/nmap_image.PNG" alt="nmap" class="center">
+<img src="images//lame/nmap_image.png" alt="nmap" class="center">
 <h3> FTP </h3>
-<img src="images//lame/ftp_image.PNG" alt="nmap" class="center">
+<img src="images//lame/ftp_image.png" alt="nmap" class="center">
 <p>Not much we can do here, we dont have permissions. We have to do some more enumeration.</p>
-<img src="images//lame/ftp_image_2.PNG" width="600" height="348" />
+<img src="images//lame/ftp_image_2.png" width="600" height="348" />
 <p>We did research on the ftp vsftpd 2.3.4 version to find any existing vulnerabilities. We opend metasploit,
 we start by searching for vsftpd in metasploit and found exploit/unix/ftp/vsftpd_234_backdoor</p>
-<img src="images//lame/ftp_image_3.PNG" />
+<img src="images//lame/ftp_image_3.png" />
 <p>we set the correct options</p>
-<img src="images//lame/ftp_image_4.PNG" />
-<img src="images//lame/ftp_image_5.PNG" />
+<img src="images//lame/ftp_image_4.png" />
+<img src="images//lame/ftp_image_5.png" />
 <p>we see it prompt for a speacial user 331, we do not have access or permissions here
 This seem to be a misconfiguration</p>
 <h3> SMB </h3>
 <p>The results for port 138 and 445 are well known</p>
-<img src="images//lame/smb_image_1.PNG" />
+<img src="images//lame/smb_image_1.png" />
 <p>These are file sharing services samba and netbias (linux/windwos)
 <p>We can simply try to login to see if we can<<br>
 smbclient -L \\\\10.10.10.3\\</p>
-<img src="images//lame/smb_image_2.PNG" />
+<img src="images//lame/smb_image_2.png" />
 <p>This gives an error, research said might not work on newer versions of kali
 On 2019.4 we get this result</p>
-<img src="images//lame/smb_image_3.PNG" />
+<img src="images//lame/smb_image_3.png" />
 <p>We do s searchsploit to see if and explooit exist in metsploit</p>
-<img src="images//lame/smb_image_4.PNG" />
+<img src="images//lame/smb_image_4.png" />
 <p>we open metsploit and search</p>
-<img src="images//lame/smb_image_5.PNG" />
+<img src="images//lame/smb_image_5.png" />
 <p>we add it to use and set the correct perameters</p>
-<img src="images//lame/smb_image_6.PNG" />
+<img src="images//lame/smb_image_6.png" />
 <p>Here we need to do some configuration, Rhost should be the IP given from hackthebox and RPORT is correct</p>
-<img src="images//lame/smb_image_7.PNG" />
+<img src="images//lame/smb_image_7.png" />
 <p>WE ARE IN</p>
-<img src="images//lame/smb_image_8.PNG" />
+<img src="images//lame/smb_image_8.png" />
 <p>Now we can try to get a shell and see if we are admin.
 We typed "shell" and got a python shell up, we check our Id and we can see that we are root
 so no privilage escalation is needed</p>
-<img src="images//lame/smb_image_9.PNG" />
+<img src="images//lame/smb_image_9.png" />
 <p>we go to the home directory and find makis, futher we find the flag</p>
-<img src="images//lame/smb_image_10.PNG" /><br>
-<img src="images//lame/smb_image_11.PNG" />
+<img src="images//lame/smb_image_10.png" /><br>
+<img src="images//lame/smb_image_11.png" />
 <p>We also so a directory called root</p>
-<img src="images//lame/smb_image_12.PNG" /><br>
-<img src="images//lame/smb_image_13.PNG" />
+<img src="images//lame/smb_image_12.png" /><br>
+<img src="images//lame/smb_image_13.png" />
 <p>Machine owned!</p>
 <h3 id="looking-back-5">Conclusion</h3>
 <p> </p>
