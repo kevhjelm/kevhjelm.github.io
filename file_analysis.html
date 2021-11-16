@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>File Analysis</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="web2.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup"/>
+<meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted."/>
+
+    <meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
+<meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-05-16T21:53:31-04:00" />
+<meta property="article:modified_time" content="2021-05-16T21:53:31-04:00" />
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.grahamhelton.com"><img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+          <a class="app-header-menu-item" href="index.html">Home</a>
+             - 
+          
+          <a class="app-header-menu-item" href="blog.html">Blog</a>
+      </nav>
+      <p>  </p>
+      <div class="app-header-social">
+        
+          <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>Github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg>
+          </a>
+        
+         <!-- <a href="https://www.twitter.com/grahamhelton3" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <title>Twitter</title>
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path> -->
+</svg>
+          </a>
+        
+          <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+  <title>LinkedIn</title>
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+</svg>
+          </a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">File Analysis</h1>
+      <img src="images//df_lab1/forsstr.png" alt="" width="100" height="100" />
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Oct 1, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          13 min read
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      <h1 id="who-am-i">File analysis</h1> 
+      In this section we will show how to indentify
+      files that does not have any extensions
+
+</p>
+<h1 id="exam-timeline">Files in folder</h1>
+<p>We located a folder containing several files, where the file extension is unknown  </p>
+
+<img src="images//df_lab1/pic1.png" width="500" height="150" />
+<p>In order to find the file extension we are going to use HxD to inspect the headers and footer of each file. 
+
+<h3>**file 1 "2D3Fa2a":** </h3>
+
+off the bat, we can see this is a pdf file, from the ascii</p>
+<img src="images//df_lab1/pic2.png" width="600" height="348" />
+<p>another way to analyse it is to use [https://www.garykessler.net/library/file_sigs.html](https://www.garykessler.net/library/file_sigs.html)
+
+here we can compare the firste few hex value to the table in the link</p>
+<img src="images//df_lab1/pic3.png" />
+<p>We can see from the table about if the trailers does match our files</p>
+<img src="images//df_lab1/pic4.png" />
+<p>Which it does. This is a PDF file. We can now rename our file with the pdf extension and open it</p>
+<img src="images//df_lab1/pic5.png" />
+<p>We found our first flag in user.txt
+We can download the user.txt and open it on our own machine</p>
+<img src="images//df_lab1/pic5.png" />
+<img src="images//df_lab1/pic6.png" />
+<h3>**File 2 AW3DXW:** </h3>
+<p>Using the same tool as previous file</p>
+<img src="images//df_lab1/pic7.png" />
+<p>WE investigate futher, usin ls -la we can see hidden files aswell</p>
+<img src="images//df_lab1/pic8.png" />
+<img src="images//df_lab1/pic9.png" />
+<p>This file is a jpeg. </p>
+<img src="images//df_lab1/pic10.png" />
+
+<h3>File 3 "Mx#234": </h3>
+
+<img src="images//df_lab1/pic11.png" />
+<img src="images//df_lab1/pic12.png" />
+<p>we change to zip extension</p>
+<img src="images//df_lab1/pic13.png" />
+<img src="images//df_lab1/pic14.png" />
+<p>WE do see the reference to ppt, slideshow, so this might be a powerpoint file slide
+We can see find many PPT string references written within the footer of the file.</p>
+
+<h3>File 4 "QW#@g#:  </h3>
+<img src="images//df_lab1/pic15.png" />
+<p> It seems to be a sound file. By taking the hint from the HxD, we can see cleartext in the acsii section. This is an indecator that this could actually be a 
+normal text file. We convert the file to a .txt</p>
+<img src="images//df_lab1/pic16.png" />
+
+<h3>File 5 "XFaWxVa":  </h3>
+<p>As seen before, this was a zip file</p>
+<img src="images//df_lab1/pic17.png" />
+<img src="images//df_lab1/pic18.png" />
+
+<h3>File 6 "ZC2f2d2":  </h3>
+
+<img src="images//df_lab1/pic19.png" />
+<p>which is also a zip file</p>
+<img src="images//df_lab1/pic20.png" />
+<p>This is actually a office word file!</p>
+<img src="images//df_lab1/pic21.png" />
+<p><b>3018977fb944bf1878f75b879fba67cc</b></p>
+
+<h3 id="looking-back-5">Conclusion</h3>
+<p> </p>
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
