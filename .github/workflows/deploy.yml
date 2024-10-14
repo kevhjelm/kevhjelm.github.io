@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 
-# Trigger only when pushing to the master branch
+# Trigger only when pushing to the production branch
 on:
   push:
     branches:
-      - master   # Only deploy on push to master branch
+      - production   # renamed from master Only deploy on push to production branch
 
 jobs:
   deploy:
