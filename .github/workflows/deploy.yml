@@ -23,5 +23,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{snyk_code}}
           publish_dir: ./  # The directory where your static files are located (root for HTML/CSS files)
