@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
  # Dependency scanning using Snyk 
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/cli@master
+        uses: snyk/actions/setup@v2
         with:
           args: test
       # Step 2: Deploy to GitHub Pages
