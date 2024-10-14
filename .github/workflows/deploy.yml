@@ -1,12 +1,11 @@
 name: Deploy to GitHub Pages
 
-# Trigger the workflow when pushing to the master branch
+# Trigger only when pushing to the master branch
 on:
   push:
     branches:
-      - master
+      - master   # Only deploy on push to master branch
 
-# Job to build and deploy the static site
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -21,4 +20,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # The directory where your static files are located (in your case, it's the root)
+          publish_dir: ./  # The directory where your static files are located (root for HTML/CSS files)
