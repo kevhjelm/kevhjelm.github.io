@@ -4,7 +4,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - production   # renamed from master Only deploy on push to production branch
+      - production   # Only deploy on push to production branch
 
 jobs:
   deploy:
@@ -14,14 +14,22 @@ jobs:
       # Step 1: Check out the repository code
       - name: Checkout code
         uses: actions/checkout@v2
- # Dependency scanning using Snyk 
-      - name: Run Snyk to check for vulnerabilities
+
+      # Step 2: Set up Snyk CLI
+      - name: Set up Snyk CLI
         uses: snyk/actions/setup@v2
         with:
-          args: test
-      # Step 2: Deploy to GitHub Pages
+          version: 'latest'  # You can specify a version or use 'latest'
+
+      # Step 3: Run Snyk to check for vulnerabilities
+      - name: Run Snyk to check for vulnerabilities
+        run: snyk test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}  # Make sure to add your Snyk token to GitHub Secrets
+
+      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{snyk_code}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./  # The directory where your static files are located (root for HTML/CSS files)
