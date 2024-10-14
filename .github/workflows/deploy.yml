@@ -14,7 +14,11 @@ jobs:
       # Step 1: Check out the repository code
       - name: Checkout code
         uses: actions/checkout@v2
-
+ # Dependency scanning using Snyk 
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/cli@master
+        with:
+          args: test
       # Step 2: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
