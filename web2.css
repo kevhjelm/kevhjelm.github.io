@@ -162,26 +162,44 @@ pre code {
   font-size: .8em
 }
 
+/* Publications */
 .posts-list {
   padding: 0;
   float: left;
+
 }
+/* Security testing */
 .posts-list2 {
-  padding: 25;
+
   float: left;
+  transform: translateX(100px);
+  
 }
 .posts-list3 {
   padding: 30;
   float: left;
+  position: relative; 
+  top: 0px;
+  transform: translateX(150px);
+}
+
+/*  */
+.posts-list4 {
+  padding: 30;
+  float: right;
+  position: relative; 
+  top: -170px;
+  transform: translateX(350px);
 }
 
 .posts-list-item {
   list-style: none;
   padding: .4em 0
-}
 
+}
+/* dotted lines font,*/
 .posts-list-item:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, .3)
+  border-bottom: 0.5px dashed rgba(255, 255, 255, .3)
 }
 
 .posts-list-item-description {
@@ -215,7 +233,7 @@ pre code {
 }
 
 .tags-list-item:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, .3)
+  border-bottom: 100px dashed rgba(255, 255, 255, .3)
 }
 
 @media(min-width:450px) {
