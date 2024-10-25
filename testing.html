@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>What is testing</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.grahamhelton.com">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="projects.html">Projects</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">What is testing?</h1>
+          <p>When it comes to cybersecurity, testing is a critical process for identifying vulnerabilities, ensuring the robustness of systems, and mitigating potential security risks. In today's digital landscape, where cyberattacks are more frequent and sophisticated, testing plays a crucial role in safeguarding sensitive data and maintaining the integrity of networks, applications, and services.</p>
+
+        </header>
+        <div class="post-content">
+          <h2>Why Do We Perform Security Testing?</h2>
+          <p>The primary goal of <strong>security testing</strong> is to uncover weaknesses in the system before they can be exploited by malicious actors. It helps organizations achieve the following:</p>
+          <ul>
+            <li><strong>Identifying vulnerabilities:</strong> Exposing potential flaws that could allow unauthorized access, data breaches, or other security violations.</li>
+            <li><strong>Validating security measures:</strong> Ensuring that the security controls implemented are working as intended.</li>
+            <li><strong>Regulatory compliance:</strong> Many industries have strict security requirements (like GDPR, HIPAA, or PCI-DSS), and testing helps meet these standards.</li>
+            <li><strong>Preventing financial and reputational damage:</strong> A security breach can result in financial loss, regulatory penalties, and damage to an organization's reputation. Testing helps prevent these outcomes.</li>
+          </ul>
+          
+          <h2>Types of Security Testing</h2>
+          <p>Security testing can take various forms depending on the approach, tools, and focus of the test. Here are some of the most common types:</p>
+          <h3>1. Static Testing</h3>
+            <p><strong>Static testing</strong> involves analyzing code or systems without actually executing the code. This type of testing is typically done in the early stages of the development lifecycle to catch vulnerabilities before the system is deployed. Static testing includes code reviews, static application security testing (SAST), and configuration analysis.</p>
+            <p><strong>When to use it:</strong> During the early development stages, before deployment.</p>
+            <p><strong>Tools:</strong> SonarQube, Checkmarx, Fortify.</p>
+            
+            <h3>2. Dynamic Testing</h3>
+            <p><strong>Dynamic testing</strong> focuses on evaluating the system during runtime, simulating real-world scenarios to see how the application behaves in a live environment. Dynamic tests assess how the application responds to various inputs, interactions, and unexpected behavior.</p>
+            <p><strong>When to use it:</strong> Post-deployment or after the application is running.</p>
+            <p><strong>Tools:</strong> Burp Suite, OWASP ZAP, Netsparker.</p>
+            
+            <h3>3. Manual Testing</h3>
+            <p><strong>Manual testing</strong> is performed by security analysts who explore the system, manually identifying vulnerabilities that automated tools may miss. It often involves reviewing application behavior, business logic flaws, and exploring the system as an attacker would.</p>
+            <p><strong>When to use it:</strong> When you need a more detailed, human-driven approach, especially for logic and design flaws that tools might not detect.</p>
+            
+            <h3>4. Automated Testing</h3>
+            <p><strong>Automated testing</strong> uses tools to automatically scan the system for common vulnerabilities such as SQL injection, cross-site scripting (XSS), or weak configurations. It is useful for quickly identifying well-known security issues and conducting large-scale tests.</p>
+            <p><strong>When to use it:</strong> Frequently, especially during development and continuous integration processes.</p>
+            <p><strong>Tools:</strong> OWASP ZAP, Nessus, Nikto.</p>
+            
+            <h3>5. Functional Testing</h3>
+            <p><strong>Functional security testing</strong> ensures that the system's security features (like authentication, authorization, encryption, etc.) work as expected. The goal is to verify that each function of the system behaves according to the specified security requirements.</p>
+            <p><strong>When to use it:</strong> During the QA phase or any time security features are added or updated.</p>
+            <p><strong>Tools:</strong> Postman (for API security testing), JUnit (for unit testing).</p>
+            
+            <h3>6. Regression Testing</h3>
+            <p><strong>Regression testing</strong> is conducted after system updates, patches, or code changes to ensure that no new vulnerabilities or issues have been introduced. This helps ensure that the system remains secure even after modifications.</p>
+            <p><strong>When to use it:</strong> After any changes in code or system configurations.</p>
+            <p><strong>Tools:</strong> Selenium (for automated regression), Burp Suite.</p>
+            
+            <h3>7. Penetration Testing</h3>
+            <p><strong>Penetration testing (pentesting)</strong> simulates a real-world attack on the system to discover potential vulnerabilities from an external or internal attacker’s perspective. It includes a mix of automated and manual testing methods.</p>
+            <p><strong>When to use it:</strong> Periodically, or when a major system is deployed, upgraded, or reconfigured.</p>
+            <p><strong>Tools:</strong> Metasploit, Nmap, Burp Suite.</p>
+            
+            <h3>8. Exploratory Testing</h3>
+            <p><strong>Exploratory testing</strong> involves unscripted, creative testing where security professionals look for unusual system behavior or vulnerabilities that might not be covered by automated or pre-defined tests. It requires a deep understanding of the system and its potential weaknesses.</p>
+            <p><strong>When to use it:</strong> When you want to explore unknown areas of the system and test beyond predefined cases.</p>
+            
+            <h3>9. Load/Stress Testing</h3>
+            <p><strong>Load and stress testing</strong> helps assess how a system performs under heavy traffic or stress conditions. This type of testing is important to identify performance-related vulnerabilities, such as Denial of Service (DoS) weaknesses.</p>
+            <p><strong>When to use it:</strong> Before system launches or during peak traffic events.</p>
+            <p><strong>Tools:</strong> JMeter, LoadRunner.</p>
+
+          <h2>When Are Different Types of Security Testing Used?</h2>
+          <ul>
+            <li><strong>Early in development:</strong> Static testing is most useful during the design and coding phases.</li>
+            <li><strong>During and after deployment:</strong> Dynamic and functional testing ensure that the system behaves as expected.</li>
+            <li><strong>After updates or changes:</strong> Regression testing verifies that no new vulnerabilities have been introduced after modifications.</li>
+            <li><strong>Periodically and for compliance:</strong> Penetration testing and manual testing assess system security over time.</li>
+            <li><strong>Continuous testing in CI/CD pipelines:</strong> Automated testing can be integrated into continuous integration pipelines for constant security feedback.</li>
+          </ul>
+
+          <h2>Conclusion</h2>
+          <p>Security testing is a comprehensive and ongoing process that ensures systems are resilient against a wide range of potential threats. By employing different types of testing at various stages of the development and deployment lifecycle, organizations can significantly reduce the risk of security incidents.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
