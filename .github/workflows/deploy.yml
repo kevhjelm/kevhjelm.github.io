@@ -1,20 +1,20 @@
-name: Snyk Security Scan
+#name: Snyk Security Scan
+###
+#on:
+ # push:
+  #  branches:
+  #    - main
 
-on:
-  push:
-    branches:
-      - main
+#jobs:
+ # snyk_scan:
+   # runs-on: ubuntu-latest
+    #steps:
+     # - name: Checkout repository
+      #  uses: actions/checkout@v4
 
-jobs:
-  snyk_scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run Snyk Security Scan
-        uses: snyk/actions/node@master  # Adjust if needed for your project type (e.g., python, java, etc.)
-        with:
-          args: test
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      #- name: Run Snyk Security Scan
+       # uses: snyk/actions/node@master  # Adjust if needed for your project type (e.g., python, java, etc.)
+       # with:
+        #  args: test
+        #env:
+         # SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
