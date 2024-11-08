@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Implementing CI/CD for a Static HTML/CSS Website with GitHub Actions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://kevhjelm.github.io/">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Implementing CI/CD for a Static HTML/CSS Website with GitHub Actions</h1>
+          <p>Learn how to set up a CI/CD pipeline for a simple HTML/CSS website using GitHub Actions. We’ll explore creating automated linting workflows, tracking errors, and ensuring a seamless deployment process.</p>
+          
+          <h3>Why CI/CD for a Static Website?</h3>
+          <p>CI/CD brings immense benefits to static sites by automating quality checks and ensuring that code remains consistent and error-free. This process is especially useful for:</p>
+          <ul>
+            <li><strong>Enforcing Code Quality</strong>: Automatically check code styling and quality using linters.</li>
+            <li><strong>Catching Errors Early</strong>: Detect common HTML/CSS issues, such as unclosed tags or misformatted CSS.</li>
+            <li><strong>Saving Time</strong>: Automate repetitive tasks to focus on development.</li>
+          </ul>
+
+          <h3>Setting Up CI/CD with GitHub Actions</h3>
+          <p>GitHub Actions is GitHub's built-in automation tool that allows us to create workflows to automate tasks. For this setup, we’ll create a linting workflow to check for HTML and CSS errors on every push to the main branch.</p>
+          
+          <h4>1. Create the Workflow File: <code>lint.yml</code></h4>
+          <p>In your project directory, create a folder named <code>.github/workflows</code>. Inside, add a file named <code>lint.yml</code>. This will instruct GitHub Actions on when and how to run the linting checks.</p>
+          
+          <h4>2. Configure the Linting Workflow</h4>
+          <p>Here’s the content for <code>lint.yml</code>:</p>
+          <pre><code>name: Lint HTML and CSS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install HTMLHint and Stylelint
+      - name: Install HTMLHint and Stylelint
+        run: |
+          npm install -g htmlhint
+          npm install -g stylelint
+
+      # Run HTMLHint for HTML linting
+      - name: Run HTMLHint
+        run: htmlhint "**/*.html"
+
+      # Run Stylelint for CSS linting
+        - name: Run Stylelint
+        run: stylelint "**/*.css"
+</code></pre>
+
+          <h4>3. Workflow Details</h4>
+          <p>The <code>lint.yml</code> file sets up a linting workflow that runs on every push or pull request to the <code>main</code> branch. Here’s a breakdown of each step:</p>
+          <ul>
+            <li><strong>Trigger</strong>: Runs on pushes and pull requests targeting the <code>main</code> branch.</li>
+            <li><strong>Checkout Repository</strong>: Pulls the code from your repository for analysis.</li>
+            <li><strong>Install Linters</strong>: Installs <code>htmlhint</code> for HTML and <code>stylelint</code> for CSS checks.</li>
+            <li><strong>Run Linters</strong>: <code>htmlhint</code> and <code>stylelint</code> analyze your HTML and CSS files, listing any errors or warnings.</li>
+          </ul>
+
+          <h3>Tracking and Fixing Errors</h3>
+          <p>Each time you push code to the <code>main</code> branch, GitHub Actions runs the linting workflow and outputs results:</p>
+          <ul>
+            <li>View the results in the **Actions** tab, where you can check for errors flagged by the linters.</li>
+            <li>Each issue lists the file and line number for easy reference, such as unclosed tags or special character issues.</li>
+            <li>Make the necessary corrections in your code and push your changes to rerun the checks.</li>
+          </ul>
+
+          <h3>Benefits of CI/CD for a Static Website</h3>
+          <p>With automated linting and CI/CD, you gain the following benefits:</p>
+          <ul>
+            <li><strong>Quality Control</strong>: Each push is validated, enforcing code consistency.</li>
+            <li><strong>Time Efficiency</strong>: Automation catches issues instantly, reducing manual review time.</li>
+            <li><strong>Collaborative Readiness</strong>: Ensures all contributors adhere to the same standards.</li>
+          </ul>
+
+          <h3>Conclusion</h3>
+          <p>Implementing CI/CD for a static website is simple but powerful. By setting up a GitHub Actions workflow with automated linting, you’ll ensure your HTML/CSS project remains clean, readable, and error-free with every update.</p>
+        </header>
+      </article>
+    </main>
+  </body>
+</html>

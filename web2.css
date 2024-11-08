@@ -192,7 +192,7 @@ pre code {
   padding: 30;
   float: left;
   position: relative; 
-
+  /* width: -1000%; Adjust as needed */
   transform: translate(820px,-475px);
 }
 
@@ -293,6 +293,7 @@ pre code {
 /*  Dots under all dates*/
 .posts-list-item {
   border-bottom: 0.5px dashed rgba(255, 255, 255, .3);
+ width: 100%;  /* Adjust as needed */
 }
 
 
