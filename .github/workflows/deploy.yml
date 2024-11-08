@@ -1,0 +1,30 @@
+name: Snyk Scan on Push to Staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  snyk_scan:
+    name: Snyk Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Snyk CLI
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      # Step 3: Authenticate Snyk using the token
+      - name: Authenticate Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk auth $SNYK_TOKEN
+
+      # Step 4: Run Snyk to test the code for vulnerabilities
+      - name: Snyk Test
+        run: snyk test --all-projects
