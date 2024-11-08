@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Snyk Security Scan
 
 on:
   push:
@@ -6,15 +6,15 @@ on:
       - main
 
 jobs:
-  build:
+  security:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@master  # Adjust if needed for your project type
+      - name: Snyk Security Scan
+        uses: snyk/actions/node@master  # Replace with the correct Snyk action for your language if needed
         with:
-          args: test  # Use `monitor` if you want Snyk to watch for new vulnerabilities
+          args: test  # Use `monitor` if you want continuous monitoring
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
