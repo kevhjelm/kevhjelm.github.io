@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>An Introduction to OSINT (Open Source Intelligence)</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">An Introduction to OSINT (Open Source Intelligence)</h1>
+          <p>Open Source Intelligence (OSINT) is the practice of gathering information from publicly available sources to aid in investigations and research. OSINT is widely used in cybersecurity, competitive intelligence, and law enforcement. In this post, we’ll explore what OSINT is, popular tools, and commands that can help you get started with OSINT investigations.</p>
+          
+          <h3>What is OSINT?</h3>
+          <p>OSINT involves collecting, analyzing, and using information from open sources such as the internet, social media, news articles, and public databases. OSINT techniques can reveal valuable data, from identifying potential security vulnerabilities to locating sensitive information inadvertently left exposed. The power of OSINT lies in the accessibility and depth of information that can be obtained from freely available resources.</p>
+        </header>
+        <div class="post-content">
+          <h3>Popular OSINT Tools and Techniques</h3>
+          <p>There are many tools and techniques available to aid in OSINT investigations. Here are some popular ones:</p>
+
+          <h4>1. Google Dorking</h4>
+          <p>Google Dorking uses advanced search operators to uncover information not immediately visible in regular searches. Here are some common Google Dork commands:</p>
+          <ul>
+            <li><code>site:example.com</code> - Search for results within a specific domain.</li>
+            <li><code>filetype:pdf "confidential"</code> - Find PDFs containing the word "confidential."</li>
+            <li><code>intitle:"index of" "passwords"</code> - Search for directories labeled "index of" with possible password lists.</li>
+            <li><code>inurl:admin</code> - Look for URLs with "admin" in them, which may lead to login pages or administrative portals.</li>
+          </ul>
+
+          <h4>2. Sublist3r</h4>
+          <p>Sublist3r is a tool used to enumerate subdomains of a target domain, which can help identify additional points of entry.</p>
+          <p>Basic Sublist3r command:</p>
+          <code>sublist3r -d example.com</code>
+          <p>This command will search for subdomains of <em>example.com</em> and list them for further analysis.</p>
+
+          <h4>3. Shodan</h4>
+          <p>Shodan is a search engine that scans the internet for connected devices. It's often used to identify exposed servers, IoT devices, webcams, and other internet-connected assets.</p>
+          <ul>
+            <li><code>apache country:"US"</code> - Find Apache servers in the United States.</li>
+            <li><code>port:22</code> - Search for devices with SSH (port 22) open.</li>
+            <li><code>ssl:"Let's Encrypt"</code> - Find devices using SSL certificates from Let's Encrypt.</li>
+          </ul>
+          <p>To use Shodan, you’ll need an account. Some searches may require a Shodan API key.</p>
+
+          <h4>4. theHarvester</h4>
+          <p>theHarvester is a tool for gathering email addresses, subdomains, IP addresses, and other information related to a target domain.</p>
+          <p>Basic theHarvester command:</p>
+          <code>theHarvester -d example.com -b google</code>
+          <p>This command uses Google as a data source to gather information related to <em>example.com</em>. You can specify other sources like Bing, LinkedIn, or Shodan for different results.</p>
+
+          <h3>Applications of OSINT</h3>
+          <p>OSINT can be applied across a variety of fields, including:</p>
+          <ul>
+            <li><strong>Cybersecurity:</strong> Identifying vulnerabilities, mapping network assets, and discovering exposed data.</li>
+            <li><strong>Law Enforcement:</strong> Gathering information on persons of interest, monitoring social media activity, and uncovering hidden connections.</li>
+            <li><strong>Corporate Security:</strong> Assessing the digital footprint of a company to mitigate risks from exposed data or insider threats.</li>
+          </ul>
+
+          <h3>Legal and Ethical Considerations</h3>
+          <p>While OSINT involves publicly available data, it is essential to consider the legal and ethical implications of using this data. Unauthorized access, misuse of data, and breaches of privacy can lead to legal consequences. Practicing responsible and ethical OSINT ensures that investigations comply with laws and respect individuals’ privacy.</p>
+
+          <h3>Conclusion</h3>
+          <p>OSINT is a powerful toolset for gathering valuable intelligence from open sources. By using techniques like Google Dorking, Sublist3r, Shodan, and theHarvester, you can uncover hidden data and gain insights that might otherwise remain unseen. As with any intelligence-gathering approach, practicing OSINT responsibly and ethically is crucial to leveraging its benefits effectively.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

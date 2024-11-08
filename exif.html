@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>An Introduction to EXIF Data in Digital Forensics</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">An Introduction to EXIF Data in Digital Forensics</h1>
+          <p>In digital forensics, metadata can be a valuable source of information. Exchangeable Image File Format (EXIF) data is a type of metadata embedded in image files, often containing details about the time, location, and device used to capture an image. This post explores metadata, EXIF data, and ExifTool, a popular utility for extracting this data, along with some example commands.</p>
+          
+          <h3>What is Metadata?</h3>
+          <p>Metadata is data about data—it provides information about a file’s properties, such as the creation date, author, file type, and more. For images, metadata can include details like dimensions, color profiles, and embedded information that describes how the file was created. Metadata can reveal information about a file’s history and context, making it useful in forensic investigations.</p>
+
+          <h3>What is EXIF Data?</h3>
+          <p>EXIF (Exchangeable Image File Format) data is a specific type of metadata found in image files, especially those created by digital cameras and smartphones. EXIF data can reveal various details about the photo, such as:</p>
+          <ul>
+            <li><strong>Date and time:</strong> When the photo was taken.</li>
+            <li><strong>Camera model and settings:</strong> Information about the device, including model, exposure, and aperture settings.</li>
+            <li><strong>GPS coordinates:</strong> If enabled, location data can show where the photo was captured.</li>
+          </ul>
+          <p>For investigators, EXIF data provides context and clues that can link images to specific events, locations, or devices.</p>
+        </header>
+        <div class="post-content">
+          <h3>What is ExifTool?</h3>
+          <p>ExifTool is a popular open-source tool for reading, writing, and editing metadata across a wide variety of file formats, including EXIF data from image files. For forensic investigators, ExifTool is invaluable for analyzing image metadata quickly and efficiently.</p>
+
+          <h3>Basic ExifTool Commands</h3>
+          <p>Below are some basic ExifTool commands that can help you explore EXIF data in images:</p>
+          <ul>
+            <li><code>exiftool image.jpg</code> - Display all metadata for the file <em>image.jpg</em>.</li>
+            <li><code>exiftool -GPSLatitude -GPSLongitude image.jpg</code> - Extract GPS coordinates from an image if available.</li>
+            <li><code>exiftool -DateTimeOriginal image.jpg</code> - Display the original date and time when the photo was taken.</li>
+            <li><code>exiftool -Model image.jpg</code> - Show the camera model used to capture the photo.</li>
+            <li><code>exiftool -all= image.jpg</code> - Remove all metadata from an image file, useful for privacy purposes.</li>
+          </ul>
+
+          <h3>Applications of EXIF Data in Digital Forensics</h3>
+          <p>EXIF data can play a significant role in forensic investigations by providing details such as:</p>
+          <ul>
+            <li><strong>Tracking Location:</strong> GPS data can help place an individual or device at a specific location, which is useful in criminal cases and incident investigations.</li>
+            <li><strong>Establishing Timelines:</strong> Date and time metadata helps reconstruct events, offering a sequence of when photos were taken or edited.</li>
+            <li><strong>Linking Devices:</strong> Camera model and serial numbers can link photos to specific devices, providing potential evidence in cases of media manipulation or copyright disputes.</li>
+          </ul>
+
+          <h3>Challenges with EXIF Data</h3>
+          <p>While EXIF data is useful, it has limitations and challenges:</p>
+          <ul>
+            <li><strong>Manipulation:</strong> EXIF data can be modified or removed, potentially altering evidence if not properly handled.</li>
+            <li><strong>Data Loss:</strong> Certain platforms strip EXIF data (e.g., social media), so data may not always be available.</li>
+            <li><strong>Privacy Concerns:</strong> GPS and timestamp data can inadvertently expose sensitive information, which must be handled with care.</li>
+          </ul>
+
+          <h3>Conclusion</h3>
+          <p>EXIF data provides a valuable layer of information in digital forensics, offering insights into the origin and context of digital images. With tools like ExifTool, investigators can quickly access and analyze this metadata to support their investigations. However, as with all digital evidence, EXIF data should be handled with care, as it can be altered and raises privacy considerations.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
