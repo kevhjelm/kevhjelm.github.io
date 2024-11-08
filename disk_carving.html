@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Disk Carving in Digital Forensics</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Disk Carving in Digital Forensics</h1>
+          <p>Disk carving is a crucial technique in digital forensics, used to recover deleted or fragmented files from storage media. In this post, we’ll explore what disk carving is, how it works, and why it’s essential for forensic investigations.</p>
+          
+          <h3>What is Disk Carving?</h3>
+          <p>Disk carving is the process of extracting files or fragments of files from a digital storage device, such as a hard drive, SSD, or USB stick, without relying on the file system's structure. This technique is especially useful when files have been deleted, damaged, or partially overwritten, as it allows forensic investigators to recover data based solely on file patterns and structures.</p>
+        </header>
+        <div class="post-content">
+          <h3>How Disk Carving Works</h3>
+          <p>Disk carving works by scanning raw data on a storage medium and looking for known file signatures or headers—identifiable sequences of bytes that mark the start and, in some cases, the end of a file. By identifying these signatures, forensic tools can attempt to reconstruct files, even if they are no longer indexed by the file system.</p>
+          <p>Two primary methods of disk carving are:</p>
+          <ul>
+            <li><strong>Header/Footer Carving:</strong> This technique looks for known headers and footers of file types (e.g., JPEG, PDF) to determine where files start and end.</li>
+            <li><strong>Header-Only Carving:</strong> If only the file header is known, carving tools may attempt to reconstruct the file without a footer, though this may yield partial files.</li>
+          </ul>
+
+          <h3>Why is Disk Carving Important in Digital Forensics?</h3>
+          <p>Disk carving is essential for retrieving evidence that would otherwise be inaccessible. It plays a vital role in cases where:</p>
+          <ul>
+            <li><strong>Files have been deleted:</strong> Deleted files are often recoverable through disk carving, as deletion typically only removes file references rather than the actual data.</li>
+            <li><strong>File systems are damaged:</strong> If the file system is corrupted, disk carving allows investigators to bypass it and access raw data directly.</li>
+            <li><strong>Partial data recovery is needed:</strong> Disk carving can help retrieve fragments of overwritten or partially damaged files, providing valuable clues even when full recovery isn’t possible.</li>
+          </ul>
+
+          <h3>Challenges of Disk Carving</h3>
+          <p>While disk carving is a powerful technique, it comes with several challenges:</p>
+          <ul>
+            <li><strong>Fragmented files:</strong> Disk carving works best on contiguous data. If a file is fragmented, carving tools may struggle to reassemble the pieces correctly.</li>
+            <li><strong>Lack of metadata:</strong> Carved files lack the original metadata (such as filenames, timestamps), as they’re recovered from raw data rather than the file system.</li>
+            <li><strong>False positives:</strong> Sometimes, random data can resemble file signatures, resulting in irrelevant or corrupted "false" files.</li>
+          </ul>
+
+          <h3>Tools Used for Disk Carving</h3>
+          <p>Several tools are widely used in digital forensics for disk carving:</p>
+          <ul>
+            <li><strong>PhotoRec:</strong> A free and open-source tool known for recovering a wide range of file types from storage media.</li>
+            <li><strong>FTK Imager:</strong> A forensic tool used for disk imaging that also includes disk carving features for file recovery.</li>
+            <li><strong>Autopsy/Sleuth Kit:</strong> An open-source digital forensics platform that offers comprehensive disk analysis and data recovery capabilities, including disk carving.</li>
+          </ul>
+
+          <h3>Applications of Disk Carving in Investigations</h3>
+          <p>Disk carving is often used in a range of digital investigations, including:</p>
+          <ul>
+            <li><strong>Cybercrime investigations:</strong> Recovering deleted files related to illegal activities, such as unauthorized access, fraud, or IP theft.</li>
+            <li><strong>Data breach analysis:</strong> Retrieving sensitive data that may have been deleted or hidden by malicious insiders.</li>
+            <li><strong>Incident response:</strong> Recovering important logs or temporary files that can help trace the sequence of an attack.</li>
+          </ul>
+
+          <h3>Conclusion</h3>
+          <p>Disk carving is an invaluable technique in digital forensics, enabling the recovery of critical data that might otherwise be lost. Despite its challenges, when combined with other forensic methods, disk carving can provide vital evidence for investigations. As technology advances, disk carving tools and techniques continue to improve, helping forensic experts uncover the truth from even the most hidden or fragmented digital artifacts.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

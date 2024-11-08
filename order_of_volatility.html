@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>The Order of Volatility in Digital Forensics</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">The Order of Volatility in Digital Forensics</h1>
+          <p>In digital forensics, understanding the "order of volatility" is essential to conducting effective investigations. The order of volatility refers to the sequence in which data should be collected based on its stability. This post explores the concept and explains why collecting data in the correct order is critical for preserving evidence.</p>
+          
+          <h3>What is the Order of Volatility?</h3>
+          <p>The order of volatility in digital forensics refers to prioritizing data collection based on how quickly the data is likely to change or disappear. Volatile data is transient, meaning it exists temporarily and can be easily lost if not captured promptly. By following the order of volatility, forensic experts can ensure that the most critical and perishable evidence is preserved first.</p>
+        </header>
+        <div class="post-content">
+          <h3>Why is the Order of Volatility Important?</h3>
+          <p>In digital investigations, collecting data in the right order is crucial for preserving the integrity of evidence. If volatile data is not prioritized, it could be altered or lost as a result of system shutdowns, network activity, or time passing. This data can provide valuable insights into the nature of an incident, including who was involved, when it happened, and what actions were taken. Failure to follow the correct order could compromise the entire investigation.</p>
+
+          <h3>The Order of Volatility in Practice</h3>
+          <p>Below is the generally accepted order of volatility, starting with the most volatile data:</p>
+
+          <h4>1. Registers and Cache</h4>
+          <p>Registers and cache memory are the most volatile types of data, as they exist within the CPU and are lost as soon as the system powers off. Capturing this data requires specialized tools and techniques, and it should be done first if possible, as it can reveal real-time data about the system's state and any running processes.</p>
+
+          <h4>2. RAM (Random Access Memory)</h4>
+          <p>RAM holds active data and processes, making it highly volatile. RAM contents are lost when the device shuts down, so capturing a memory dump is crucial. This data can provide insights into live processes, network connections, and other in-progress activities at the time of the investigation.</p>
+
+          <h4>3. Network Connections and Routing Tables</h4>
+          <p>Network information, including open connections, active ports, and routing tables, is also volatile. This data can disappear with changes in network configuration or if the system is restarted. Network data is valuable for identifying unauthorized access, communication with external servers, and potentially malicious activity.</p>
+
+          <h4>4. Temporary Files</h4>
+          <p>Temporary files are often created by applications for caching and quick access. They may include critical data, such as passwords or session information, which can be invaluable for the investigation. Although less volatile than RAM, temporary files can still be easily altered or deleted.</p>
+
+          <h4>5. Disk Data</h4>
+          <p>Data stored on hard drives or SSDs is more stable and less volatile than memory data. This includes system files, user documents, logs, and application data. Although not as susceptible to immediate loss, disk data can still be overwritten or altered, so it should be captured after more volatile data.</p>
+
+          <h4>6. Archival Data (Backups, Logs)</h4>
+          <p>Data that is backed up or archived is the least volatile. This includes external backups, log files, and other historical data stored over time. Because of its low volatility, archival data is usually captured last. It provides valuable historical context, helping to reconstruct timelines and analyze past activity.</p>
+
+          <h3>Challenges in Maintaining the Order of Volatility</h3>
+          <p>While the order of volatility provides a structured approach, there are challenges to following it strictly. Constraints such as limited access to certain data, inadequate tools, or real-time threats can complicate the process. Forensic investigators must often balance the ideal order with practical limitations, adjusting their approach as needed while prioritizing volatile data wherever possible.</p>
+
+          <h3>Conclusion</h3>
+          <p>Understanding and following the order of volatility is fundamental to effective digital forensics. By prioritizing the most volatile data, investigators can capture the most critical evidence before it’s lost, enhancing the accuracy and integrity of the investigation. In a field where every byte can hold significant value, preserving data in the correct order is a vital skill for forensic experts.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

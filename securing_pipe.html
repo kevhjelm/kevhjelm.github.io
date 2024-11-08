@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Securing the Pipe: Safeguarding Your CI/CD Pipeline</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Securing the Pipe: Safeguarding Your CI/CD Pipeline</h1>
+          <p>As CI/CD pipelines become the backbone of modern software development, ensuring their security is crucial. In this post, we’ll dive into the key practices and strategies to secure your CI/CD pipeline, minimizing vulnerabilities and safeguarding the continuous delivery process.</p>
+          
+          <h3>Understanding the Risks in CI/CD Pipelines</h3>
+          <p>The CI/CD pipeline can introduce several risks if not properly secured. These risks include:</p>
+          <ul>
+            <li><strong>Code vulnerabilities:</strong> Security flaws may enter production if code isn’t thoroughly reviewed.</li>
+            <li><strong>Credential leaks:</strong> Hard-coded secrets or poor access controls can lead to unauthorized access.</li>
+            <li><strong>Third-party dependencies:</strong> Vulnerabilities in libraries or dependencies can expose the pipeline.</li>
+            <li><strong>Insider threats:</strong> Malicious or accidental actions by insiders can compromise the pipeline.</li>
+            <li><strong>Supply chain attacks:</strong> Attackers targeting the pipeline’s tools or plugins can cause widespread harm.</li>
+          </ul>
+        </header>
+        <div class="post-content">
+          <h3>Best Practices for Securing Your CI/CD Pipeline</h3>
+
+          <h4>A. Implement Role-Based Access Control (RBAC)</h4>
+          <p>Using RBAC to assign appropriate permissions for each team member limits risks from unauthorized access.</p>
+          <ul>
+            <li><strong>Least Privilege Principle:</strong> Only grant users the minimum access needed for their role.</li>
+            <li><strong>Regular Reviews:</strong> Regularly audit permissions to ensure they match current job responsibilities.</li>
+          </ul>
+
+          <h4>B. Use Secure Credential Management</h4>
+          <p>Managing credentials securely prevents leaks and unauthorized access.</p>
+          <ul>
+            <li><strong>Use Vaults:</strong> Store secrets in secure tools like HashiCorp Vault or AWS Secrets Manager.</li>
+            <li><strong>Rotate Credentials:</strong> Regular credential rotation reduces the risk of stale credentials being misused.</li>
+            <li><strong>Avoid Hard-Coding:</strong> Use environment variables or secure storage to handle secrets.</li>
+          </ul>
+
+          <h4>C. Automate Security Testing</h4>
+          <p>Integrating security testing into the pipeline ensures that vulnerabilities are caught early.</p>
+          <ul>
+            <li><strong>SAST:</strong> Static Application Security Testing (SAST) tools check for vulnerabilities in code.</li>
+            <li><strong>DAST:</strong> Dynamic Application Security Testing (DAST) tools scan running applications for issues.</li>
+            <li><strong>Dependency Scanning:</strong> Tools like Snyk or Dependabot identify vulnerabilities in open-source libraries.</li>
+          </ul>
+
+          <h4>D. Isolate and Segment Environments</h4>
+          <p>Separating development, staging, and production environments minimizes the risk of cross-contamination.</p>
+          <ul>
+            <li><strong>Network Isolation:</strong> Use separate networks or subnets for each environment.</li>
+            <li><strong>Access Restrictions:</strong> Limit access to staging and production environments to authorized builds.</li>
+          </ul>
+
+          <h4>E. Monitor and Audit the Pipeline</h4>
+          <p>Continuous monitoring helps detect unusual or suspicious activities within the pipeline.</p>
+          <ul>
+            <li><strong>Logging and Monitoring:</strong> Log all activities within the pipeline for traceability.</li>
+            <li><strong>SIEM Integration:</strong> Use a Security Information and Event Management (SIEM) system to monitor events.</li>
+            <li><strong>Regular Audits:</strong> Schedule audits to verify compliance with security policies.</li>
+          </ul>
+
+          <h4>F. Enforce Code Reviews and Approval Gates</h4>
+          <p>Code reviews and automated approval gates prevent unauthorized or vulnerable code from moving forward.</p>
+          <ul>
+            <li><strong>Peer Reviews:</strong> Ensure all code undergoes peer review before merging.</li>
+            <li><strong>Automated Gates:</strong> Set up gates to block code if it fails security or quality checks.</li>
+          </ul>
+
+          <h4>G. Secure the CI/CD Toolchain Itself</h4>
+          <p>Protecting the tools and services used in the pipeline is vital for security.</p>
+          <ul>
+            <li><strong>Keep Tools Updated:</strong> Regularly update tools to patch known vulnerabilities.</li>
+            <li><strong>Verify Plugins:</strong> Use trusted plugins only and verify their sources.</li>
+            <li><strong>Restrict Access:</strong> Limit access to CI/CD tools and enforce multi-factor authentication.</li>
+          </ul>
+
+          <h3>Conclusion: Securing the Pipeline is a Continuous Journey</h3>
+          <p>Securing a CI/CD pipeline is not a one-time effort. Regular updates to security practices, tools, and policies are essential. By integrating robust security at each stage of the CI/CD pipeline, you can prevent vulnerabilities and keep your deployments secure. Prioritizing security is essential for maintaining user trust and achieving reliable, resilient software delivery.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
