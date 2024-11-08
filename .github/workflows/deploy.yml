@@ -1,4 +1,4 @@
-name: Snyk Security Scan
+name: CI/CD Pipeline
 
 on:
   push:
@@ -6,24 +6,15 @@ on:
       - main
 
 jobs:
-  snyk:
-    name: Snyk Scan
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master  # Adjust if needed for your project type
         with:
-          node-version: '14'
-
-      - name: Install Snyk CLI
-        run: npm install -g snyk
-
-      - name: Authenticate Snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-
-      - name: Run Snyk Test
-        run: snyk test
+          args: test  # Use `monitor` if you want Snyk to watch for new vulnerabilities
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
