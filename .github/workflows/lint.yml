@@ -1,0 +1,33 @@
+name: Lint HTML and CSS
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # HTMLHint for HTML linting
+      - name: Run HTMLHint
+        uses: reviewdog/action-htmlhint@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-check
+          level: warning
+          fail_on_error: true
+
+      # Stylelint for CSS linting
+      - name: Install Stylelint
+        run: npm install -g stylelint
+
+      - name: Run Stylelint
+        run: stylelint "**/*.css"
