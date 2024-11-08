@@ -16,18 +16,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # HTMLHint for HTML linting
+      # Install HTMLHint and Stylelint
+      - name: Install HTMLHint and Stylelint
+        run: |
+          npm install -g htmlhint
+          npm install -g stylelint
+
+      # Run HTMLHint for HTML linting
       - name: Run HTMLHint
-        uses: reviewdog/action-htmlhint@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          reporter: github-pr-check
-          level: warning
-          fail_on_error: true
+        run: htmlhint "**/*.html"
 
-      # Stylelint for CSS linting
-      - name: Install Stylelint
-        run: npm install -g stylelint
-
+      # Run Stylelint for CSS linting
       - name: Run Stylelint
         run: stylelint "**/*.css"
