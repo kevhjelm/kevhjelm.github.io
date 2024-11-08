@@ -3,7 +3,7 @@ name: Snyk Security Scan
 on:
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   snyk:
