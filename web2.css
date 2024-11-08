@@ -168,14 +168,6 @@ pre code {
   float: left;
 
 }
-<<<<<<< HEAD
-/* Security testing */
-.posts-list2 {
-
-  float: left;
-  transform: translateX(100px);
-  
-=======
 
 
 /*  css for security HTML  */
@@ -186,7 +178,6 @@ pre code {
   padding: 0;
   float: left;
 
->>>>>>> production
 }
 
 /* Security  lab writeup */
@@ -201,22 +192,8 @@ pre code {
   padding: 30;
   float: left;
   position: relative; 
-<<<<<<< HEAD
-  top: 0px;
-  transform: translateX(150px);
-}
-
-/*  */
-.posts-list4 {
-  padding: 30;
-  float: right;
-  position: relative; 
-  top: -170px;
-  transform: translateX(350px);
-=======
 
   transform: translate(820px,-475px);
->>>>>>> production
 }
 
 /* Security.html devsecops */
@@ -321,17 +298,8 @@ pre code {
 
 .posts-list-item {
   list-style: none;
-<<<<<<< HEAD
-  padding: .4em 0
-
-}
-/* dotted lines font,*/
-.posts-list-item:not(:last-child) {
-  border-bottom: 0.5px dashed rgba(255, 255, 255, .3)
-=======
   padding: .4em 0;
 
->>>>>>> production
 }
 .posts-list-item_df {
   list-style: none;
