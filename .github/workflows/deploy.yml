@@ -1,4 +1,4 @@
-name: Snyk Security Scan
+name: Deploy and Security Scan
 
 on:
   push:
@@ -6,15 +6,46 @@ on:
       - main
 
 jobs:
-  security:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Snyk Security Scan
-        uses: snyk/actions/node@master  # Replace with the correct Snyk action for your language if needed
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          args: test  # Use `monitor` if you want continuous monitoring
+          node-version: '16'  # or the version your project requires
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build  # Adjust as per your project’s build script
+
+  snyk_security_scan:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Snyk Security Scan
+        uses: snyk/actions/node@master  # Adjust for your project type if not Node.js
+        with:
+          args: test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+  deploy:
+    needs: [build, snyk_security_scan]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public  # Adjust to match your project’s build output directory
