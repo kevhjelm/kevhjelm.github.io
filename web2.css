@@ -166,25 +166,114 @@ pre code {
 .posts-list {
   padding: 0;
   float: left;
+}
+
+
+/*  css for security HTML  */
+
+
+/*  */
+.security_ssd {
+  padding: 0;
+  float: left;
 
 }
-/* Security testing */
-.posts-list2 {
+
+/* Security  lab writeup */
+.security_lab  {
 
   float: left;
-  transform: translateX(100px);
+  transform: translateX(50px);
   
 }
-.posts-list3 {
+/* Security.html appsec */
+.security_appsec {
   padding: 30;
   float: left;
   position: relative; 
-  top: 0px;
-  transform: translateX(150px);
+
+  transform: translate(820px,-475px);
 }
 
-/*  */
-.posts-list4 {
+/* Security.html devsecops */
+.security_devsecops {
+  padding: 30;
+  float: right;
+  position: relative; 
+  transform: translate(300px,-140px);
+}
+
+
+/* Menu,html page */
+/* Menu,html page */
+/* Menu,html page */
+/* Menu,html page */
+
+
+/* Security testing menu*/
+.posts-list_menu {
+  padding: 0;
+  float: left;
+}
+
+/* Security engineering meny */
+.menu_seceng {
+  padding: 30;
+  float: left;
+  position: relative; 
+  transform: translateX(100px);
+}
+
+/* Menu security Engineer*/
+.menu_cloud {
+  padding: 0;
+  float: left;
+  transform: translate(200px,0px);
+}
+
+.menu_ai {
+  padding: 0;
+  float: left;
+  transform: translate(300px,0px);
+}
+
+
+
+/* seceng.html    */
+
+/* Df lab */
+
+.df_lab {
+  padding: 0;
+  float: left;
+}
+
+/* df section appsec*/
+.osint{
+  float: left;
+  transform: translateX(100px);
+}  
+
+/* devsecops section appsec*/
+.secarch{
+  float: left;
+  transform: translate(360px,-250px);
+
+}  
+
+ 
+
+/* future section */
+/* 
+.posts-list_new {
+  padding: 30;
+  float: left;
+  position: relative; 
+  transform: translateX(100px);
+}
+*/
+
+.posts-list5 {
   padding: 30;
   float: right;
   position: relative; 
@@ -192,15 +281,32 @@ pre code {
   transform: translateX(350px);
 }
 
+
+.posts-list5 {
+  padding: 30;
+  float: right;
+  position: relative; 
+  top: -170px;
+  transform: translateX(350px);
+}
+/*  Dots under all dates*/
+.posts-list-item {
+  border-bottom: 0.5px dashed rgba(255, 255, 255, .3);
+}
+
+
 .posts-list-item {
   list-style: none;
-  padding: .4em 0
+  padding: .4em 0;
 
 }
-/* dotted lines font,*/
-.posts-list-item:not(:last-child) {
-  border-bottom: 0.5px dashed rgba(255, 255, 255, .3)
+.posts-list-item_df {
+  list-style: none;
+  padding: .4em 0;
+  transform: translateX(0px);
 }
+/* dotted lines font,*/
+
 
 .posts-list-item-description {
   display: block;

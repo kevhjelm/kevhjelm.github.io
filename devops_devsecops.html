@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>DevOps vs. DevSecOps</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://kevhjelm.github.io/">
+        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">DevOps vs. DevSecOps</h1>
+          <p>DevOps and DevSecOps are modern approaches to software development and deployment that emphasize collaboration and efficiency, but they differ significantly in how they handle security.</p>
+          
+          <h3>DevOps</h3>
+          <p>DevOps is a software development approach that integrates development and operations teams to streamline and accelerate the software delivery process. Its primary focus is on improving collaboration, automation, and continuous integration/continuous deployment (CI/CD) to ensure faster and more reliable releases.</p>
+          
+          <h4>Key Aspects of DevOps:</h4>
+          <ul>
+            <li><strong>Collaboration and Culture:</strong> DevOps fosters a collaborative environment where development and operations teams work closely to deploy code quickly and efficiently.</li>
+            <li><strong>Automation:</strong> Focuses heavily on automating repetitive tasks, including testing, deployment, and monitoring, to speed up the software release cycle.</li>
+            <li><strong>Continuous Integration and Continuous Deployment (CI/CD):</strong> Ensures that code changes are tested and deployed frequently, allowing for rapid iteration and feedback.</li>
+            <li><strong>Reliability and Efficiency:</strong> Emphasizes system stability and performance, often through automated monitoring and incident response systems.</li>
+          </ul>
+          <p><strong>Goal:</strong> Achieve faster software development and deployment cycles by enhancing collaboration and automating processes.</p>
+
+          <h3>DevSecOps</h3>
+          <p>DevSecOps builds upon DevOps by integrating security practices into the development lifecycle. This approach ensures that security is a shared responsibility and not an afterthought. DevSecOps embeds security checks and balances into every phase of the CI/CD pipeline, promoting a culture of "security as code."</p>
+          
+          <h4>Key Aspects of DevSecOps:</h4>
+          <ul>
+            <li><strong>Security Integration:</strong> Security tools and practices are embedded into every stage of the development and deployment process.</li>
+            <li><strong>Shift-Left Security:</strong> Emphasizes identifying and addressing security issues early in the development process to prevent vulnerabilities from reaching production.</li>
+            <li><strong>Automation of Security Testing:</strong> Integrates security scans, vulnerability assessments, and compliance checks into CI/CD pipelines, making security a continuous process.</li>
+            <li><strong>Collaboration Across Teams:</strong> DevSecOps promotes collaboration among development, operations, and security teams, creating a shared responsibility for security.</li>
+          </ul>
+          <p><strong>Goal:</strong> Ensure security is an integral part of the software lifecycle, reducing risks and vulnerabilities in production.</p>
+
+          <h2>Differences in Focus and Objectives</h2>
+          <table>
+            <tr><th>Aspect</th><th>DevOps</th><th>DevSecOps</th></tr>
+            <tr><td><strong>Primary Focus</strong></td><td>Speed and reliability in deployment</td><td>Security integrated into development</td></tr>
+            <tr><td><strong>Approach to Security</strong></td><td>Security as a separate process, often post-deployment</td><td>Security embedded throughout the development cycle</td></tr>
+            <tr><td><strong>Key Tools</strong></td><td>CI/CD, automation tools, monitoring</td><td>CI/CD, security tools, vulnerability scanners</td></tr>
+            <tr><td><strong>Process</strong></td><td>Development and operations integration</td><td>Development, operations, and security integration</td></tr>
+            <tr><td><strong>Goal</strong></td><td>Efficient and reliable software delivery</td><td>Secure and compliant software delivery</td></tr>
+          </table>
+
+          <h2>How They Work Together</h2>
+          <p>DevSecOps builds on the principles of DevOps by embedding security into the development process, ensuring that security is not an afterthought. By integrating security checks within the CI/CD pipeline, DevSecOps allows for faster, more secure releases, creating a balance between speed and security.</p>
+        </header>
+      </article>
+    </main>
+  </body>
+</html>
