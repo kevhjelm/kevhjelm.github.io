@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Kevin Hjelmtveit</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kevin Hjelmtveit" />
+    <meta name="description" content="Kevin Hjelmtveit - Security Consultant" />
+    <link rel="stylesheet" href="web2.css" />
+
+    <!-- Social Media Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kevin Hjelmtveit" />
+    <meta name="twitter:description" content="Kevin Hjelmtveit - Experienced Security Consultant" />
+    <meta property="og:title" content="Kevin Hjelmtveit" />
+    <meta property="og:description" content="Kevin Hjelmtveit - Security Consultant" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kevhjelm.github.io"/>
+    <meta property="og:updated_time" content="2024-10-24T21:53:31-04:00" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://kevhjelm.github.io/"><img class="app-header-avatar" src="me2.jpg" alt="Kevin Hjelmtveit" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+        <!-- <a class="app-header-menu-item" href="blogs.html">Blogs</a> -->
+      </nav>
+
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-container">
+      <article>
+        <header>
+          <h1>Introduction to Hashing, Cracking, and Mastering Hashcat</h1>
+        </header>
+        <section>
+          <h2>What Is Hashing?</h2>
+          <p>
+            Hashing is a one-way cryptographic process that converts data into a fixed-length string of characters. It’s commonly used to store passwords securely in databases. Examples include MD5, SHA-256, and NTLM.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why Crack Hashes?</h2>
+          <p>
+            Cracking hashes can help penetration testers assess password security, recover lost credentials, or analyze digital evidence in forensics. However, it must always be done with permission.
+          </p>
+        </section>
+
+        <section>
+          <h2>General Commands in Hashcat</h2>
+          <h3>Brute Force Attack</h3>
+          <pre><code>hashcat -m 1000 -a 3 hashes.txt ?a?a?a?a?a?a</code></pre>
+          <p>This command brute forces all 6-character passwords.</p>
+
+          <h3>Wordlist Attack</h3>
+          <pre><code>hashcat -m 1000 -a 0 hashes.txt wordlist.txt</code></pre>
+          <p>Uses a pre-defined wordlist to test passwords.</p>
+        </section>
+
+        <section>
+          <h2>Example: Cracking NTLM Hashes</h2>
+          <h3>Setup</h3>
+          <p>Create a file <code>hashes.txt</code> with the following NTLM hashes:</p>
+          <pre><code>8846f7eaee8fb117ad06bdd830b7586c # password123
+b3d5c338a03f1d744c3c7022d5d27a1c # letmein</code></pre>
+          <p>Create a wordlist <code>wordlist.txt</code> with these entries:</p>
+          <pre><code>password123
+123456
+letmein
+qwerty</code></pre>
+
+          <h3>Command</h3>
+          <pre><code>hashcat -m 1000 -a 0 hashes.txt wordlist.txt -o results.txt</code></pre>
+
+          <h3>Result</h3>
+          <p>Hashcat cracks the hashes and outputs the results:</p>
+          <pre><code>8846f7eaee8fb117ad06bdd830b7586c:password123
+b3d5c338a03f1d744c3c7022d5d27a1c:letmein</code></pre>
+          <p>The corresponding passwords are <code>password123</code> and <code>letmein</code>.</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
