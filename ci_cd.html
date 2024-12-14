@@ -54,7 +54,7 @@
           <p>Follow these steps to create a linting workflow:</p>
           
           <h4>1. Create the Workflow File</h4>
-          <p>In your project directory, create <code>.github/workflows/lint.yml</code> with the following content:</p>
+          <p>In our project directory, create <code>.github/workflows/lint.yml</code> with the following content:</p>
           <pre><code>
 name: Lint HTML and CSS
 
@@ -140,24 +140,24 @@ jobs:
           <p>The <code>lint.yml</code> file sets up a linting workflow that runs on every push or pull request to the <code>main</code> branch. Here’s a breakdown of each step:</p>
           <ul>
             <li><strong>Trigger</strong>: Runs on pushes and pull requests targeting the <code>main</code> branch.</li>
-            <li><strong>Checkout Repository</strong>: Pulls the code from your repository for analysis.</li>
+            <li><strong>Checkout Repository</strong>: Pulls the code from our repository for analysis.</li>
             <li><strong>Install Linters</strong>: Installs <code>htmlhint</code> for HTML and <code>stylelint</code> for CSS checks.</li>
-            <li><strong>Run Linters</strong>: <code>htmlhint</code> and <code>stylelint</code> analyze your HTML and CSS files, listing any errors or warnings.</li>
+            <li><strong>Run Linters</strong>: <code>htmlhint</code> and <code>stylelint</code> analyze our HTML and CSS files, listing any errors or warnings.</li>
             <li><strong>Commit Auto-Fixes</strong>: If <code>stylelint</code> can fix any CSS issues automatically, those changes are committed back to the repository.</li>
             <li><strong>Upload Reports</strong>: Lint reports are uploaded for reference as artifacts.</li>
           </ul>
 
           <h4>3. Tracking and Fixing Errors</h4>
-          <p>Each time you push code to the <code>main</code> branch, GitHub Actions runs the linting workflow and outputs results. Here's how to address issues:</p>
+          <p>Each time we push code to the <code>main</code> branch, GitHub Actions runs the linting workflow and outputs results. Here's how to address issues:</p>
           <ul>
-            <li>View the results in the <strong>Actions</strong> tab on your GitHub repository.</li>
+            <li>View the results in the <strong>Actions</strong> tab on our GitHub repository.</li>
             <li>Check the output reports (e.g., <code>htmlhint-report.txt</code> or <code>stylelint-report.txt</code>) for errors and warnings.</li>
             <li>Locate errors using the file name and line number provided by the linters.</li>
-            <li>Fix the issues in your code and push the changes back to the repository to rerun the checks.</li>
+            <li>Fix the issues in our code and push the changes back to the repository to rerun the checks.</li>
           </ul>
 
           <h3>Benefits of CI/CD for a Static Website</h3>
-          <p>By implementing CI/CD workflows for a static website, you gain several benefits:</p>
+          <p>By implementing CI/CD workflows for a static website, we gain several benefits:</p>
           <ul>
             <li><strong>Quality Assurance</strong>: Automated checks ensure consistent code quality across the project.</li>
             <li><strong>Reduced Manual Effort</strong>: Linters and automated fixes save time and reduce human errors.</li>
@@ -165,14 +165,14 @@ jobs:
           </ul>
 
           <h3>Conclusion</h3>
-          <p>Setting up a CI/CD pipeline with GitHub Actions for a static HTML/CSS website is a powerful way to automate quality checks and streamline development. By integrating tools like <code>htmlhint</code> and <code>stylelint</code>, you can ensure that your code remains clean, consistent, and error-free with every update.</p>
+          <p>Setting up a CI/CD pipeline with GitHub Actions for a static HTML/CSS website is a powerful way to automate quality checks and streamline development. By integrating tools like <code>htmlhint</code> and <code>stylelint</code>, we can ensure that our code remains clean, consistent, and error-free with every update.</p>
 
           <h3>Additional Resources</h3>
-          <p>If you're interested in learning more, check out these resources:</p>
+          <p>Check out these resources:</p>
           <ul>
             <li><a href="https://github.com/features/actions">GitHub Actions Documentation</a></li>
             <li><a href="https://stylelint.io/">Stylelint Documentation</a></li>
-            <li><a href="https://htmlhint.io/">HTMLHint Documentation</a></li>
+            <li><a href="https://htmlhint.com/">HTMLHint Documentation</a></li>
           </ul>
         </header>
       </article>
