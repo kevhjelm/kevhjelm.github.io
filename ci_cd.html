@@ -9,11 +9,11 @@
   <body>
     <header class="app-header">
       <a href="https://kevhjelm.github.io/">
-        <img class="app-header-avatar" src="me2.jpg" alt="kevhjelm" />
+        <img class="app-header-avatar" src="me2.jpg" alt="Kevin Hjelmtveit" />
       </a>
       <h1>Kevin Hjelmtveit</h1>
       <nav class="app-header-menu">
-        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="index.html">Home</a> -
         <a class="app-header-menu-item" href="menu.html">Menu</a>
       </nav>
       <div class="app-header-social">
@@ -37,10 +37,13 @@
       <article class="post">
         <header class="post-header">
           <h1 class="post-title">Implementing CI/CD for a Static HTML/CSS Website with GitHub Actions</h1>
-          <p>Learn how to set up a CI/CD pipeline for a simple HTML/CSS website using GitHub Actions. We’ll explore creating automated linting workflows, tracking errors, and ensuring a seamless deployment process.</p>
+          <p>
+            Learn how to set up a CI/CD pipeline for a simple HTML/CSS website using GitHub Actions.
+            We’ll explore creating automated linting workflows, tracking errors, and ensuring a seamless deployment process.
+          </p>
           
           <h3>Why CI/CD for a Static Website?</h3>
-          <p>CI/CD brings immense benefits to static sites by automating quality checks and ensuring that code remains consistent and error-free. This process is especially useful for:</p>
+          <p>CI/CD brings immense benefits to static sites by automating quality checks and ensuring code consistency:</p>
           <ul>
             <li><strong>Enforcing Code Quality</strong>: Automatically check code styling and quality using linters.</li>
             <li><strong>Catching Errors Early</strong>: Detect common HTML/CSS issues, such as unclosed tags or misformatted CSS.</li>
@@ -48,140 +51,90 @@
           </ul>
 
           <h3>Setting Up CI/CD with GitHub Actions</h3>
-          <p>GitHub Actions is GitHub's built-in automation tool that allows us to create workflows to automate tasks. For this setup, we’ll create a linting workflow to check for HTML and CSS errors on every push to the main branch.</p>
+          <p>Follow these steps to create a linting workflow:</p>
           
-          <h4>1. Create the Workflow File: <code>lint.yml</code></h4>
-          <p>In your project directory, create a folder named <code>.github/workflows</code>. Inside, add a file named <code>lint.yml</code>. This will instruct GitHub Actions on when and how to run the linting checks.</p>
-          
-          <h4>2. Configure the Linting Workflow</h4>
-          <p>Here’s the content for <code>lint.yml</code>:</p>
-          <pre><code>name: Lint HTML and CSS
+          <h4>1. Create the Workflow File</h4>
+          <p>In your project directory, create <code>.github/workflows/lint.yml</code> with the following content:</p>
+          <pre><code>
+name: Lint HTML and CSS
 
-            name: Lint HTML and CSS
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
-            on:
-              push:
-                branches:
-                  - main
-              pull_request:
-                branches:
-                  - main
-            
-            jobs:
-              lint:
-                runs-on: ubuntu-latest
-            
-                steps:
-                  - name: Checkout repository
-                    uses: actions/checkout@v4
-            
-                  - name: Setup Node.js
-                    uses: actions/setup-node@v3
-                    with:
-                      node-version: 16
-            
-                  - name: Install HTMLHint and Stylelint
-                    run: |
-                      npm install -g htmlhint
-                      npm install -g stylelint stylelint-config-standard
-            
-                  - name: Add Stylelint Configuration
-                    run: |
-                      echo '{
-                        "extends": "stylelint-config-standard",
-                        "rules": {
-                          "alpha-value-notation": "percentage",
-                          "color-function-notation": "modern",
-                          "selector-class-pattern": "^[a-z0-9\\-]+$",
-                          "comment-whitespace-inside": "always",
-                          "length-zero-no-unit": true,
-                          "no-duplicate-selectors": true,
-                          "declaration-empty-line-before": "never",
-                          "comment-empty-line-before": "always"
-                        }
-                      }' > .stylelintrc.json
-            
-                  - name: Add HTMLHint Configuration
-                    run: |
-                      echo '{
-                        "tag-pair": true,
-                        "attr-value-double-quotes": true,
-                        "doctype-first": true,
-                        "id-unique": true
-                      }' > .htmlhintrc
-            
-                  - name: Run HTMLHint
-                    run: |
-                      htmlhint "**/*.html" > htmlhint-report.txt || true
-            
-                  - name: Display HTMLHint Report
-                    run: cat htmlhint-report.txt
-            
-                  - name: Run Stylelint
-                    run: |
-                      stylelint "**/*.css" --fix > stylelint-report.txt || true
-            
-                  - name: Display Stylelint Report
-                    run: cat stylelint-report.txt
-            
-                  - name: Check for changes after auto-fix
-                    run: |
-                      git status
-                      git diff
-            
-                  - name: Commit changes made by auto-fix
-                    run: |
-                      git config --global user.name "GitHub Actions"
-                      git config --global user.email "actions@github.com"
-                      if [ -n "$(git status --porcelain)" ]; then
-                        git add .
-                        git commit -m "Stylelint auto-fix"
-                        git push
-                      fi
-            
-                  - name: Upload lint reports
-                    uses: actions/upload-artifact@v3
-                    with:
-                      name: lint-reports
-                      path: |
-                        htmlhint-report.txt
-                        stylelint-report.txt
-</code></pre> <br>
-<img src="lint.png" alt="" width="800" height="500"  /><figcaption> Here we see, in github action of error due to linting</figcaption>
+jobs:
+  lint:
+    runs-on: ubuntu-latest
 
-<img src="lint2.png" alt="" width="500" height="100"  /><figcaption> We can see at line 85 we have a paragraph tag not used missing starting tag &lt;p&gt;
-</figcaption>
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-<img src="lint3.png" alt="" width="500" height="200"  /><figcaption> After some troubleshooting, changing the yml file and changes in the html,CSS file we got linting working &lt;p&gt;
-</figcaption>
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
-          <h4>3. Workflow Details</h4>
-          <p>The <code>lint.yml</code> file sets up a linting workflow that runs on every push or pull request to the <code>main</code> branch. Here’s a breakdown of each step:</p>
-          <ul>
-            <li><strong>Trigger</strong>: Runs on pushes and pull requests targeting the <code>main</code> branch.</li>
-            <li><strong>Checkout Repository</strong>: Pulls the code from your repository for analysis.</li>
-            <li><strong>Install Linters</strong>: Installs <code>htmlhint</code> for HTML and <code>stylelint</code> for CSS checks.</li>
-            <li><strong>Run Linters</strong>: <code>htmlhint</code> and <code>stylelint</code> analyze your HTML and CSS files, listing any errors or warnings.</li>
-          </ul>
+      - name: Install HTMLHint and Stylelint
+        run: |
+          npm install -g htmlhint
+          npm install -g stylelint stylelint-config-standard
 
-          <h3>Tracking and Fixing Errors</h3>
-          <p>Each time you push code to the <code>main</code> branch, GitHub Actions runs the linting workflow and outputs results:</p>
-          <ul>
-            <li>View the results in the **Actions** tab, where you can check for errors flagged by the linters.</li>
-            <li>Each issue lists the file and line number for easy reference, such as unclosed tags or special character issues.</li>
-            <li>Make the necessary corrections in your code and push your changes to rerun the checks.</li>
-          </ul>
+      - name: Add Stylelint Configuration
+        run: |
+          echo '{
+            "extends": "stylelint-config-standard",
+            "rules": {
+              "alpha-value-notation": "percentage",
+              "color-function-notation": "modern",
+              "selector-class-pattern": "^[a-z0-9\\-]+$",
+              "comment-whitespace-inside": "always",
+              "length-zero-no-unit": true,
+              "no-duplicate-selectors": true,
+              "declaration-empty-line-before": "never",
+              "comment-empty-line-before": "always"
+            }
+          }' > .stylelintrc.json
 
-          <h3>Benefits of CI/CD for a Static Website</h3>
-          <p>With automated linting and CI/CD, you gain the following benefits:</p>
-          <ul>
-            <li><strong>Quality Control</strong>: Each push is validated, enforcing code consistency.</li>
-            <li><strong>Time Efficiency</strong>: Automation catches issues instantly, reducing manual review time.</li>
-            <li><strong>Collaborative Readiness</strong>: Ensures all contributors adhere to the same standards.</li>
-          </ul>
+      - name: Add HTMLHint Configuration
+        run: |
+          echo '{
+            "tag-pair": true,
+            "attr-value-double-quotes": true,
+            "doctype-first": true,
+            "id-unique": true
+          }' > .htmlhintrc
 
-          <h3>Conclusion</h3>
-          <p>Implementing CI/CD for a static website is simple but powerful. By setting up a GitHub Actions workflow with automated linting, you’ll ensure your HTML/CSS project remains clean, readable, and error-free with every update.</p>
+      - name: Run HTMLHint
+        run: |
+          htmlhint "**/*.html" > htmlhint-report.txt || true
+
+      - name: Display HTMLHint Report
+        run: cat htmlhint-report.txt
+
+      - name: Run Stylelint
+        run: |
+          stylelint "**/*.css" --fix > stylelint-report.txt || true
+
+      - name: Display Stylelint Report
+        run: cat stylelint-report.txt
+
+      - name: Commit changes made by auto-fix
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Stylelint auto-fix"
+            git push
+          fi
+          </code></pre>
+          <img src="lint.png" alt="Linting Error" width="800" height="500" />
+          <figcaption>GitHub Action displaying linting errors.</figcaption>
         </header>
       </article>
     </main>
