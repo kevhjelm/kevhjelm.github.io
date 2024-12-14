@@ -16,11 +16,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
       # Install HTMLHint and Stylelint
       - name: Install HTMLHint and Stylelint
         run: |
           npm install -g htmlhint
-          npm install -g stylelint
+          npm install -g stylelint stylelint-config-standard
+
+      # Add Stylelint Configuration
+      - name: Create Stylelint Configuration
+        run: |
+          echo '{
+            "extends": "stylelint-config-standard",
+            "rules": {
+              "indentation": 2,
+              "color-hex-length": "short",
+              "block-no-empty": true
+            }
+          }' > .stylelintrc.json
 
       # Run HTMLHint for HTML linting
       - name: Run HTMLHint
