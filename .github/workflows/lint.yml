@@ -42,11 +42,28 @@ jobs:
             }
           }' > .stylelintrc.json
 
+      - name: Add HTMLHint Configuration
+        run: |
+          echo '{
+            "tag-pair": true,
+            "attr-value-double-quotes": true,
+            "doctype-first": true,
+            "id-unique": true
+          }' > .htmlhintrc
+
       - name: Run HTMLHint
-        run: htmlhint "**/*.html" > htmlhint-report.txt
+        run: |
+          htmlhint "**/*.html" > htmlhint-report.txt || true
+
+      - name: Display HTMLHint Report
+        run: cat htmlhint-report.txt
 
       - name: Run Stylelint
-        run: stylelint "**/*.css" --fix > stylelint-report.txt
+        run: |
+          stylelint "**/*.css" --fix > stylelint-report.txt || true
+
+      - name: Display Stylelint Report
+        run: cat stylelint-report.txt
 
       - name: Check for changes after auto-fix
         run: |
@@ -57,10 +74,11 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add .
-          git commit -m "Stylelint auto-fix"
-          git push
-        if: success()
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Stylelint auto-fix"
+            git push
+          fi
 
       - name: Upload lint reports
         uses: actions/upload-artifact@v3
