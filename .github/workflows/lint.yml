@@ -21,28 +21,51 @@ jobs:
         with:
           node-version: 16
 
-      # Install HTMLHint and Stylelint
       - name: Install HTMLHint and Stylelint
         run: |
           npm install -g htmlhint
           npm install -g stylelint stylelint-config-standard
 
-      # Add Stylelint Configuration
-      - name: Create Stylelint Configuration
+      - name: Add Stylelint Configuration
         run: |
           echo '{
             "extends": "stylelint-config-standard",
             "rules": {
-              "indentation": 2,
-              "color-hex-length": "short",
-              "block-no-empty": true
+              "alpha-value-notation": "percentage",
+              "color-function-notation": "modern",
+              "selector-class-pattern": "^[a-z0-9\\-]+$",
+              "comment-whitespace-inside": "always",
+              "length-zero-no-unit": true,
+              "no-duplicate-selectors": true,
+              "declaration-empty-line-before": "never",
+              "comment-empty-line-before": "always"
             }
           }' > .stylelintrc.json
 
-      # Run HTMLHint for HTML linting
       - name: Run HTMLHint
-        run: htmlhint "**/*.html"
+        run: htmlhint "**/*.html" > htmlhint-report.txt
 
-      # Run Stylelint for CSS linting
       - name: Run Stylelint
-        run: stylelint "**/*.css"
+        run: stylelint "**/*.css" --fix > stylelint-report.txt
+
+      - name: Check for changes after auto-fix
+        run: |
+          git status
+          git diff
+
+      - name: Commit changes made by auto-fix
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Stylelint auto-fix"
+          git push
+        if: success()
+
+      - name: Upload lint reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-reports
+          path: |
+            htmlhint-report.txt
+            stylelint-report.txt
