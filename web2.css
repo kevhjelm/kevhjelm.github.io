@@ -55,9 +55,6 @@ pre code {
   background: rgb(175 186 196 / 25%)
 }
 
-::selection {
-  background: rgb(175 186 196 / 25%)
-}
 
 .app-header {
   padding: 2.5em;
