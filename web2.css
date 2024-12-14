@@ -34,7 +34,7 @@ a:hover {
 }
 
 code {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
   color: rgba(175, 186, 196, .8)
 }
@@ -173,7 +173,7 @@ pre code {
 /*  css for security HTML  */
 
 
-/*  */
+/* security ssd */
 .security_ssd {
   padding: 0;
   float: left;
@@ -206,9 +206,7 @@ pre code {
 
 
 /* Menu,html page */
-/* Menu,html page */
-/* Menu,html page */
-/* Menu,html page */
+
 
 
 /* Security testing menu*/
