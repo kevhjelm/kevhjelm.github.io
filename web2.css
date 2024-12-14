@@ -181,14 +181,14 @@ pre code {
 }
 
 /* Security  lab writeup */
-.security_lab  {
+.security-lab  {
 
   float: left;
   transform: translateX(50px);
   
 }
 /* Security.html appsec */
-.security_appsec {
+.security-appsec {
   padding: 30;
   float: left;
   position: relative; 
@@ -197,7 +197,7 @@ pre code {
 }
 
 /* Security.html devsecops */
-.security_devsecops {
+.security-devsecops {
   padding: 30;
   float: right;
   position: relative; 
@@ -210,13 +210,13 @@ pre code {
 
 
 /* Security testing menu*/
-.posts-list_menu {
+.posts-list-menu {
   padding: 0;
   float: left;
 }
 
 /* Security engineering meny */
-.menu_seceng {
+.menu-seceng {
   padding: 30;
   float: left;
   position: relative; 
@@ -224,13 +224,13 @@ pre code {
 }
 
 /* Menu security Engineer*/
-.menu_cloud {
+.menu-cloud {
   padding: 0;
   float: left;
   transform: translate(200px,0px);
 }
 
-.menu_ai {
+.menu-ai {
   padding: 0;
   float: left;
   transform: translate(300px,0px);
@@ -242,7 +242,7 @@ pre code {
 
 /* Df lab */
 
-.df_lab {
+.df-lab {
   padding: 0;
   float: left;
 }
@@ -280,26 +280,30 @@ pre code {
   transform: translateX(350px);
 }
 
-
+/*
 .posts-list5 {
   padding: 30;
   float: right;
   position: relative; 
   top: -170px;
   transform: translateX(350px);
-}
+}*/
+
 /*  Dots under all dates*/
 .posts-list-item {
   border-bottom: 0.5px dashed rgba(255, 255, 255, .3);
  width: 100%;  /* Adjust as needed */
+ list-style: none;
+ padding: .4em 0;
+
 }
-
-
+/* 
 .posts-list-item {
   list-style: none;
   padding: .4em 0;
 
 }
+  */
 .posts-list-item_df {
   list-style: none;
   padding: .4em 0;
