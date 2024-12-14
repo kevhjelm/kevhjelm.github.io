@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Azure Security Basics // Kevin Hjelmtveit</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An introduction to securing your Azure environment with essential tips and tools." />
+    <link rel="stylesheet" href="web2.css" />
+
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Azure Security Basics"/>
+    <meta name="twitter:description" content="Learn the foundational aspects of securing your Azure environment."/>
+
+    <meta property="og:title" content="Azure Security Basics" />
+    <meta property="og:description" content="Learn the foundational aspects of securing your Azure environment." />
+    <meta property="og:type" content="website" />
+    <meta property="og:updated_time" content="2024-12-15T00:00:00+00:00" />
+  </head>
+
+  <body>
+    <header class="app-header">
+      <a href="https://kevhjelm.github.io/"><img class="app-header-avatar" src="me2.jpg" alt="Kevhjelm" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a> 
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-container">
+      <article>
+        <h1>Azure Security Basics</h1>
+        <p>Securing your Azure environment is critical to ensuring your applications and data remain protected. This guide covers foundational aspects of Azure security and provides actionable steps to improve your cloud security posture.</p>
+
+        <h2>1. Understanding the Shared Responsibility Model</h2>
+        <p>Azure operates under a shared responsibility model. Microsoft secures the physical infrastructure and foundational cloud services, while customers are responsible for securing their workloads, data, and access management.</p>
+
+        <h2>2. Identity and Access Management</h2>
+        <p>Azure Active Directory (AAD) is the backbone of identity management in Azure. Key practices include:</p>
+        <ul>
+          <li>Enabling <strong>Multi-Factor Authentication (MFA)</strong> for all users.</li>
+          <li>Using <strong>Role-Based Access Control (RBAC)</strong> to enforce least-privilege access.</li>
+          <li>Leveraging <strong>Conditional Access Policies</strong> to restrict access based on risk factors like location and device.</li>
+          <li>Utilizing <strong>Privileged Identity Management (PIM)</strong> for just-in-time administrative access.</li>
+        </ul>
+
+        <h2>3. Securing the Network</h2>
+        <p>Azure provides multiple tools for network security:</p>
+        <ul>
+          <li>Segment resources using <strong>Virtual Networks (VNets)</strong>.</li>
+          <li>Control traffic with <strong>Network Security Groups (NSGs)</strong>.</li>
+          <li>Protect against Distributed Denial of Service (DDoS) attacks with <strong>Azure DDoS Protection</strong>.</li>
+          <li>Use <strong>Azure Firewall</strong> to monitor and secure network traffic.</li>
+        </ul>
+
+        <h2>4. Data Security</h2>
+        <p>Data security is essential for compliance and protection. Key practices include:</p>
+        <ul>
+          <li>Encrypting data at rest using Azure-managed or customer-managed keys in <strong>Azure Key Vault</strong>.</li>
+          <li>Ensuring data in transit is encrypted with <strong>TLS</strong>.</li>
+          <li>Backing up data using <strong>Azure Backup</strong> and enabling geo-redundancy for critical workloads.</li>
+        </ul>
+
+        <h2>5. Monitoring and Threat Detection</h2>
+        <p>Azure provides tools to monitor and respond to potential threats:</p>
+        <ul>
+          <li>Use <strong>Azure Monitor</strong> for centralized resource monitoring.</li>
+          <li>Enable <strong>Microsoft Defender for Cloud</strong> for security posture management and threat detection.</li>
+          <li>Deploy <strong>Azure Sentinel</strong> as a SIEM solution for advanced threat detection and response.</li>
+        </ul>
+
+        <h2>6. Compliance and Governance</h2>
+        <p>Ensure your Azure environment meets regulatory requirements with tools like:</p>
+        <ul>
+          <li><strong>Azure Policy</strong> to enforce resource configuration standards.</li>
+          <li><strong>Azure Blueprints</strong> to deploy pre-defined compliance controls.</li>
+          <li>Audit resource activity using <strong>Azure Activity Logs</strong>.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Securing your Azure environment requires a layered approach, incorporating identity management, network security, data protection, and proactive monitoring. By implementing these foundational practices, you can significantly enhance your cloud security posture and protect your critical assets.</p>
+      </article>
+    </main>
+  </body>
+</html>
