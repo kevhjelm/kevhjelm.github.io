@@ -23,7 +23,8 @@ h6 {
 }
 
 a {
-  /*color: #57cc8a; green*/
+
+  /* color: #57cc8a; green */
   color: #287186;
   transition: color .35s;
   text-decoration: none
@@ -36,7 +37,7 @@ a:hover {
 code {
   font-family: monospace;
   font-size: 1em;
-  color: rgba(175, 186, 196, .8)
+  color: rgb(175 186 196 / 80%)
 }
 
 pre {
@@ -51,11 +52,11 @@ pre code {
 }
 
 ::selection {
-  background: rgba(175, 186, 196, .25)
+  background: rgb(175 186 196 / 25%)
 }
 
-::-moz-selection {
-  background: rgba(175, 186, 196, .25)
+::selection {
+  background: rgb(175 186 196 / 25%)
 }
 
 .app-header {
@@ -84,7 +85,7 @@ pre code {
   margin: 0 .1em
 }
 
-@media(min-width:940px) {
+@media(width >=940px) {
   .app-header {
     position: fixed;
     top: 0;
@@ -150,7 +151,7 @@ pre code {
 .post-content>pre,
 .post-content .highlight>pre,
 .post-content .highlight>div {
-  border-left: .4em solid rgba(87, 204, 138, .8);
+  border-left: .4em solid rgb(87 204 138 / 80%);
   padding: .5em 1em
 }
 
@@ -182,16 +183,17 @@ pre code {
 
 /* Security  lab writeup */
 .security-lab  {
-
   float: left;
   transform: translateX(50px);
   
 }
+
 /* Security.html appsec */
 .security-appsec {
   padding: 30;
   float: left;
   position: relative; 
+
   /* width: -1000%; Adjust as needed */
   transform: translate(820px,-475px);
 }
@@ -209,7 +211,7 @@ pre code {
 
 
 
-/* Security testing menu*/
+/* Security testing menu */
 .posts-list-menu {
   padding: 0;
   float: left;
@@ -223,17 +225,17 @@ pre code {
   transform: translateX(100px);
 }
 
-/* Menu security Engineer*/
+/* Menu security Engineer */
 .menu-cloud {
   padding: 0;
   float: left;
-  transform: translate(200px,0px);
+  transform: translate(200px,0);
 }
 
 .menu-ai {
   padding: 0;
   float: left;
-  transform: translate(300px,0px);
+  transform: translate(300px,0);
 }
 
 
@@ -247,13 +249,13 @@ pre code {
   float: left;
 }
 
-/* df section appsec*/
+/* df section appsec */
 .osint{
   float: left;
   transform: translateX(100px);
 }  
 
-/* devsecops section appsec*/
+/* devsecops section appsec */
 .secarch{
   float: left;
   transform: translate(360px,-250px);
@@ -263,6 +265,7 @@ pre code {
  
 
 /* future section */
+
 /* 
 .posts-list_new {
   padding: 30;
@@ -287,16 +290,17 @@ pre code {
   position: relative; 
   top: -170px;
   transform: translateX(350px);
-}*/
+} */
 
-/*  Dots under all dates*/
+/*  Dots under all dates */
 .posts-list-item {
-  border-bottom: 0.5px dashed rgba(255, 255, 255, .3);
+  border-bottom: 0.5px dashed rgb(255 255 255 / 30%);
  width: 100%;  /* Adjust as needed */
  list-style: none;
  padding: .4em 0;
 
 }
+
 /* 
 .posts-list-item {
   list-style: none;
@@ -307,9 +311,10 @@ pre code {
 .posts-list-item-df {
   list-style: none;
   padding: .4em 0;
-  transform: translateX(0px);
+  transform: translateX(0);
 }
-/* dotted lines font,*/
+
+/* dotted lines font, */
 
 
 .posts-list-item-description {
@@ -324,13 +329,13 @@ pre code {
   font-size: .9em;
   border-radius: .2em;
   white-space: nowrap;
-  background: rgba(255, 255, 255, .1);
+  background: rgb(255 255 255 / 10%);
   transition: color .35s, background .35s
 }
 
 .tag:hover {
   transition: color .25s, background .05s;
-  background: rgba(255, 255, 255, .3)
+  background: rgb(255 255 255 / 30%)
 }
 
 .tags-list {
@@ -343,10 +348,10 @@ pre code {
 }
 
 .tags-list-item:not(:last-child) {
-  border-bottom: 100px dashed rgba(255, 255, 255, .3)
+  border-bottom: 100px dashed rgb(255 255 255 / 30%)
 }
 
-@media(min-width:450px) {
+@media(width >=450px) {
   .tags-list {
     display: flex;
     flex-wrap: wrap
