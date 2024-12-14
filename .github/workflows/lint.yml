@@ -13,23 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js environment
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      # Step 3: Install HTMLHint and Stylelint
       - name: Install HTMLHint and Stylelint
         run: |
           npm install -g htmlhint
           npm install -g stylelint stylelint-config-standard
 
-      # Step 4: Add Stylelint Configuration File
       - name: Add Stylelint Configuration
         run: |
           echo '{
@@ -46,16 +42,30 @@ jobs:
             }
           }' > .stylelintrc.json
 
-      # Step 5: Run HTMLHint for HTML linting
       - name: Run HTMLHint
-        run: htmlhint "**/*.html"
+        run: htmlhint "**/*.html" > htmlhint-report.txt
 
-      # Step 6: Run Stylelint for CSS linting with auto-fix
       - name: Run Stylelint
-        run: stylelint "**/*.css" --fix
+        run: stylelint "**/*.css" --fix > stylelint-report.txt
 
-      # Step 7: Verify the repository status
       - name: Check for changes after auto-fix
         run: |
           git status
           git diff
+
+      - name: Commit changes made by auto-fix
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Stylelint auto-fix"
+          git push
+        if: success()
+
+      - name: Upload lint reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-reports
+          path: |
+            htmlhint-report.txt
+            stylelint-report.txt
