@@ -86,7 +86,12 @@ jobs:
       # Run Stylelint for CSS linting
         - name: Run Stylelint
         run: stylelint "**/*.css"
-</code></pre>
+</code></pre> <br>
+<img src="lint.png" alt="" width="800" height="500"  /><figcaption> Here we see, in github action of error due to linting</figcaption>
+
+<img src="lint2.png" alt="" width="500" height="100"  /><figcaption> We can see at line 85 we have a paragraph tag not used missing starting tag &lt;p&gt;
+</figcaption>
+
 
           <h4>3. Workflow Details</h4>
           <p>The <code>lint.yml</code> file sets up a linting workflow that runs on every push or pull request to the <code>main</code> branch. Here’s a breakdown of each step:</p>
