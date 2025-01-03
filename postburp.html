@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>Kevin Hjelmtveit</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.74.3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kevin Hjelmtveit" />
+    <meta name="description" content="Kevin Hjelmtveit - Security Consultant" />
+    <link rel="stylesheet" href="web2.css" />
+
+    <!-- Social Media Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Kevin Hjelmtveit" />
+    <meta name="twitter:description" content="Kevin Hjelmtveit - Experienced Security Consultant" />
+    <meta property="og:title" content="Kevin Hjelmtveit" />
+    <meta property="og:description" content="Kevin Hjelmtveit - Security Consultant" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kevhjelm.github.io"/>
+    <meta property="og:updated_time" content="2024-10-24T21:53:31-04:00" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://kevhjelm.github.io/"><img class="app-header-avatar" src="me3.jpg" alt="Kevin Hjelmtveit" /></a>
+      <h1>Kevin Hjelmtveit</h1>
+      
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+        <!-- <a class="app-header-menu-item" href="blogs.html">Blogs</a> -->
+      </nav>
+
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main class="app-container">
+      <article>
+        <header>
+          <h1>Postman vs. Burp Suite: A Comprehensive Comparison for API Testing and Security</h1>
+        </header>
+        <section>
+          <h2>What is Postman?</h2>
+          <p>Postman is a widely-used API platform that simplifies the process of building, testing, and documenting APIs. It provides developers with an intuitive interface to interact with APIs, making it ideal for testing functionality, performance, and reliability.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li><strong>User-Friendly Interface:</strong> Postman offers a clean and interactive UI, making it easy to create and manage API requests.</li>
+            <li><strong>Comprehensive Testing Capabilities:</strong> Supports manual testing, automated testing (via Postman scripts), and integration with CI/CD pipelines.</li>
+            <li><strong>Collections and Documentation:</strong> Allows users to organize API requests into collections and generate documentation for seamless collaboration.</li>
+            <li><strong>Mock Servers:</strong> Developers can simulate API responses for testing without a live server.</li>
+            <li><strong>Environment Management:</strong> Postman enables the use of variables for managing multiple environments (e.g., dev, staging, production).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What is Burp Suite?</h2>
+          <p>Burp Suite, developed by PortSwigger, is a powerful tool for web application security testing. While it offers API testing capabilities, its primary focus lies in identifying vulnerabilities and performing penetration testing.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li><strong>Security Testing Suite:</strong> Includes tools like the Proxy, Intruder, Repeater, and Scanner for comprehensive security assessments.</li>
+            <li><strong>Intercepting Proxy:</strong> Acts as a middleman between the client and server, allowing inspection and modification of requests and responses.</li>
+            <li><strong>Vulnerability Detection:</strong> Identifies issues such as SQL injection, XSS, authentication flaws, and more.</li>
+            <li><strong>Automation:</strong> Offers automation for repetitive tasks while allowing manual testing for precision.</li>
+            <li><strong>Extensibility:</strong> Includes a rich ecosystem of plugins and extensions for advanced testing.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Postman vs. Burp Suite: Feature Comparison</h2>
+          <img src="postman1.PNG" alt="" width="500" height="300"  /><figcaption> Postman vs. Burp Suite Comparison</figcaption>
+         <!--  <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Postman</th>
+                <th>Burp Suite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Use Case</strong></td>
+                <td>Functional API testing</td>
+                <td>Security and vulnerability testing</td>
+              </tr>
+              <tr>
+                <td><strong>Ease of Use</strong></td>
+                <td>Beginner-friendly</td>
+                <td>Steeper learning curve</td>
+              </tr>
+              <tr>
+                <td><strong>Automation</strong></td>
+                <td>Supports scripting and CI/CD</td>
+                <td>Extensive automation for pen testing</td>
+              </tr>
+              <tr>
+                <td><strong>Intercepting Requests</strong></td>
+                <td>Limited capabilities</td>
+                <td>Robust proxy for request/response modification</td>
+              </tr>
+              <tr>
+                <td><strong>Collaboration Tools</strong></td>
+                <td>Built-in documentation and team workspaces</td>
+                <td>Limited collaboration features</td>
+              </tr>
+              <tr>
+                <td><strong>Vulnerability Scanning</strong></td>
+                <td>Not available</td>
+                <td>Comprehensive scanning tools</td>
+              </tr>
+              <tr>
+                <td><strong>Cost</strong></td>
+                <td>Free (basic) + Paid tiers</td>
+                <td>Free (Community) + Paid (Professional/Enterprise)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        -->
+        <section>
+          <h2>Conclusion</h2>
+          <p>Choosing between Postman and Burp Suite depends on your goals. If your focus is on API development and functional testing, Postman is the clear choice. On the other hand, if security is your priority, Burp Suite is indispensable.</p>
+          <p>For most professionals, the ideal approach is to leverage both tools. Start with Postman for creating and verifying APIs, then switch to Burp Suite for rigorous security testing. By combining their strengths, you can ensure your APIs are both reliable and secure.</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

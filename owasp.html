@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Understanding the OWASP Top 10: A Guide to Web Application Security</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me3.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Understanding the OWASP Top 10: A Guide to Web Application Security</h1>
+          <p>In the ever-evolving digital landscape, securing web applications has never been more critical. Cyberattacks grow in sophistication and volume, making it essential for developers, security professionals, and organizations to stay informed about the most common security risks. The OWASP Top 10 is a globally recognized standard that highlights the most critical security vulnerabilities in web applications. This post explores the latest list and offers insights into mitigating these risks.</p>
+        </header>
+        <div class="post-content">
+          <h3>What is OWASP and Why the Top 10 Matters?</h3>
+          <p>OWASP is a non-profit organization focused on improving software security. The OWASP Top 10, first released in 2003 and regularly updated, is a prioritized list of the most critical web application security risks. By addressing these vulnerabilities, organizations can significantly reduce their risk of cyberattacks, protect user data, and comply with regulations such as GDPR and PCI DSS.</p>
+
+          <h3>The OWASP Top 10 (Latest Update)</h3>
+          <p>The OWASP Top 10 identifies critical vulnerabilities:</p>
+          <p>1. <strong>Broken Access Control</strong> occurs when user permissions are improperly enforced, allowing attackers to access restricted data or perform unauthorized actions. This vulnerability can manifest as URL manipulation, forced browsing, or privilege escalation. Effective mitigation includes implementing robust access control policies, utilizing deny-by-default principles, and regularly testing access permissions.</p>
+          
+          <p>2. <strong>Cryptographic Failures</strong> involve weak or improperly implemented encryption, compromising the confidentiality and integrity of sensitive data. Common issues include the use of outdated algorithms, hardcoded keys, and improper management of certificates. Addressing these issues requires the adoption of strong encryption standards, secure key management, and regular cryptographic audits.</p>
+          
+          <p>3. <strong>Injection</strong> vulnerabilities arise when untrusted data manipulates interpreters like SQL, NoSQL, or LDAP. This can lead to unauthorized data access, data loss, or even full system compromise. To prevent injection, developers should use parameterized queries, validate input rigorously, and avoid dynamic query construction.</p>
+          
+          <p>4. <strong>Insecure Design</strong> focuses on a lack of security considerations during the application's conceptualization and development phases. This includes inadequate threat modeling and the absence of defensive design principles. Secure design practices, such as embedding security requirements early in the software development lifecycle (SDLC) and performing continuous threat assessments, are essential to addressing this issue.</p>
+          
+          <p>5. <strong>Security Misconfiguration</strong> arises when servers, frameworks, or other components are set up incorrectly, leaving them exposed to potential attacks. Misconfigurations can include default credentials, open cloud storage, or verbose error messages. Organizations should implement automated configuration checks, minimize the attack surface, and follow best practices for system hardening.</p>
+          
+          <p>6. <strong>Vulnerable and Outdated Components</strong> expose systems to known exploits due to the use of unpatched libraries, frameworks, or software. An inventory of software components, regular updates, and vulnerability monitoring tools can help address this risk effectively.</p>
+          
+          <p>7. <strong>Identification and Authentication Failures</strong> occur when authentication mechanisms are weak or poorly implemented, enabling attackers to impersonate legitimate users. Common problems include inadequate password policies, missing multi-factor authentication (MFA), and insecure session handling. Organizations should enforce strong authentication protocols, implement MFA, and secure session management practices.</p>
+          
+          <p>8. <strong>Software and Data Integrity Failures</strong> happen when applications rely on untrusted sources, insecure deserialization, or improper update mechanisms. This can allow attackers to insert malicious code or compromise data integrity. Mitigation strategies include validating data integrity with cryptographic hashes, securing update processes, and avoiding unsafe deserialization practices.</p>
+          
+          <p>9. <strong>Security Logging and Monitoring Failures</strong> highlight the inability to detect or respond to attacks due to insufficient or improperly configured logging. Attackers may exploit this blind spot to carry out prolonged attacks undetected. Organizations should ensure comprehensive logging of security events, monitor logs actively, and establish incident response protocols.</p>
+          
+          <p>10. <strong>Server-Side Request Forgery (SSRF)</strong> occurs when an attacker manipulates the server into making unauthorized requests to other services, often bypassing firewalls and accessing internal systems. To mitigate SSRF, developers should validate and sanitize all user inputs, enforce strict allowlists, and segment networks to limit access to sensitive systems.</p>
+          
+          <h3>Why Should You Care?</h3>
+          <p>Ignoring these vulnerabilities can lead to severe consequences, including data breaches, financial losses, reputational damage, and legal penalties. Addressing the OWASP Top 10 helps organizations improve their security posture and build trust with users.</p>
+
+          <h3>Practical Steps to Mitigate OWASP Top 10 Risks</h3>
+          <p>Adopt secure coding practices, train developers, and integrate tools like static and dynamic application security testing (SAST and DAST) into your development pipeline. Regular vulnerability assessments and staying updated with the latest security practices can significantly enhance your defense against cyber threats.</p>
+
+          <h3>Conclusion</h3>
+          <p>The OWASP Top 10 is more than just a list; it’s a call to action for organizations to prioritize web application security. By understanding and mitigating these risks, you can build safer applications, protect your users, and stay ahead of cyber threats.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
