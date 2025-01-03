@@ -1,6 +1,10 @@
 
    Config loaded: /home/runner/work/kevhjelm.github.io/kevhjelm.github.io/.htmlhintrc
 
+   /home/runner/work/kevhjelm.github.io/kevhjelm.github.io/postburp.html
+[37m      L140 |[90m      </article>[39m
+[37m                  ^ [31mTag must be paired, missing: [ </section> ], start tag match failed [ <section> ] on line 84. (tag-pair)[39m
+
    /home/runner/work/kevhjelm.github.io/kevhjelm.github.io/seceng.html
 [37m      L291 |[90m    </main>[39m
 [37m                ^ [31mTag must be paired, missing: [ </ul></li></li></ul></article> ], start tag match failed [ <ul class="secarch"> ] on line 217. (tag-pair)[39m
@@ -8,7 +12,7 @@
    /home/runner/work/kevhjelm.github.io/kevhjelm.github.io/security-testing.html
 [37m      L47 |[90m    </header>[39m
 [37m               ^ [31mTag must be paired, missing: [ </a></div> ], start tag match failed [ <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener"> ] on line 33. (tag-pair)[39m
-[37m      L311 |[90m  </article>[39m
-[37m              ^ [31mTag must be paired, missing: [ </ul></ul> ], start tag match failed [ <ul class="security-devsecops"> ] on line 256. (tag-pair)[39m
+[37m      L347 |[90m  </article>[39m
+[37m              ^ [31mTag must be paired, missing: [ </ul> ], start tag match failed [ <ul class="security-devsecops"> ] on line 292. (tag-pair)[39m
 
-Scanned 30 files, found 3 errors in 2 files (53 ms)
+Scanned 32 files, found 4 errors in 3 files (52 ms)
