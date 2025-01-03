@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Configuring a Palo Alto NGFW for Home Use</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me3.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> - 
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">Configuring a Palo Alto NGFW for Home Use</h1>
+          <p>Bringing enterprise-grade security to a home network is both rewarding and practical in today’s connected world. Here’s a step-by-step guide to configuring a Palo Alto Next-Generation Firewall (NGFW) for personal use.</p>
+        </header>
+        <div class="post-content">
+          <h3>Step 1: Understand Your Network Topology</h3>
+          <p>A typical home setup with a Palo Alto NGFW looks like this:</p>
+          <p><strong>ISP Modem/Router (Bridge Mode)</strong> → <strong>Palo Alto NGFW</strong> → <strong>Home Devices (Switch, Wi-Fi Router, PCs, IoT devices, etc.)</strong></p>
+          <p>The ISP modem/router should be set to <strong>bridge mode</strong> to pass the public IP directly to the firewall. The NGFW will handle DHCP, NAT, and routing for your home network.</p>
+
+          <h3>Step 2: Connect Your Firewall</h3>
+          <p><strong>Physical Connections:</strong></p>
+          <ul>
+            <li>Connect the ISP modem/router (in bridge mode) to the <strong>WAN port</strong> of the firewall (e.g., Ethernet1/1).</li>
+            <li>Connect your home switch, Wi-Fi router, or a PC to the <strong>LAN port</strong> of the firewall (e.g., Ethernet1/2).</li>
+          </ul>
+          <p><strong>Management Port:</strong></p>
+          <ul>
+            <li>Connect your PC to the firewall’s <strong>Management Port</strong> to configure it.</li>
+            <li>Assign your PC a static IP address on the same subnet as the firewall’s default management IP (<code>192.168.1.1</code>). For example, use <code>192.168.1.2</code>.</li>
+          </ul>
+
+          <h3>Step 3: Access the Firewall’s Web Interface</h3>
+          <p>1. Open a web browser and navigate to <code>https://192.168.1.1</code>.</p>
+          <p>2. Log in using the default credentials:</p>
+          <ul>
+            <li><strong>Username:</strong> admin</li>
+            <li><strong>Password:</strong> admin</li>
+          </ul>
+          <p>3. Change the default password immediately for security.</p>
+
+          <img src="palo1.png" alt="" width="500" height="500" />
+          <h3>Step 4: Initial Setup</h3>
+          <p><strong>1. Assign IPs to Interfaces</strong></p>
+          <ul>
+            <li>Go to <strong>Network > Interfaces</strong>.</li>
+            <li>Configure <strong>Ethernet1/1 (WAN)</strong>:</li>
+            <ul>
+              <li>Type: Layer3</li>
+              <li>IP Address: Select <strong>DHCP</strong> if your ISP assigns it dynamically or use <strong>Static</strong> if your ISP provides specific IP details.</li>
+            </ul>
+            <li>Configure <strong>Ethernet1/2 (LAN)</strong>:</li>
+            <ul>
+              <li>Type: Layer3</li>
+              <li>IP Address: Assign a static IP such as <code>192.168.10.1/24</code>.</li>
+            </ul>
+          </ul>
+          <p><strong>2. Create a Virtual Router</strong></p>
+          <p>Go to <strong>Network > Virtual Routers</strong>. Create a new router and assign both <code>Ethernet1/1</code> (WAN) and <code>Ethernet1/2</code> (LAN) to it.</p>
+          <p><strong>3. Set Up NAT</strong></p>
+          <ul>
+            <li>Go to <strong>Policies > NAT</strong> and create a new rule:</li>
+            <ul>
+              <li><strong>Name:</strong> Internet-Access-NAT</li>
+              <li><strong>Source Zone:</strong> LAN</li>
+              <li><strong>Destination Zone:</strong> WAN</li>
+              <li><strong>Source Address:</strong> 192.168.10.0/24</li>
+              <li><strong>Destination Address:</strong> Any</li>
+              <li><strong>Translated Packet:</strong> Use Dynamic IP and Port (select the interface IP of <code>Ethernet1/1</code> for translation).</li>
+            </ul>
+          </ul>
+          <p><strong>4. Set Up Security Policies</strong></p>
+          <ul>
+            <li>Go to <strong>Policies > Security</strong>.</li>
+            <li>Create an allow rule for internal devices to access the internet:</li>
+            <ul>
+              <li><strong>Name:</strong> Allow-LAN-to-Internet</li>
+              <li><strong>Source Zone:</strong> LAN</li>
+              <li><strong>Destination Zone:</strong> WAN</li>
+              <li><strong>Source Address:</strong> Any</li>
+              <li><strong>Destination Address:</strong> Any</li>
+              <li><strong>Application:</strong> Any</li>
+              <li><strong>Service:</strong> Any</li>
+              <li><strong>Action:</strong> Allow</li>
+            </ul>
+          </ul>
+
+          <h3>Step 5: DHCP Server Configuration</h3>
+          <ul>
+            <li>Go to <strong>Network > DHCP</strong>.</li>
+            <li>Enable DHCP on <code>Ethernet1/2</code> (LAN):</li>
+            <ul>
+              <li><strong>Interface:</strong> Ethernet1/2</li>
+              <li><strong>DHCP Range:</strong> Define a range of IP addresses for your home devices (e.g., <code>192.168.10.100</code> to <code>192.168.10.200</code>).</li>
+              <li><strong>DNS Servers:</strong> Specify DNS servers (e.g., Google’s DNS: <code>8.8.8.8</code> and <code>8.8.4.4</code> or your ISP’s DNS).</li>
+              <li><strong>Gateway:</strong> Set the default gateway to <code>192.168.10.1</code> (LAN interface IP).</li>
+            </ul>
+            <li>Save and commit your changes.</li>
+          </ul>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
