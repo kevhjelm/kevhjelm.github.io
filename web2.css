@@ -185,6 +185,7 @@ pre code {
   
 }
 
+
 /* Security.html appsec */
 .security-appsec {
   padding: 30;
@@ -192,7 +193,7 @@ pre code {
   position: relative; 
 
   /* width: -1000%; Adjust as needed */
-  transform: translate(820px,-475px);
+  transform: translate(130px,-4px);
 }
 
 /* Security.html devsecops */
@@ -200,8 +201,35 @@ pre code {
   padding: 30;
   float: right;
   position: relative; 
+  transform: translate(520px,-400px);
+}
+
+
+
+
+/* 
+
+/* Security-testing.html appsec 
+.security-appsec {
+  padding: 30;
+  float: left;
+  position: relative; */
+
+  /* width: -1000%; Adjust as needed 
+  transform: translate(820px,-475px);
+}
+
+/* Security-testing.html devsecops 
+.security-devsecops {
+  padding: 30;
+  float: right;
+  position: relative; 
   transform: translate(550px,-470px);
 }
+*/
+*/*/
+
+
 
 
 /* Menu,html page */
