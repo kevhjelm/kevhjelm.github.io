@@ -15,4 +15,4 @@
 [37m      L347 |[90m  </article>[39m
 [37m              ^ [31mTag must be paired, missing: [ </ul> ], start tag match failed [ <ul class="security-devsecops"> ] on line 292. (tag-pair)[39m
 
-Scanned 34 files, found 4 errors in 3 files (60 ms)
+Scanned 34 files, found 4 errors in 3 files (52 ms)
