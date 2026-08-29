@@ -168,67 +168,29 @@ pre code {
 }
 
 
-/*  css for security HTML  */
 
+/* Menu.html, seceng.html and security-testing.html share this
+   horizontal topic-columns layout: an .app-container child holding
+   several <ul> topic groups side by side, each with a .topic-heading
+   followed by .posts-list-item entries. */
 
-.security-ssd {
-  padding: 0;
-}
-
-
-
-
-
-/* Menu,html page */
-
-
-
-/* Security testing menu */
-.posts-list-menu {
-  padding: 0;
-  float: left;
-}
-
-/* Security engineering meny */
-.menu-seceng {
-  padding: 30;
-  float: left;
-  position: relative; 
-  transform: translateX(100px);
-}
-
-/* Menu security Engineer */
-.menu-cloud {
-  padding: 0;
-  float: left;
-  transform: translate(200px,0);
-}
-
-.menu-ai {
-  padding: 0;
-  float: left;
-  transform: translate(300px,0);
-}
-
-
-
-/* seceng.html    */
-
-.seceng-columns {
+.topic-columns {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
-.seceng-columns > ul > h1,
-.seceng-columns > ul > h2 {
-  font-size: 2em;
-  font-family: inherit;
-}
-
-.df-lab {
+.topic-columns > ul {
   padding: 0;
+  width: 13rem;
+  flex: 0 0 13rem;
+}
+
+.topic-heading {
+  margin: 0 0 .5em;
+  font-size: 1.5em;
+  font-family: inherit;
 }
 
 /* future section */
