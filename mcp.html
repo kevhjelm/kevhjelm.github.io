@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>What is MCP?</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="web2.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me3.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">What is MCP?</h1>
+          <p>The Model Context Protocol (MCP) is an open standard, introduced by Anthropic, that defines a common way for AI models to connect to external tools, data sources, and services. Instead of every application building its own custom integration for every AI model, MCP gives both sides a shared protocol to speak.</p>
+        </header>
+        <div class="post-content">
+          <h3>Why is MCP Important?</h3>
+          <p>Before MCP, connecting an AI model to a database, an API, or a file system meant writing a bespoke integration for that specific model and that specific tool. Every new combination of model and data source multiplied the integration work. MCP solves this "M×N" problem by acting as a universal connector, similar to how USB-C standardized device charging and data transfer: build one MCP server for your tool, and any MCP-compatible model can use it.</p>
+
+          <h3>Why is MCP Used?</h3>
+          <p>MCP is used to give AI models access to live, real-world context they wouldn't otherwise have, such as internal documentation, ticketing systems, codebases, or company databases. It lets an AI assistant go beyond its training data and take real actions, like reading a file, querying a database, or calling an internal API, through a consistent, well-defined interface rather than a one-off plugin.</p>
+
+          <h3>How Does It Work?</h3>
+          <p>MCP follows a client-server model. An MCP server exposes a set of capabilities, tools, resources, and prompts, over a standard interface. An MCP client, usually embedded in the AI application, discovers what a server offers and calls it on the model's behalf. This keeps the model itself unaware of the underlying implementation; it only needs to understand the protocol.</p>
+
+          <h3>Security Considerations</h3>
+          <p>Because MCP servers can grant an AI model the ability to read data or trigger actions, they expand the attack surface of any system that adopts them. Key concerns include over-permissioned tools, prompt injection via untrusted data returned from a server, and servers that aren't properly authenticated or sandboxed. As with any new integration surface, MCP servers should be treated like any other third-party dependency: reviewed, least-privileged, and monitored.</p>
+
+          <h3>Conclusion</h3>
+          <p>MCP is quickly becoming the standard way AI models talk to the outside world. Understanding it, both how it works and how it can be misused, is increasingly relevant for anyone building or securing AI-powered systems.</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
