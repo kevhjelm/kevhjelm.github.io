@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>OWASP Top 10 for LLM Applications // Kevin Hjelmtveit</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A guide to the OWASP Top 10 for LLM Applications, covering prompt injection, sensitive information disclosure, and other AI-specific security risks." />
+    <link rel="canonical" href="https://kevhjelm.github.io/owaspllm.html" />
+    <meta property="og:title" content="OWASP Top 10 for LLM Applications" />
+    <meta property="og:description" content="A guide to the OWASP Top 10 for LLM Applications, covering prompt injection, sensitive information disclosure, and other AI-specific security risks." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kevhjelm.github.io/owaspllm.html" />
+    <meta property="og:image" content="https://kevhjelm.github.io/me3.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OWASP Top 10 for LLM Applications" />
+    <meta name="twitter:description" content="A guide to the OWASP Top 10 for LLM Applications, covering prompt injection, sensitive information disclosure, and other AI-specific security risks." />
+    <link rel="stylesheet" href="web2.css" />
+    <script>(function(){try{var t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me3.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+        <header class="post-header">
+          <h1 class="post-title">OWASP Top 10 for LLM Applications</h1>
+          <p>As large language models move from demos into production systems, they bring a new class of security risks that don't map cleanly onto traditional web application vulnerabilities. The OWASP Top 10 for LLM Applications catalogs the most critical of these risks, giving developers, security engineers, and AI teams a shared vocabulary for identifying and mitigating them.</p>
+        </header>
+        <div class="post-content">
+          <h3>Why LLMs Need Their Own Top 10</h3>
+          <p>The classic OWASP Top 10 focuses on how untrusted input breaks deterministic code: injection, broken access control, misconfiguration. LLM applications introduce a fundamentally different attack surface, natural language itself becomes an input channel that can steer model behavior, and the model's output is often trusted and acted on downstream. That shift is why OWASP maintains a separate, dedicated list for LLM-specific risks.</p>
+
+          <h3>The OWASP Top 10 for LLM Applications</h3>
+
+          <p>1. <strong>Prompt Injection</strong> occurs when crafted input, direct from a user or indirect via a document, webpage, or tool result, manipulates the model into ignoring its instructions or taking unintended actions. Because there's no hard boundary between "instructions" and "data" in a prompt, this is one of the hardest LLM risks to fully eliminate. Mitigation relies on treating all model output as untrusted, enforcing least privilege on any tool the model can call, and adding human approval for sensitive actions.</p>
+
+          <p>2. <strong>Sensitive Information Disclosure</strong> happens when a model reveals confidential data, whether personal information, proprietary business logic, or secrets, memorized during training or included in its context window. This can leak through direct queries, cleverly chained prompts, or overly permissive retrieval-augmented generation (RAG) pipelines. Data minimization, output filtering, and strict access controls on what the model can retrieve are the key defenses.</p>
+
+          <p>3. <strong>Supply Chain</strong> risks cover the entire pipeline behind an LLM application: pretrained models, fine-tuning datasets, plugins, and third-party libraries. A poisoned base model, a compromised dependency, or an untrusted community fine-tune can undermine the security of everything built on top of it. Vetting model provenance, pinning dependencies, and maintaining a software bill of materials (SBOM) help manage this exposure.</p>
+
+          <p>4. <strong>Data and Model Poisoning</strong> refers to the deliberate manipulation of training, fine-tuning, or embedding data to introduce backdoors, biases, or degraded performance. Because poisoned behavior can lie dormant until a specific trigger appears, it's difficult to detect through normal testing. Validating data sources, sandboxing training pipelines, and monitoring for anomalous outputs reduce this risk.</p>
+
+          <p>5. <strong>Improper Output Handling</strong> arises when an application passes LLM-generated content downstream, into a shell, a database query, a browser, or another system, without validation or sanitization, effectively trusting the model's output as safe code or markup. This can lead to classic vulnerabilities like XSS, SSRF, or remote code execution, just triggered through the model instead of a form field. The fix is familiar: treat LLM output exactly like any other untrusted user input.</p>
+
+          <p>6. <strong>Excessive Agency</strong> describes LLM-based systems granted more permissions, tools, or autonomy than a given task requires, so a manipulated or simply mistaken model action causes outsized damage. This risk grows directly with how much an application lets a model do on its own. Limiting tool permissions to the minimum needed, requiring confirmation for high-impact actions, and logging every action a model takes keep the blast radius small.</p>
+
+          <p>7. <strong>System Prompt Leakage</strong> occurs when the hidden instructions that shape a model's behavior are extracted by an attacker, exposing internal logic, business rules, or, worse, secrets that were mistakenly embedded in the prompt itself. Leaked system prompts also make other attacks, like prompt injection, easier to craft. System prompts should never contain secrets, and applications shouldn't rely on prompt secrecy as a security control.</p>
+
+          <p>8. <strong>Vector and Embedding Weaknesses</strong> affect retrieval-augmented generation (RAG) systems, where poorly secured vector databases or embedding pipelines let attackers inject malicious content into the knowledge base or extract sensitive embedded data. Since the model treats retrieved content as trusted context, a compromised vector store can quietly poison every downstream response. Access control on embedding pipelines and validation of ingested content are essential safeguards.</p>
+
+          <p>9. <strong>Misinformation</strong> covers the tendency of LLMs to produce confident, plausible-sounding but factually incorrect output, commonly called hallucination, which becomes a security issue when that output drives decisions, code, or published content without verification. This is especially dangerous in domains like security, legal, or medical advice. Grounding responses in verified sources, citing evidence, and keeping a human in the loop for high-stakes decisions all help.</p>
+
+          <p>10. <strong>Unbounded Consumption</strong> happens when an application doesn't limit how much a model can be asked to compute, through long inputs, recursive agent loops, or high-volume requests, leading to denial of service or runaway infrastructure costs. Rate limiting, input/output size caps, and timeouts on agentic loops keep resource usage predictable.</p>
+
+          <h3>Why This Matters for Security Engineers</h3>
+          <p>Most of these risks can't be patched away the way a traditional vulnerability can; they're inherent to how LLMs process language and take action. That makes secure design, least privilege, and defense in depth even more important than in conventional application security. Treating an LLM as a powerful but fundamentally untrusted component, rather than a trusted piece of business logic, is the mental model that holds up best across all ten risks.</p>
+
+          <h3>Conclusion</h3>
+          <p>The OWASP Top 10 for LLM Applications is a fast-moving list, reflecting how quickly the field itself is evolving. Whether you're building AI features into an existing product or securing someone else's, understanding these risks is becoming as fundamental to application security as the original OWASP Top 10.</p>
+        </div>
+      </article>
+    <p class="app-footer-note">Partly written by AI, controlled by human.</p>
+    </main>
+  </body>
+</html>
