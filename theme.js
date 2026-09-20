@@ -62,6 +62,35 @@
     container.insertBefore(button, container.firstChild);
   }
 
+  function showLastUpdated() {
+    var header = document.querySelector(".app-header");
+    if (!header || header.querySelector(".app-header-updated")) {
+      return;
+    }
+    fetch("last-updated.json")
+      .then(function (res) {
+        return res.ok ? res.json() : null;
+      })
+      .then(function (data) {
+        if (!data || !data.lastUpdated) {
+          return;
+        }
+        var date = new Date(data.lastUpdated);
+        if (isNaN(date.getTime())) {
+          return;
+        }
+        var el = document.createElement("p");
+        el.className = "app-header-updated";
+        el.textContent =
+          "Last updated: " +
+          date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+        header.appendChild(el);
+      })
+      .catch(function () {
+        /* no metadata available, e.g. local preview */
+      });
+  }
+
   media.addEventListener("change", function () {
     if (!getStoredTheme()) {
       applyTheme(preferredTheme());
@@ -69,4 +98,5 @@
   });
 
   createToggleButton();
+  showLastUpdated();
 })();

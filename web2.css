@@ -122,6 +122,12 @@ pre code {
   margin: 0 .1em
 }
 
+.app-header-updated {
+  margin: .5rem 0 0;
+  font-size: .7em;
+  opacity: .7
+}
+
 @media(width >=940px) {
   .app-header {
     position: fixed;
