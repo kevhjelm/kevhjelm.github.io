@@ -2,6 +2,40 @@
   box-sizing: border-box
 }
 
+:root {
+  --color-bg: #353b43;
+  --color-bg-alt: #242930;
+  --color-text: #afbac4;
+  --color-heading: #fff;
+  --color-link: #287186;
+  --color-link-hover: #fff;
+  --color-accent: #57cc8a;
+  --color-accent-strong: #287186;
+  --color-code-text: rgb(175 186 196 / 80%);
+  --color-overlay-10: rgb(255 255 255 / 10%);
+  --color-overlay-25: rgb(175 186 196 / 25%);
+  --color-overlay-30: rgb(255 255 255 / 30%);
+  --color-overlay-30-hover: rgb(255 255 255 / 30%);
+  --color-accent-border: rgb(87 204 138 / 80%)
+}
+
+[data-theme="light"] {
+  --color-bg: #f5f6f8;
+  --color-bg-alt: #e4e7eb;
+  --color-text: #33393f;
+  --color-heading: #14171a;
+  --color-link: #1c6d82;
+  --color-link-hover: #000;
+  --color-accent: #2f9e63;
+  --color-accent-strong: #1c6d82;
+  --color-code-text: rgb(51 57 63 / 80%);
+  --color-overlay-10: rgb(0 0 0 / 6%);
+  --color-overlay-25: rgb(51 57 63 / 15%);
+  --color-overlay-30: rgb(0 0 0 / 15%);
+  --color-overlay-30-hover: rgb(0 0 0 / 25%);
+  --color-accent-border: rgb(47 158 99 / 80%)
+}
+
 html {
   line-height: 1.6
 }
@@ -9,8 +43,9 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #353b43;
-  color: #afbac4
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background .2s, color .2s
 }
 
 h1,
@@ -19,25 +54,25 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff
+  color: var(--color-heading)
 }
 
 a {
 
   /* color: #57cc8a; green */
-  color: #287186;
+  color: var(--color-link);
   transition: color .35s;
   text-decoration: none
 }
 
 a:hover {
-  color: #fff
+  color: var(--color-link-hover)
 }
 
 code {
   font-family: monospace;
   font-size: 1em;
-  color: rgb(175 186 196 / 80%)
+  color: var(--color-code-text)
 }
 
 pre {
@@ -52,21 +87,22 @@ pre code {
 }
 
 .selection {
-  background: rgb(175 186 196 / 25%)
+  background: var(--color-overlay-25)
 }
 
 
 .app-header {
   padding: 2.5em;
-  background: #242930;
-  text-align: center
+  background: var(--color-bg-alt);
+  text-align: center;
+  transition: background .2s
 }
 
 .app-header-avatar {
   width: 15rem;
   height: 15rem;
   border-radius: 100%;
-  border: .5rem solid #287186 /* color: #287186; #57cc8a  */
+  border: .5rem solid var(--color-accent-strong) /* color: #287186; #57cc8a  */
 }
 
 .app-container {
@@ -75,7 +111,11 @@ pre code {
 
 .app-header-social {
   font-size: 2em;
-  color: #fff
+  color: var(--color-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .1em
 }
 
 .app-header-social a {
@@ -112,6 +152,19 @@ pre code {
   vertical-align: -.125em
 }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .1em;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0
+}
+
 .pagination {
   display: block;
   list-style: none;
@@ -131,13 +184,13 @@ pre code {
 }
 
 .page-item.active .page-link {
-  color: #fff;
+  color: var(--color-heading);
   border-radius: 2em;
-  background: #57cc8a
+  background: var(--color-accent)
 }
 
 .post-title {
-  color: #fff
+  color: var(--color-heading)
 }
 
 .post-content>pre,
@@ -148,7 +201,7 @@ pre code {
 .post-content>pre,
 .post-content .highlight>pre,
 .post-content .highlight>div {
-  border-left: .4em solid rgb(87 204 138 / 80%);
+  border-left: .4em solid var(--color-accent-border);
   padding: .5em 1em
 }
 
@@ -223,7 +276,7 @@ pre code {
 
 /*  Dots under all dates */
 .posts-list-item {
-  border-bottom: 0.5px dashed rgb(255 255 255 / 30%);
+  border-bottom: 0.5px dashed var(--color-overlay-30);
  width: 100%;  /* Adjust as needed */
  list-style: none;
  padding: .4em 0;
@@ -258,13 +311,13 @@ pre code {
   font-size: .9em;
   border-radius: .2em;
   white-space: nowrap;
-  background: rgb(255 255 255 / 10%);
+  background: var(--color-overlay-10);
   transition: color .35s, background .35s
 }
 
 .tag:hover {
   transition: color .25s, background .05s;
-  background: rgb(255 255 255 / 30%)
+  background: var(--color-overlay-30-hover)
 }
 
 .tags-list {
@@ -277,7 +330,7 @@ pre code {
 }
 
 .tags-list-item:not(:last-child) {
-  border-bottom: 100px dashed rgb(255 255 255 / 30%)
+  border-bottom: 100px dashed var(--color-overlay-30)
 }
 
 @media(width >=450px) {
