@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Git and Claude Code // Kevin Hjelmtveit</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An introduction to Git and Claude Code: what they are, why to use them, and how to set up Anthropic's agentic coding CLI in your workflow." />
+    <link rel="canonical" href="https://kevhjelm.github.io/claude_code.html" />
+    <meta property="og:title" content="Git and Claude Code" />
+    <meta property="og:description" content="An introduction to Git and Claude Code: what they are, why to use them, and how to set up Anthropic's agentic coding CLI in your workflow." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://kevhjelm.github.io/claude_code.html" />
+    <meta property="og:image" content="https://kevhjelm.github.io/me3.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Git and Claude Code" />
+    <meta name="twitter:description" content="An introduction to Git and Claude Code: what they are, why to use them, and how to set up Anthropic's agentic coding CLI in your workflow." />
+    <link rel="stylesheet" href="web2.css" />
+    <script>(function(){try{var t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)}catch(e){}})()</script>
+    <script src="theme.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://www.kevhjelm.github.io">
+        <img class="app-header-avatar" src="me3.jpg" alt="kevhjelm" />
+      </a>
+      <h1>Kevin Hjelmtveit</h1>
+      <nav class="app-header-menu">
+        <a class="app-header-menu-item" href="index.html">Home</a> -
+        <a class="app-header-menu-item" href="menu.html">Menu</a>
+      </nav>
+      <div class="app-header-social">
+        <a href="https://github.com/kevhjelm" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+            <title>Github</title>
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noreferrer noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-linkedin">
+            <title>LinkedIn</title>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main class="app-container">
+      <article class="post">
+
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="menu.html">Menu</a> <span class="breadcrumb-separator">&gt;</span> <a href="menu.html">Artificial Intelligence</a> <span class="breadcrumb-separator">&gt;</span> Git and Claude Code
+      </nav>
+        <header class="post-header">
+          <h1 class="post-title">Git and Claude Code</h1>
+          <p>Git is the version control system almost every modern codebase runs on. Claude Code is Anthropic's official command-line tool for agentic coding, an AI assistant that lives in your terminal, reads your project, and can make changes directly in your working tree. Used together, they turn "describe what you want" into a reviewable, committable change. This post covers what each one is, why they're worth using, and how to get both running.</p>
+        </header>
+        <div class="post-content">
+
+          <h3>What is Git?</h3>
+          <p>Git is a distributed version control system: it tracks every change made to a set of files over time, lets multiple people (or an AI assistant) work on the same codebase without stepping on each other, and gives you a full history you can inspect, branch, or roll back at any point. Every commit is a snapshot, every branch is a lightweight pointer, and nothing is truly destroyed until you go out of your way to force it.</p>
+
+          <h4>Getting started with Git</h4>
+          <pre><code>git init                        # start a new repository
+git clone &lt;url&gt;                 # copy an existing repository
+git status                      # see what's changed
+git add &lt;file&gt;                  # stage a change
+git commit -m "message"         # record a snapshot
+git branch feature/my-change    # create a branch
+git push origin feature/my-change  # publish it</code></pre>
+
+          <h4>Why use Git?</h4>
+          <ul>
+            <li><strong>A safety net.</strong> Nothing is truly lost, you can always diff, revert, or check out a previous commit.</li>
+            <li><strong>Branching.</strong> Experiment on a branch without touching working code, merge only once it's ready.</li>
+            <li><strong>Collaboration.</strong> Multiple people (or agents) can work in parallel and merge their changes with a clear history of who changed what, and why.</li>
+            <li><strong>Auditability.</strong> From a security standpoint, a clean commit history is one of the simplest ways to trace when a vulnerability was introduced and by which change.</li>
+          </ul>
+
+          <h3>What is Claude Code?</h3>
+          <p>Claude Code is Anthropic's CLI for agentic coding. Instead of copy-pasting code into a chat window, you run <code>claude</code> inside your project directory and it works directly with your files: it reads the codebase for context, proposes and applies edits, runs your build and test commands, and can create commits or pull requests on your behalf, all while asking for confirmation before anything destructive or hard to reverse.</p>
+
+          <h4>Setting up Claude Code</h4>
+          <pre><code># install (requires Node.js)
+npm install -g @anthropic-ai/claude-code
+
+# from inside your project directory
+cd my-project
+claude</code></pre>
+          <p>The first time you run it, Claude Code walks you through authenticating with your Anthropic account. From then on, running <code>claude</code> in any project directory drops you into an interactive session where you can ask it to explain code, fix a bug, write tests, or implement a feature, in plain English.</p>
+
+          <h4>A typical workflow</h4>
+          <pre><code>$ git checkout -b fix/login-bug
+$ claude
+&gt; there's a bug where the login form accepts empty passwords, find and fix it
+
+  # Claude Code reads the relevant files, proposes a fix,
+  # asks for confirmation, and applies the edit
+
+$ git diff                # review exactly what changed
+$ git add -A
+$ git commit -m "Validate that password is non-empty on login"
+$ git push origin fix/login-bug</code></pre>
+
+          <h3>Why Use Claude Code?</h3>
+          <p>It's less about replacing the developer and more about removing friction. A few concrete reasons it's worth adding to your workflow:</p>
+          <ul>
+            <li><strong>Faster context-gathering.</strong> Dropped into an unfamiliar codebase, it can search, read, and summarize far faster than doing it by hand.</li>
+            <li><strong>Git-aware by default.</strong> It understands branches, diffs, and commit history, and it favors small, reviewable, reversible changes over big destructive ones.</li>
+            <li><strong>Automates the repetitive parts.</strong> Boilerplate, refactors that touch many files, writing tests for existing code, the kind of work that's simple but tedious.</li>
+            <li><strong>You stay in control.</strong> Every non-trivial action (editing files, running commands, committing, pushing) is visible and confirmable, so it fits naturally into a normal review process instead of bypassing it.</li>
+          </ul>
+
+          <h3>Security Considerations</h3>
+          <p>Treat an AI coding agent the same way you'd treat a new contributor: review its diffs before merging, keep secrets out of the repository (and out of what you paste into the terminal), and use Git's branching model so nothing lands on <code>main</code> without a review step. Claude Code's permission prompts for risky actions (force-pushes, destructive resets, editing files it hasn't read) exist for exactly this reason, don't reflexively approve them without reading what's being asked.</p>
+
+          <h3>Conclusion</h3>
+          <p>Git gives you a reliable history and a safe way to experiment; Claude Code gives you a fast, context-aware way to make changes within that history. Neither replaces good engineering judgment, but together they make it much faster to go from "I need to fix this" to a clean, reviewed commit.</p>
+        </div>
+      </article>
+      <p class="app-footer-note">Partly written by AI, controlled by human.</p>
+    </main>
+  </body>
+</html>
