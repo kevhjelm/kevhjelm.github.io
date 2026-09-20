@@ -246,6 +246,15 @@ pre code {
   font-family: inherit;
 }
 
+.breadcrumb {
+  margin: 0 0 1.5rem;
+  font-size: .9em;
+}
+
+.breadcrumb-separator {
+  margin: 0 .4em;
+}
+
 /* future section */
 
 /* 
