@@ -122,6 +122,12 @@ pre code {
   margin: 0 .1em
 }
 
+.app-header-updated {
+  margin: .5rem 0 0;
+  font-size: .7em;
+  opacity: .7
+}
+
 @media(width >=940px) {
   .app-header {
     position: fixed;
@@ -163,6 +169,48 @@ pre code {
   color: inherit;
   cursor: pointer;
   line-height: 0
+}
+
+.lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: .5em;
+  margin: 1em 0 0
+}
+
+.lang-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: .45em;
+  padding: .3em .7em;
+  font: inherit;
+  font-size: .85em;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-overlay-10);
+  border: 1px solid transparent;
+  border-radius: .3em;
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity .2s, border-color .2s
+}
+
+.lang-switch button:hover {
+  opacity: 1
+}
+
+.lang-switch button[aria-pressed="true"] {
+  opacity: 1;
+  border-color: var(--color-accent);
+  color: var(--color-heading)
+}
+
+.flag {
+  display: block;
+  width: 1.5em;
+  height: 1em;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 25%)
 }
 
 .pagination {

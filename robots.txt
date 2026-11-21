@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /code_review.html
 
-Sitemap: https://kevhjelm.github.io/sitemap.xml
+Sitemap: https://kevhjelm.no/sitemap.xml

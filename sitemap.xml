@@ -1,213 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kevhjelm.github.io/</loc>
+    <loc>https://kevhjelm.no/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/menu.html</loc>
+    <loc>https://kevhjelm.no/menu.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/security-testing.html</loc>
+    <loc>https://kevhjelm.no/security-testing.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/seceng.html</loc>
+    <loc>https://kevhjelm.no/seceng.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/sdlc.html</loc>
+    <loc>https://kevhjelm.no/sdlc.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/testing.html</loc>
+    <loc>https://kevhjelm.no/testing.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/ejpt.html</loc>
+    <loc>https://kevhjelm.no/ejpt.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/netmon.html</loc>
+    <loc>https://kevhjelm.no/netmon.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/devil.html</loc>
+    <loc>https://kevhjelm.no/devil.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/blue.html</loc>
+    <loc>https://kevhjelm.no/blue.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/jerry.html</loc>
+    <loc>https://kevhjelm.no/jerry.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/lame.html</loc>
+    <loc>https://kevhjelm.no/lame.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/owasp.html</loc>
+    <loc>https://kevhjelm.no/owasp.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/postburp.html</loc>
+    <loc>https://kevhjelm.no/postburp.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/appsec_pentest.html</loc>
+    <loc>https://kevhjelm.no/appsec_pentest.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/devops_devsecops.html</loc>
+    <loc>https://kevhjelm.no/devops_devsecops.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/securing_pipe.html</loc>
+    <loc>https://kevhjelm.no/securing_pipe.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/ci_cd.html</loc>
+    <loc>https://kevhjelm.no/ci_cd.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/disk_carving.html</loc>
+    <loc>https://kevhjelm.no/disk_carving.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/file_analysis.html</loc>
+    <loc>https://kevhjelm.no/file_analysis.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/exif.html</loc>
+    <loc>https://kevhjelm.no/exif.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/5w.html</loc>
+    <loc>https://kevhjelm.no/5w.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/order_of_volatility.html</loc>
+    <loc>https://kevhjelm.no/order_of_volatility.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/df.html</loc>
+    <loc>https://kevhjelm.no/df.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/osint.html</loc>
+    <loc>https://kevhjelm.no/osint.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/palo.html</loc>
+    <loc>https://kevhjelm.no/palo.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/fw.html</loc>
+    <loc>https://kevhjelm.no/fw.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/hashcat.html</loc>
+    <loc>https://kevhjelm.no/hashcat.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/azure.html</loc>
+    <loc>https://kevhjelm.no/azure.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/aws.html</loc>
+    <loc>https://kevhjelm.no/aws.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/mcp.html</loc>
+    <loc>https://kevhjelm.no/mcp.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/ai.html</loc>
+    <loc>https://kevhjelm.no/ai.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/ml.html</loc>
+    <loc>https://kevhjelm.no/ml.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/owaspllm.html</loc>
+    <loc>https://kevhjelm.no/owaspllm.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://kevhjelm.github.io/claude_code.html</loc>
+    <loc>https://kevhjelm.no/claude_code.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kevhjelm.no/ugc/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

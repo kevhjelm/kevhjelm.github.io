@@ -19,6 +19,9 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Generate last-updated metadata
+        run: |
+          printf '{"lastUpdated": "%s"}' "$(git log -1 --format=%cI)" > last-updated.json
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
