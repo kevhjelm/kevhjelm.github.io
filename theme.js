@@ -136,7 +136,9 @@
     ["What is digital forensic?", "Hva er digital etterforskning?"],
     ["What is security testing?", "Hva er sikkerhetstesting?"],
     ["Order of votility", "Flyktighetsrekkefølge"],
-    ["Securing the pipe", "Sikring av pipelinen"],
+    ["Securing the pipe", "Sikring av pipelinen"],
+    ["Agentic Security: How to Secure AI Agents", "Agentisk sikkerhet: Slik sikrer du KI-agenter"],
+    ["Agentic Security", "Agentisk sikkerhet"],
 
     // Home page
     ["My name is Kevin and I'm an experienced security consultant, with a background in penetration testing and security operations. I've worked in various roles within security operations centers, handling challenges from basic configuration to incident management. I've applied a wide range of security technologies and have strong technical skills, particularly in system configuration and maintenance. My experience spans across multiple sectors, where I've honed my ability to identify and exploit security vulnerabilities. I hold a solid academic background with master's degrees in information security and networking, along with several certifications that highlight my expertise in security, including recognized certifications in information security and penetration testing. I'm committed to continuous professional development, as demonstrated by the courses I've taken on new security techniques and strategies, ensuring I stay up to date with the latest developments in the field.",
