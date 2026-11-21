@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI UGC Norge · KI-skaper og innholdsprodusent | KevinMakesUGC</title>
+<meta name="description" content="AI creator og innholdsprodusent i Norge. Jeg lager AI UGC-videoannonser og innlegg for TikTok, Reels og betalt annonsering.">
+<link rel="canonical" href="https://kevhjelm.no/ugc/">
+<meta property="og:title" content="AI UGC Norge · KI-skaper og innholdsprodusent">
+<meta property="og:description" content="AI creator og innholdsprodusent i Norge. AI UGC-videoannonser for TikTok, Reels og betalt annonsering.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:url" content="https://kevhjelm.no/ugc/">
+<meta property="og:image" content="https://kevhjelm.no/me3.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI UGC Norge · KI-skaper og innholdsprodusent">
+<meta name="twitter:description" content="AI creator og innholdsprodusent i Norge. AI UGC-videoannonser for TikTok, Reels og betalt annonsering.">
+<script>(function(){try{var t=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}})()</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "AI UGC-videoannonser",
+      "serviceType": "AI UGC-produksjon",
+      "areaServed": { "@type": "Country", "name": "Norge" },
+      "availableLanguage": ["nb", "en"],
+      "url": "https://kevhjelm.no/ugc/",
+      "provider": {
+        "@type": "Person",
+        "name": "Kevin Hjelmtveit",
+        "alternateName": "KevinMakesUGC",
+        "jobTitle": "AI creator og innholdsprodusent",
+        "url": "https://kevhjelm.no/",
+        "sameAs": ["https://linkedin.com/in/kevhjelm/"]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Hva er AI UGC?",
+          "acceptedAnswer": { "@type": "Answer", "text": "AI UGC er brukergenerert innhold laget med kunstig intelligens: korte, vertikale videoer der en AI-karakter presenterer eller viser frem et produkt, uten filmteam eller skuespillere." } },
+        { "@type": "Question", "name": "Hva gjør en KI-skaper?",
+          "acceptedAnswer": { "@type": "Answer", "text": "En KI-skaper, eller AI creator, er en innholdsprodusent som bruker KI-verktøy for bilde, video og stemme til å lage manus, karakterer og ferdige videoer for sosiale medier og annonser." } },
+        { "@type": "Question", "name": "Må AI-generert reklame merkes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ikke alltid etter norsk lov i dag, men reklame skal alltid merkes som reklame og ikke være villedende. TikTok og Meta krever KI-merking av realistisk innhold, og jeg merker alltid innhold med realistiske AI-personer." } },
+        { "@type": "Question", "name": "Kan du lage innlegg fra bilder vi allerede har?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Send meg produktbilder, bilder fra nettsiden eller tidligere innlegg, så lager jeg nye innlegg, karuseller og videoer basert på dem. Du må ha rett til å bruke bildene du sender." } },
+        { "@type": "Question", "name": "Lager du innhold på engelsk også?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ja. Jeg lager UGC på både norsk og engelsk, med manus, voiceover og undertekster tilpasset målgruppen." } }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* Design based on kevhjelm.no: fixed sidebar, slate palette, teal/green accents, dashed dividers. */
+*{box-sizing:border-box}
+:root{
+  --color-bg:#353b43;
+  --color-bg-alt:#242930;
+  --color-text:#afbac4;
+  --color-heading:#fff;
+  --color-link:#57cc8a;
+  --color-link-hover:#fff;
+  --color-accent:#57cc8a;
+  --color-accent-strong:#287186;
+  --color-overlay-10:rgb(255 255 255 / 6%);
+  --color-overlay-30:rgb(255 255 255 / 30%);
+  --color-accent-border:rgb(87 204 138 / 80%);
+}
+[data-theme="light"]{
+  --color-bg:#f5f6f8;
+  --color-bg-alt:#e4e7eb;
+  --color-text:#33393f;
+  --color-heading:#14171a;
+  --color-link:#1c6d82;
+  --color-link-hover:#000;
+  --color-accent:#2f9e63;
+  --color-accent-strong:#1c6d82;
+  --color-overlay-10:rgb(0 0 0 / 5%);
+  --color-overlay-30:rgb(0 0 0 / 18%);
+  --color-accent-border:rgb(47 158 99 / 80%);
+}
+html{line-height:1.6;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font-family:sans-serif;background:var(--color-bg);color:var(--color-text);transition:background .2s,color .2s}
+h1,h2,h3{color:var(--color-heading)}
+a{color:var(--color-link);text-decoration:none;transition:color .35s}
+a:hover{color:var(--color-link-hover)}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px}
+
+/* Sidebar */
+.app-header{padding:2.5em;background:var(--color-bg-alt);text-align:center;transition:background .2s}
+.app-header-avatar{width:15rem;height:15rem;max-width:100%;border-radius:100%;border:.5rem solid var(--color-accent-strong);display:grid;place-content:center;margin:0 auto;overflow:hidden;background:var(--color-bg);font-size:4.5rem;font-weight:700;color:var(--color-heading);letter-spacing:-.04em}
+.app-header-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.app-header-name{margin:.6em 0 0;font-size:2em;font-weight:700;color:var(--color-heading);line-height:1.2}
+.app-header-tagline{margin:.2em 0 1em;font-size:.95em}
+.app-header-menu{display:flex;flex-direction:column;gap:.15em;margin:0 0 1.2em}
+.app-header-menu-item{padding:.15em 0}
+.app-header-social{font-size:2em;color:var(--color-heading);display:flex;align-items:center;justify-content:center;gap:.1em}
+.app-header-social a{color:var(--color-heading);margin:0 .1em}
+.app-header-social a:hover{color:var(--color-accent)}
+.icon{display:inline-block;width:1em;height:1em;vertical-align:-.125em}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;margin:0 .1em;padding:0;border:none;background:none;color:inherit;cursor:pointer;line-height:0;font-size:inherit}
+.theme-toggle:hover{color:var(--color-accent)}
+
+/* Language switch */
+.lang-switch{display:flex;justify-content:center;gap:.5em;margin:1em 0 0}
+.lang-switch button{display:inline-flex;align-items:center;gap:.45em;padding:.3em .7em;font:inherit;font-size:.85em;font-weight:700;color:var(--color-text);background:var(--color-overlay-10);border:1px solid transparent;border-radius:.3em;cursor:pointer;opacity:.6;transition:opacity .2s,border-color .2s}
+.lang-switch button:hover{opacity:1}
+.lang-switch button[aria-pressed="true"]{opacity:1;border-color:var(--color-accent);color:var(--color-heading)}
+.flag{width:1.5em;height:1em;display:block;border-radius:2px;box-shadow:0 0 0 1px rgb(0 0 0 / 25%)}
+
+.app-container{padding:2.5rem}
+@media (width >= 940px){
+  .app-header{position:fixed;top:0;left:0;width:20rem;min-height:100vh;overflow-y:auto;max-height:100vh}
+  .app-container{max-width:65rem;margin-left:20rem}
+}
+@media (width < 940px){
+  .app-header-avatar{width:9rem;height:9rem;font-size:3rem}
+  .app-header-menu{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.2em 1em}
+}
+@media (width < 600px){
+  .app-header{padding:1.5em 1em}
+  .app-container{padding:1.5rem 1rem}
+}
+
+/* Content */
+section{padding:.5rem 0 2rem;border-bottom:1px dashed var(--color-overlay-30);margin-bottom:2rem}
+section:last-of-type{border-bottom:0}
+.homepage-header h1{margin:0 0 .3em;font-size:2.2em;line-height:1.2}
+.kicker{margin:0;color:var(--color-accent);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.85em}
+.lede{font-size:1.1em;max-width:60ch}
+h2{font-size:1.6em;margin:0 0 .4em}
+h3{margin:0 0 .25em;font-size:1.05em}
+p{max-width:65ch}
+
+.tag{display:inline-block;margin:0 .2em .4em 0;padding:0 .6em;font-size:.9em;border-radius:.2em;white-space:nowrap;background:var(--color-overlay-10);transition:color .35s,background .35s}
+.ctas{display:flex;flex-wrap:wrap;gap:.8em;margin-top:1.2em}
+.btn{display:inline-block;padding:.55em 1.2em;border-radius:.3em;border:1px solid var(--color-accent-strong);color:var(--color-heading);background:transparent;font:inherit;font-weight:600;cursor:pointer}
+.btn.primary{background:var(--color-accent-strong);border-color:var(--color-accent-strong);color:#fff}
+.btn:hover{border-color:var(--color-accent);color:var(--color-heading)}
+.btn.primary:hover{background:var(--color-accent);border-color:var(--color-accent);color:#14171a}
+.btn[hidden],code[hidden]{display:none}
+
+/* Dashed lists, like the posts-list on kevhjelm */
+.posts-list{padding:0;margin:0}
+.posts-list-item{list-style:none;padding:.6em 0;border-bottom:1px dashed var(--color-overlay-30)}
+.posts-list-item:last-child{border-bottom:0}
+.posts-list-item strong{color:var(--color-heading)}
+.posts-list-item-description{display:block;font-size:.9em}
+
+.two-col{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2.5rem;align-items:start}
+@media (width < 760px){.two-col{grid-template-columns:1fr}}
+.hl{border-left:.4em solid var(--color-accent-border);padding-left:.8em!important}
+
+/* Videos */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem}
+.card{display:grid;gap:.4em;align-content:start}
+.card[hidden]{display:none}
+.frame{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--color-bg-alt);border-left:.4em solid var(--color-accent-border)}
+.frame video{width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.frame video[hidden],.empty[hidden]{display:none}
+.empty{position:absolute;inset:0;display:grid;place-content:center;gap:.3em;text-align:center;padding:1em;font-size:.85em}
+.empty strong{color:var(--color-heading);font-size:1.1em}
+.ai{position:absolute;top:.6em;right:.6em;background:rgb(0 0 0 / 70%);color:#fff;font-size:.7em;font-weight:700;padding:.2em .6em;border-radius:.2em;z-index:1}
+.card h3{margin:.3em 0 0}
+.card p{margin:0;font-size:.9em}
+.frame.post{aspect-ratio:4/5}
+.frame.post>img{width:100%;height:100%;object-fit:cover;display:block}
+.frame img[hidden]{display:none}
+.source{position:absolute;left:.6em;bottom:.6em;width:34%;margin:0;border:2px solid #fff;border-radius:.2em;overflow:hidden;box-shadow:0 2px 8px rgb(0 0 0 / 50%);background:#000;z-index:1}
+.source[hidden]{display:none}
+.source img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.source figcaption{font-size:.65em;font-weight:700;text-align:center;color:#fff;background:rgb(0 0 0 / 70%);padding:.1em 0}
+.from-image{background:var(--color-accent);color:#14171a}
+
+.note{margin-top:1.5em;padding:1em 1.2em;background:var(--color-overlay-10);border-left:.4em solid var(--color-accent-border)}
+.note h3{margin-top:0}
+.note p{margin:.3em 0 0}
+.small{font-size:.85em}
+
+.note.free{margin-top:2.5em}
+.note .ctas{margin-top:.8em}
+.note .small{margin-top:.8em}
+h3.sub{margin:1.8em 0 .2em;font-size:1.25em}
+
+/* FAQ */
+.faq h3{margin-top:1em}
+.faq p{margin:.2em 0 0}
+
+/* Contact */
+.steps{padding-left:1.3em;margin:0 0 1.2em}
+.steps li{padding:.2em 0}
+.steps li::marker{color:var(--color-accent);font-weight:700}
+.copyrow{display:flex;flex-wrap:wrap;gap:.8em;align-items:center}
+code{font-family:monospace;font-size:1em}
+
+.app-footer-note{margin:3rem 0 0;padding-top:1rem;border-top:1px dashed var(--color-overlay-30);font-size:.8em}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <a href="#top" data-i18n-aria="aria.top" aria-label="Til toppen"><div class="app-header-avatar" id="avatar">KMU</div></a>
+  <p class="app-header-name" data-fill="name">KevinMakesUGC</p>
+  <p class="app-header-tagline" data-i18n="tagline">AI creator og innholdsprodusent fra Norge</p>
+
+  <nav class="app-header-menu" data-i18n-aria="aria.sections" aria-label="Seksjoner">
+    <a class="app-header-menu-item" href="#hva-er-ugc" data-i18n="nav.ugc">Hva er UGC</a>
+    <a class="app-header-menu-item" href="#hvorfor" data-i18n="nav.why">Hvorfor AI UGC</a>
+    <a class="app-header-menu-item" href="#hva-jeg-gjor" data-i18n="nav.do">Hva jeg gjør</a>
+    <a class="app-header-menu-item" href="#hva-jeg-lager" data-i18n="nav.make">Hva jeg lager</a>    <a class="app-header-menu-item" href="#ki-og-loven" data-i18n="nav.law">KI og loven</a>
+    <a class="app-header-menu-item" href="#sporsmal" data-i18n="nav.faq">Spørsmål og svar</a>
+    <a class="app-header-menu-item" href="#kontakt" data-i18n="nav.contact">Kontakt</a>
+  </nav>
+
+  <div class="app-header-social" id="social">
+    <button type="button" class="theme-toggle" id="themeToggle" data-i18n-aria="aria.theme" aria-label="Bytt mellom lyst og mørkt tema"></button>
+    <a id="mailIcon" href="#kontakt" data-i18n-aria="aria.mail" aria-label="E-post">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </a>
+    <a href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </a>
+    <a id="tiktokIcon" href="#" target="_blank" rel="noopener" aria-label="TikTok" hidden>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M9 12a4 4 0 1 0 4 4V3c.5 2.5 2.5 4.5 5 5"></path></svg>
+    </a>
+    <a id="instagramIcon" href="#" target="_blank" rel="noopener" aria-label="Instagram" hidden>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+  </div>
+
+  <div class="lang-switch" role="group" aria-label="Språk / Language">
+    <button type="button" data-lang="nb" aria-pressed="true" lang="nb" title="Norsk">
+      <svg class="flag" viewBox="0 0 22 16" preserveAspectRatio="none" aria-hidden="true"><rect width="22" height="16" fill="#BA0C2F"/><path d="M0 8h22M8 0v16" stroke="#fff" stroke-width="4"/><path d="M0 8h22M8 0v16" stroke="#00205B" stroke-width="2"/></svg>
+      NO
+    </button>
+    <button type="button" data-lang="en" aria-pressed="false" lang="en" title="English">
+      <svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="none" aria-hidden="true"><clipPath id="uk-s"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="uk-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#uk-s)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#uk-t)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>
+      EN
+    </button>
+  </div>
+</header>
+
+<main class="app-container" id="top">
+
+  <section>
+    <header class="homepage-header">
+      <p class="kicker" data-i18n="kicker">AI UGC · Norge</p>
+      <h1 data-i18n="headline">AI UGC fra Norge: videoannonser som stopper scrollingen.</h1>
+    </header>
+    <p class="lede" data-i18n="intro">Jeg er en AI creator og KI-skaper som lager korte, mobilvennlige videoannonser for TikTok, Instagram Reels og betalt annonsering. Med AI-karakterer, stemmer og produktbilder får du mange varianter raskt, til en lavere pris enn tradisjonell produksjon.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#hva-jeg-lager" data-i18n="cta.see">Se hva jeg lager</a>
+      <a class="btn" href="#kontakt" data-i18n="cta.contact">Kontakt for samarbeid</a>
+    </div>
+  </section>
+
+  <!-- HVA ER UGC -->
+  <section id="hva-er-ugc">
+    <h2 data-i18n="ugc.h2">Hva er UGC?</h2>
+    <div class="two-col">
+      <div>
+        <p data-i18n="ugc.p1">UGC står for <strong>user-generated content</strong>, altså brukergenerert innhold. Det er videoer som ser ut som de er laget av vanlige folk, ikke av et reklamebyrå: filmet vertikalt, personlige og rett på sak.</p>
+        <p data-i18n="ugc.p2">Merkevarer bruker UGC i annonser på TikTok, Instagram og Facebook fordi det passer inn i feeden. Folk scroller forbi tradisjonell reklame, men stopper for noe som føles som et vanlig innlegg.</p>
+        <p data-i18n="ugc.p3">Forskjellen fra en influencer er at du betaler for <strong>selve videoen</strong>, ikke for følgerne. Du får videoen og kan kjøre den som annonse fra din egen konto. Med <strong>AI UGC</strong> lages personen, stemmen og scenen med KI, så du slipper innspilling.</p>
+      </div>
+      <ul class="posts-list">
+        <li class="posts-list-item"><strong data-i18n="cmp.trad.t">Tradisjonell reklame</strong><span class="posts-list-item-description" data-i18n="cmp.trad.d">Dyr produksjon, tar uker, ser ut som reklame.</span></li>
+        <li class="posts-list-item"><strong data-i18n="cmp.inf.t">Influencer</strong><span class="posts-list-item-description" data-i18n="cmp.inf.d">Du betaler for rekkevidde, innlegget ligger på deres konto.</span></li>
+        <li class="posts-list-item hl"><strong data-i18n="cmp.ugc.t">AI UGC</strong><span class="posts-list-item-description" data-i18n="cmp.ugc.d">Du betaler for videoen, eier bruken og kan teste mange varianter.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HVORFOR -->
+  <section id="hvorfor">
+    <h2 data-i18n="why.h2">Hvorfor bruke AI UGC?</h2>
+    <p data-i18n="why.p">De fleste bedrifter vet at de burde være synlige på sosiale medier. Problemet er sjelden viljen, men tiden og innholdet.</p>
+    <ul class="posts-list">
+      <li class="posts-list-item"><strong data-i18n="w1.t">Dere er der, men har ikke tid til å poste</strong><span class="posts-list-item-description" data-i18n="w1.d">Profilen finnes på Instagram, Facebook eller TikTok, men det har vært stille lenge fordi ingen har tid. Jeg lager en bunke med innlegg og videoer, så dere har innhold klart i ukene fremover.</span></li>
+      <li class="posts-list-item"><strong data-i18n="w2.t">Dere er ikke der ennå, men vil starte</strong><span class="posts-list-item-description" data-i18n="w2.d">Dere vil inn på TikTok, Reels eller LinkedIn, men mangler innhold og vet ikke hvor dere skal begynne. Jeg lager første runde, så dere har noe å poste fra dag én.</span></li>
+      <li class="posts-list-item"><strong data-i18n="w3.t">Dere har bilder, men ikke innlegg</strong><span class="posts-list-item-description" data-i18n="w3.d">Produktbilder og bilder fra nettsiden blir liggende ubrukt. Jeg gjør dem om til innlegg, karuseller og korte videoer.</span></li>
+      <li class="posts-list-item"><strong data-i18n="w4.t">Dere vil teste før dere bruker mye penger</strong><span class="posts-list-item-description" data-i18n="w4.d">Med AI kan dere prøve flere vinkler og budskap billig, og bruke mer på det som faktisk fungerer.</span></li>
+    </ul>
+    <div class="note">
+      <h3 data-i18n="hobby.h3">En hobby, ikke et byrå</h3>
+      <p data-i18n="hobby.p">Til daglig jobber jeg som sikkerhetsrådgiver. AI UGC lager jeg på fritiden, fordi jeg synes det er gøy å utforske hva KI kan brukes til. Det betyr at jeg tar på meg et begrenset antall oppdrag om gangen, og at du får en ærlig leveringsdato i stedet for et løfte jeg ikke kan holde.</p>
+    </div>
+  </section>
+
+  <!-- HVA JEG GJØR -->
+  <section id="hva-jeg-gjor">
+    <h2 data-i18n="do.h2">Hva jeg gjør som innholdsprodusent</h2>
+    <p data-i18n="about">Jeg heter Kevin, jobber med IT-sikkerhet til daglig og lager AI UGC som hobby. Jeg kombinerer AI-verktøy med et øye for hva som faktisk får folk til å stoppe og se. Du sender meg produktet, nettsiden eller bildene du allerede har, jeg skriver manus, lager videoene og innleggene og leverer dem klare til bruk.</p>
+
+    <div class="two-col">
+      <div>
+        <h3 data-i18n="services.h3">Tjenester</h3>
+        <ul class="posts-list">
+          <li class="posts-list-item"><strong data-i18n="s1.t">Hook-først-annonser</strong><span class="posts-list-item-description" data-i18n="s1.d">Videoer på 15–30 sekunder som vinner de første 3 sekundene, med flere hook-varianter du kan teste.</span></li>
+          <li class="posts-list-item"><strong data-i18n="s2.t">Faste AI-karakterer</strong><span class="posts-list-item-description" data-i18n="s2.d">En gjeng med AI-karakterer i ulike aldre og stiler. Jeg velger den som passer målgruppen din.</span></li>
+          <li class="posts-list-item"><strong data-i18n="s3.t">Manus og idéer</strong><span class="posts-list-item-description" data-i18n="s3.d">Jeg skriver manus basert på hva kundene dine faktisk bryr seg om, så annonsen treffer.</span></li>
+          <li class="posts-list-item"><strong data-i18n="s4.t">Mange varianter</strong><span class="posts-list-item-description" data-i18n="s4.d">Samme annonse i flere versjoner med ulike hooks, karakterer og lengder, så du finner vinneren raskere.</span></li>
+          <li class="posts-list-item hl"><strong data-i18n="s5.t">Innlegg fra bildene du allerede har</strong><span class="posts-list-item-description" data-i18n="s5.d">Send meg produktbilder, bilder fra nettsiden eller eldre innhold, så lager jeg nye innlegg, karuseller og annonser basert på dem.</span></li>
+        </ul>
+        <p style="margin-top:1em">
+          <span class="tag" data-i18n="tag1">Råfiler</span><span class="tag" data-i18n="tag2">Ekstra hooks</span><span class="tag" data-i18n="tag3">Bruksrett for annonser</span><span class="tag" data-i18n="tag4">Fast leveringsdato</span><span class="tag" data-i18n="tag5">Norsk og engelsk</span>
+        </p>
+      </div>
+      <div>
+        <h3 data-i18n="how.h3">Slik jobber jeg</h3>
+        <ul class="posts-list">
+          <li class="posts-list-item"><strong data-i18n="h1.t">AI er alltid merket</strong><span class="posts-list-item-description" data-i18n="h1.d">Videoene leveres klare til AI-merking, i tråd med reglene hos TikTok, Meta og EU.</span></li>
+          <li class="posts-list-item"><strong data-i18n="h2.t">Ingen falske anmeldelser</strong><span class="posts-list-item-description" data-i18n="h2.d">AI-karakterene mine later ikke som de er ekte kunder. Ekte anmeldelser siteres ordrett, med din godkjenning.</span></li>
+          <li class="posts-list-item"><strong data-i18n="h3.t">Tydelig og ærlig</strong><span class="posts-list-item-description" data-i18n="h3.d">Du får et fast tilbud, en klar leveringsdato og en runde med justeringer inkludert.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- HVA JEG LAGER -->
+  <section id="hva-jeg-lager">
+    <h2 data-i18n="make.h2">Hva jeg lager</h2>
+    <p data-i18n="make.p">Eksempler på videoer og innlegg jeg kan levere, laget for fiktive merkevarer. Kundearbeid vises bare med kundens tillatelse. Alt er laget med AI.</p>
+
+    <h3 class="sub" data-i18n="make.videos.h3">Videoer</h3>
+    <p data-i18n="make.videos.p">Trykk på en video for å spille av med lyd.</p>
+    <div class="grid" id="grid"></div>
+
+    <h3 class="sub" data-i18n="make.posts.h3">Innlegg</h3>
+    <p data-i18n="posts.p">Innlegg for Instagram, Facebook og LinkedIn, mange av dem laget fra bilder kunden allerede hadde. Der det står <strong>Fra eksisterende bilde</strong>, ser du originalbildet i hjørnet.</p>
+    <div class="grid" id="postGrid"></div>
+
+    <div class="note free">
+      <h3 data-i18n="free.h3">Nysgjerrig? Få en gratis prøve</h3>
+      <p data-i18n="free.p">Har du en idé, eller lurer du på hvordan produktet ditt kunne sett ut i en AI UGC-video eller et innlegg? Send meg idéen, så lager jeg ett innlegg eller en kort video gratis, helt uten forpliktelser. Liker du det, kan vi snakke videre. Liker du det ikke, har du ikke tapt noe.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#kontakt" data-i18n="free.cta">Send meg idéen din</a>
+      </div>
+      <p class="small" data-i18n="free.small">Siden dette er en hobby, lager jeg gratis prøver når jeg har tid, én per bedrift.</p>
+    </div>
+  </section>
+
+  <!-- KI OG LOVEN -->
+  <section id="ki-og-loven">
+    <h2 data-i18n="law.h2">KI-innhold og norsk lov</h2>
+    <p data-i18n="law.p">Kort fortalt: ikke alt KI-innhold må merkes som KI etter norsk lov i dag, men alt må være ærlig. Produktet må finnes, og kundene skal ikke lures. Slik er reglene per november 2026:</p>
+    <ul class="posts-list">
+      <li class="posts-list-item"><strong data-i18n="l1.t">Reklame skal merkes som reklame</strong><span class="posts-list-item-description" data-i18n="l1.d">Markedsføringsloven § 3 krever at det går tydelig frem at noe er reklame, uansett om det er laget med KI eller kamera.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l2.t">Ingen generell KI-merkeplikt i Norge ennå</strong><span class="posts-list-item-description" data-i18n="l2.d">Forbrukertilsynet har uttalt at markedsføringsloven ikke har en egen regel om å merke KI-generert reklame. Et innlegg med KI-genererte bakgrunner eller scener trenger derfor ikke alltid KI-merking etter norsk lov.</span></li>
+      <li class="posts-list-item hl"><strong data-i18n="l3.t">Produktet må være ekte, og ikke villedende</strong><span class="posts-list-item-description" data-i18n="l3.d">Forbudet mot villedende markedsføring (markedsføringsloven §§ 6 og 7) gjelder fullt ut. KI kan lage personen og scenen, men produktet, egenskapene, prisene og resultatene som vises må være ekte.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l4.t">Retusjerte kropper skal merkes</strong><span class="posts-list-item-description" data-i18n="l4.d">Endrer KI størrelsen, fasongen eller huden til en ekte person i reklame, gjelder merkeplikten for retusjert reklame (markedsføringsloven § 2). Helt KI-genererte personer er ikke omfattet ennå, men Forbrukertilsynet kan likevel reagere på reklame som skaper kroppspress.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l5.t">Ingen falske anmeldelser</strong><span class="posts-list-item-description" data-i18n="l5.d">Siden 1. oktober 2023 er det forbudt å bruke falske brukeromtaler. En AI-karakter kan presentere et produkt, men aldri late som den er en ekte kunde.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l6.t">Ekte personer krever samtykke</strong><span class="posts-list-item-description" data-i18n="l6.d">Bilder av identifiserbare personer er personopplysninger etter GDPR, og åndsverkloven § 104 krever samtykke for å vise bilder av folk offentlig. Jeg bruker aldri ekte personers ansikt eller stemme uten samtykke, og dere må ha samtykke fra personene i bildene dere sender meg.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l7.t">EUs KI-forordning er på vei</strong><span class="posts-list-item-description" data-i18n="l7.d">I EU må realistiske deepfakes merkes fra 2. august 2026 (AI Act artikkel 50). I Norge gjelder den ikke ennå, og regjeringen tar sikte på en norsk KI-lov i 2027. Annonserer dere mot EU-land, kan reglene gjelde allerede.</span></li>
+      <li class="posts-list-item"><strong data-i18n="l8.t">Plattformene krever merking uansett</strong><span class="posts-list-item-description" data-i18n="l8.d">TikTok og Meta krever, eller setter selv på, KI-merking på annonser med realistisk KI-innhold. I praksis blir realistiske AI-personer i annonser derfor merket uansett hva loven sier.</span></li>
+    </ul>
+    <div class="note">
+      <h3 data-i18n="law.mine.h3">Min praksis</h3>
+      <p data-i18n="law.mine.p">Jeg merker alltid innhold med realistiske AI-personer, også der loven ikke krever det ennå. Jeg lager bare innhold for produkter som finnes, viser dem slik de faktisk er, og bildene du sender brukes bare til ditt oppdrag.</p>
+    </div>
+    <p class="small" data-i18n="law.disclaimer">Dette er en oversikt, ikke juridisk rådgivning. Se Forbrukertilsynets <a href="https://www.forbrukertilsynet.no/lov-og-rett/veiledninger-og-retningslinjer/someveiledning" target="_blank" rel="noopener">veileder for reklame i sosiale medier</a> og <a href="https://www.forbrukertilsynet.no/vi-jobber-med/merking-av-retusjert-reklame" target="_blank" rel="noopener">reglene for retusjert reklame</a> for oppdatert informasjon.</p>
+  </section>
+
+  <!-- SPØRSMÅL OG SVAR -->
+  <section id="sporsmal" class="faq">
+    <h2 data-i18n="faq.h2">Spørsmål og svar</h2>
+    <h3 data-i18n="q1">Hva er AI UGC?</h3>
+    <p data-i18n="a1">AI UGC er brukergenerert innhold laget med kunstig intelligens: korte, vertikale videoer der en AI-karakter presenterer eller viser frem et produkt, uten filmteam eller skuespillere.</p>
+    <h3 data-i18n="q2">Hva gjør en KI-skaper?</h3>
+    <p data-i18n="a2">En KI-skaper, eller AI creator, er en innholdsprodusent som bruker KI-verktøy for bilde, video og stemme til å lage manus, karakterer og ferdige videoer for sosiale medier og annonser.</p>
+    <h3 data-i18n="q3">Må AI-generert reklame merkes?</h3>
+    <p data-i18n="a3">Ikke alltid etter norsk lov i dag, men reklame skal alltid merkes som reklame og ikke være villedende. TikTok og Meta krever KI-merking av realistisk innhold, og jeg merker alltid innhold med realistiske AI-personer.</p>
+    <h3 data-i18n="q4">Lager du innhold på engelsk også?</h3>
+    <p data-i18n="a4">Ja. Jeg lager UGC på både norsk og engelsk, med manus, voiceover og undertekster tilpasset målgruppen.</p>
+    <h3 data-i18n="q5">Kan du lage innlegg fra bilder vi allerede har?</h3>
+    <p data-i18n="a5">Ja. Send meg produktbilder, bilder fra nettsiden eller tidligere innlegg, så lager jeg nye innlegg, karuseller og videoer basert på dem. Du må ha rett til å bruke bildene du sender.</p>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <h2 data-i18n="contact.h2">Kontakt for samarbeid</h2>
+    <p data-i18n="contact.p">Fortell meg om produktet ditt og hva du trenger. Jeg svarer med idéer og et pristilbud så snart jeg kan, som regel innen noen dager. Priser etter avtale.</p>
+    <ol class="steps">
+      <li data-i18n="step1">Du sender produkt, nettside, bilder eller idé</li>
+      <li data-i18n="step2">Jeg foreslår manus og karakterer</li>
+      <li data-i18n="step3">Du får ferdige videoer, klare til bruk</li>
+    </ol>
+    <div class="copyrow">
+      <a class="btn primary" id="mailBtn" href="https://linkedin.com/in/kevhjelm/" target="_blank" rel="noopener">Send melding på LinkedIn</a>
+      <button class="btn" id="copyBtn" type="button" hidden>Kopier e-post</button>
+      <code id="emailText" hidden></code>
+    </div>
+  </section>
+
+  <p class="app-footer-note">© <span id="year"></span> <span data-fill="name">KevinMakesUGC</span> · <span data-i18n="footer">Alle eksempelvideoer er AI-generert.</span> · <a href="/">kevhjelm.no</a></p>
+</main>
+
+<script>
+/* ============================================================
+   ENDRE DINE OPPLYSNINGER HER
+   ------------------------------------------------------------
+   - Legg eksempelinnlegg (bilder) i mappen ugc/posts/, se "posts" lenger ned.
+   - Legg videofilene i mappen ugc/videos/ (f.eks. videos/video-1.mp4). MP4 fungerer best.
+   - Sett "photo" til et bilde (f.eks. "/me3.jpg") for å vise det i sirkelen. Tomt = "initials".
+   - "email": tomt = kontaktknappen går til LinkedIn i stedet.
+   - La et felt stå tomt ("") for å skjule det.
+   ============================================================ */
+const CONFIG = {
+  name: "KevinMakesUGC",
+  email: "kevinmakesugc@gmail.com",
+  photo: "",
+  initials: "KMU",      // vises i sirkelen når "photo" er tomt
+  linkedin: "https://linkedin.com/in/kevhjelm/",
+  handles: {
+    TikTok: "",            // f.eks. "https://www.tiktok.com/@kevinmakesugc"
+    Instagram: "",         // f.eks. "https://www.instagram.com/kevinmakesugc"
+  },
+  // Én linje per video.
+  videos: [
+    { file: "videos/video-1.mp4", title: { nb: "App-gjennomgang", en: "App walkthrough" }, note: { nb: "Problem → løsning, med 3 hook-varianter", en: "Problem → solution, with 3 hook variants" } },
+    { file: "videos/video-2.mp4", title: { nb: "Hudpleierutine", en: "Skincare routine" }, note: { nb: "Steg-for-steg-demo med AI-karakter", en: "Step-by-step demo with an AI character" } },
+  ],
+  // Eksempelinnlegg (bilder). Legg filene i ugc/posts/. JPG, PNG eller WebP, gjerne 4:5 (f.eks. 1080x1350).
+  // "source" = originalbildet innlegget er laget fra. Tomt ("") = innlegget er laget fra bunnen.
+  posts: [
+    { image: "posts/post-1.jpg", source: "posts/post-1-original.jpg", title: { nb: "Produktbilde blir annonse", en: "Product photo into an ad" }, note: { nb: "Vanlig produktbilde gjort om til et ferdig annonseinnlegg", en: "A plain product photo turned into a finished ad post" } },
+    { image: "posts/post-2.jpg", source: "posts/post-2-original.jpg", title: { nb: "Ny scene, samme produkt", en: "New scene, same product" }, note: { nb: "Produktet plassert i en ny, stemningsfull setting", en: "The product placed in a new, atmospheric setting" } },
+    { image: "posts/post-3.jpg", source: "", title: { nb: "Lanseringsinnlegg", en: "Launch post" }, note: { nb: "Innlegg med AI-karakter og tydelig budskap", en: "Post with an AI character and a clear message" } },
+  ],
+};
+/* ============================ slutt på innstillinger ============================ */
+
+/* English text. The Norwegian text lives in the HTML itself, so search engines index it. */
+const EN = {
+  "title": "AI UGC Norway · AI creator and content producer | KevinMakesUGC",
+  "aria.top": "Back to top", "aria.sections": "Sections", "aria.theme": "Toggle light and dark theme",
+  "aria.mail": "Email",
+  "tagline": "AI creator and content producer from Norway",
+  "nav.why": "Why AI UGC", "nav.law": "AI and the law",
+  "why.h2": "Why use AI UGC?",
+  "why.p": "Most businesses know they should be visible on social media. The problem is rarely the will, it's the time and the content.",
+  "w1.t": "You're there, but don't have time to post", "w1.d": "Your profile exists on Instagram, Facebook or TikTok, but it's been quiet for a while because nobody has the time. I make a batch of posts and videos so you have content ready for the weeks ahead.",
+  "w2.t": "You're not there yet, but want to start", "w2.d": "You want to get on TikTok, Reels or LinkedIn, but have no content and don't know where to begin. I make the first round, so you have something to post from day one.",
+  "w3.t": "You have images, but no posts", "w3.d": "Product photos and website images sit unused. I turn them into posts, carousels and short videos.",
+  "w4.t": "You want to test before spending a lot", "w4.d": "With AI you can try several angles and messages cheaply, then spend more on what actually works.",
+  "hobby.h3": "A hobby, not an agency",
+  "hobby.p": "By day I work as a security consultant. I make AI UGC in my spare time because I enjoy exploring what AI can do. That means I take on a limited number of projects at a time, and you get an honest delivery date instead of a promise I can't keep.",
+  "law.h2": "AI content and Norwegian law",
+  "law.p": "In short: not all AI content has to be labelled as AI under Norwegian law today, but all of it has to be honest. The product must exist, and customers must not be misled. This is how the rules stand as of November 2026:",
+  "l1.t": "Ads must be labelled as ads", "l1.d": "Section 3 of the Norwegian Marketing Control Act requires that it's clear when something is advertising, whether it's made with AI or a camera.",
+  "l2.t": "No general AI labelling duty in Norway yet", "l2.d": "The Norwegian Consumer Authority (Forbrukertilsynet) has said the Marketing Control Act has no specific rule requiring AI-generated ads to be labelled. A post with AI-generated backgrounds or scenes therefore doesn't always need an AI label under Norwegian law.",
+  "l3.t": "The product must be real, and not misleading", "l3.d": "The ban on misleading marketing (sections 6 and 7) applies in full. AI can create the person and the scene, but the product, its features, prices and the results shown must be real.",
+  "l4.t": "Retouched bodies must be labelled", "l4.d": "If AI changes the size, shape or skin of a real person in an ad, the labelling rule for retouched advertising applies (section 2). Fully AI-generated people aren't covered yet, but the Consumer Authority can still act against ads that create body pressure.",
+  "l5.t": "No fake reviews", "l5.d": "Since 1 October 2023, fake consumer reviews have been banned. An AI character can present a product, but never pretend to be a real customer.",
+  "l6.t": "Real people require consent", "l6.d": "Images of identifiable people are personal data under GDPR, and section 104 of the Norwegian Copyright Act requires consent to show pictures of people publicly. I never use a real person's face or voice without consent, and you need consent from the people in any images you send me.",
+  "l7.t": "The EU AI Act is on its way", "l7.d": "In the EU, realistic deepfakes must be labelled from 2 August 2026 (AI Act Article 50). It doesn't apply in Norway yet, and the government aims for a Norwegian AI law in 2027. If you advertise to EU countries, the rules may already apply to you.",
+  "l8.t": "The platforms require labelling anyway", "l8.d": "TikTok and Meta require, or automatically add, an AI label on ads with realistic AI content. In practice, realistic AI people in ads get labelled whatever the law says.",
+  "law.mine.h3": "My practice",
+  "law.mine.p": "I always label content with realistic AI people, even where the law doesn't require it yet. I only make content for products that exist, show them as they really are, and the images you send are only used for your project.",
+  "law.disclaimer": "This is an overview, not legal advice. See the Norwegian Consumer Authority's <a href=\"https://www.forbrukertilsynet.no/lov-og-rett/veiledninger-og-retningslinjer/someveiledning\" target=\"_blank\" rel=\"noopener\">guide to advertising on social media</a> and <a href=\"https://www.forbrukertilsynet.no/vi-jobber-med/merking-av-retusjert-reklame\" target=\"_blank\" rel=\"noopener\">rules for retouched advertising</a> for up-to-date information.",
+  "nav.ugc": "What is UGC", "nav.do": "What I do", "nav.make": "What I make", "nav.faq": "FAQ", "nav.contact": "Contact",
+  "s5.t": "Posts from the images you already have", "s5.d": "Send me product photos, website images or older content, and I'll turn them into new posts, carousels and ads.",
+  "posts.p": "Posts for Instagram, Facebook and LinkedIn, many of them made from images the client already had. Where it says <strong>From existing image</strong>, the original image is shown in the corner.",
+  "q5": "Can you make posts from images we already have?", "a5": "Yes. Send me product photos, website images or earlier posts, and I'll make new posts, carousels and videos based on them. You need the rights to use the images you send.",
+  "kicker": "AI UGC · Norway",
+  "headline": "AI UGC from Norway: video ads that stop the scroll.",
+  "intro": "I'm an AI creator who makes short, mobile-first video ads for TikTok, Instagram Reels and paid social. With AI characters, voices and product shots you get lots of variants fast, for less than traditional production.",
+  "cta.see": "See what I make", "cta.contact": "Get in touch",
+  "ugc.h2": "What is UGC?",
+  "ugc.p1": "UGC stands for <strong>user-generated content</strong>. These are videos that look like they were made by ordinary people, not an ad agency: shot vertically, personal and straight to the point.",
+  "ugc.p2": "Brands use UGC in ads on TikTok, Instagram and Facebook because it fits the feed. People scroll past traditional ads, but stop for something that feels like a normal post.",
+  "ugc.p3": "Unlike an influencer, you pay for <strong>the video itself</strong>, not the followers. You get the video and can run it as an ad from your own account. With <strong>AI UGC</strong>, the person, voice and scene are made with AI, so there's no shoot.",
+  "cmp.trad.t": "Traditional advertising", "cmp.trad.d": "Expensive production, takes weeks, looks like an ad.",
+  "cmp.inf.t": "Influencer", "cmp.inf.d": "You pay for reach, and the post lives on their account.",
+  "cmp.ugc.t": "AI UGC", "cmp.ugc.d": "You pay for the video, own the usage and can test many variants.",
+  "do.h2": "What I do as a content producer",
+  "about": "I'm Kevin. I work in IT security by day and make AI UGC as a hobby. I combine AI tools with an eye for what actually makes people stop and watch. You send me your product, website or the images you already have, I write the script, make the videos and posts and deliver them ready to use.",
+  "services.h3": "Services",
+  "s1.t": "Hook-first ads", "s1.d": "15–30 second videos that win the first 3 seconds, with several hook variants to test.",
+  "s2.t": "Recurring AI characters", "s2.d": "A cast of AI characters of different ages and styles. I pick the one that fits your audience.",
+  "s3.t": "Scripts and ideas", "s3.d": "I write scripts based on what your customers actually care about, so the ad lands.",
+  "s4.t": "Lots of variants", "s4.d": "The same ad in several versions with different hooks, characters and lengths, so you find the winner faster.",
+  "tag1": "Raw files", "tag2": "Extra hooks", "tag3": "Ad usage rights", "tag4": "Fixed delivery date", "tag5": "Norwegian and English",
+  "how.h3": "How I work",
+  "h1.t": "AI is always labelled", "h1.d": "Videos are delivered ready for AI labelling, in line with TikTok, Meta and EU rules.",
+  "h2.t": "No fake reviews", "h2.d": "My AI characters never pretend to be real customers. Real reviews are quoted word for word, with your approval.",
+  "h3.t": "Clear and honest", "h3.d": "You get a fixed quote, a clear delivery date and one round of revisions included.",
+  "make.h2": "What I make",
+  "make.p": "Examples of videos and posts I can deliver, made for fictional brands. Client work is only shown with the client's permission. Everything is made with AI.",
+  "make.videos.h3": "Videos", "make.videos.p": "Tap a video to play it with sound.",
+  "make.posts.h3": "Posts",
+  "free.h3": "Curious? Get a free sample",
+  "free.p": "Have an idea, or wondering what your product could look like in an AI UGC video or post? Send me the idea and I'll make one post or a short video for free, with no obligation. If you like it, we can talk further. If not, you haven't lost anything.",
+  "free.cta": "Send me your idea",
+  "free.small": "Since this is a hobby, I make free samples when I have time, one per business.",
+  "faq.h2": "FAQ",
+  "q1": "What is AI UGC?", "a1": "AI UGC is user-generated content made with artificial intelligence: short, vertical videos where an AI character presents or shows off a product, with no film crew or actors.",
+  "q2": "What does an AI creator do?", "a2": "An AI creator is a content producer who uses AI tools for images, video and voice to make scripts, characters and finished videos for social media and ads.",
+  "q3": "Does AI-generated advertising need to be labelled?", "a3": "Not always under Norwegian law today, but ads must always be labelled as ads and must not be misleading. TikTok and Meta require AI labels on realistic content, and I always label content with realistic AI people.",
+  "q4": "Do you make content in English too?", "a4": "Yes. I make UGC in both Norwegian and English, with scripts, voiceover and subtitles tailored to the audience.",
+  "contact.h2": "Get in touch",
+  "contact.p": "Tell me about your product and what you need. I'll reply with ideas and a quote as soon as I can, usually within a few days. Pricing on request.",
+  "step1": "You send a product, website, images or an idea", "step2": "I suggest scripts and characters", "step3": "You get finished videos, ready to use",
+  "footer": "All sample videos are AI-generated.",
+};
+/* Text set from JavaScript, in both languages. */
+const UI = {
+  nb: { ai: "AI-generert", soon: "Video kommer snart", postSoon: "Innlegg kommer snart", original: "Original", fromImage: "Fra eksisterende bilde", mail: "Send e-post", linkedin: "Send melding på LinkedIn", copy: "Kopier e-post", copied: "Kopiert!", copyFail: "Kunne ikke kopiere. Marker adressen i stedet.", subject: "UGC-samarbeid", toDark: "Bytt til mørkt tema", toLight: "Bytt til lyst tema" },
+  en: { ai: "AI-generated", soon: "Video coming soon", postSoon: "Post coming soon", original: "Original", fromImage: "From existing image", mail: "Send email", linkedin: "Message me on LinkedIn", copy: "Copy email", copied: "Copied!", copyFail: "Couldn't copy. Select the address instead.", subject: "UGC collaboration", toDark: "Switch to dark theme", toLight: "Switch to light theme" },
+};
+
+(function(){
+  let lang = "nb";
+  const t = k => UI[lang][k];
+
+  // Remember the Norwegian text from the HTML so we can switch back.
+  const NB = { title: document.title };
+  document.querySelectorAll("[data-i18n]").forEach(el => { NB[el.dataset.i18n] = el.innerHTML; });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => { NB[el.dataset.i18nAria] = el.getAttribute("aria-label"); });
+
+  // Theme toggle (same behaviour as kevhjelm.no)
+  const sun = () => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><title>' + t("toDark") + '</title><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+  const moon = () => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><title>' + t("toLight") + '</title><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+  const toggle = document.getElementById("themeToggle");
+  const cur = () => document.documentElement.getAttribute("data-theme") || "dark";
+  const paint = () => { toggle.innerHTML = cur() === "light" ? moon() : sun(); };
+  toggle.addEventListener("click", () => {
+    const next = cur() === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
+    paint();
+  });
+
+  // Static fills
+  document.querySelectorAll("[data-fill]").forEach(el => { const v = CONFIG[el.dataset.fill]; if (v) el.textContent = v; });
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Avatar
+  const avatar = document.getElementById("avatar");
+  if (CONFIG.photo) {
+    avatar.textContent = "";
+    const img = document.createElement("img");
+    img.src = CONFIG.photo; img.alt = CONFIG.name;
+    avatar.appendChild(img);
+  } else {
+    avatar.textContent = CONFIG.initials || (CONFIG.name || "K").charAt(0);
+  }
+
+  // Social icons
+  [["TikTok", "tiktokIcon"], ["Instagram", "instagramIcon"]].forEach(([k, id]) => {
+    const url = CONFIG.handles[k]; const a = document.getElementById(id);
+    if (url) { a.href = url; a.hidden = false; }
+  });
+
+  // Videos (built once, text updated on language change)
+  const grid = document.getElementById("grid");
+  const cards = CONFIG.videos.map(v => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="frame">
+        <span class="ai"></span>
+        <video controls playsinline preload="metadata"></video>
+        <div class="empty" hidden><strong></strong></div>
+      </div>
+      <h3></h3><p></p>`;
+    const video = card.querySelector("video");
+    const empty = card.querySelector(".empty");
+    const showEmpty = () => { video.hidden = true; empty.hidden = false; };
+    video.addEventListener("error", showEmpty, true);
+    const src = document.createElement("source");
+    src.src = v.file + "#t=0.1";
+    src.addEventListener("error", showEmpty);
+    video.appendChild(src);
+    video.addEventListener("play", () => { grid.querySelectorAll("video").forEach(o => { if (o !== video) o.pause(); }); });
+    grid.appendChild(card);
+    return { card, v };
+  });
+  const renderCards = () => cards.forEach(({ card, v }) => {
+    card.querySelector(".ai").textContent = t("ai");
+    card.querySelector(".empty strong").textContent = t("soon");
+    card.querySelector("h3").textContent = v.title[lang];
+    card.querySelector("p").textContent = v.note ? v.note[lang] : "";
+  });
+
+  // Example posts (images), optionally with the original image they were made from
+  const postGrid = document.getElementById("postGrid");
+  const postCards = (CONFIG.posts || []).map(p => {
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="frame post">
+        <span class="ai"></span>
+        <img loading="lazy" alt="">
+        <figure class="source" hidden><img loading="lazy" alt=""><figcaption></figcaption></figure>
+        <div class="empty" hidden><strong></strong></div>
+      </div>
+      <div><span class="tag from-image" hidden></span></div>
+      <h3></h3><p></p>`;
+    const img = card.querySelector(".frame > img");
+    const empty = card.querySelector(".empty");
+    const source = card.querySelector(".source");
+    img.addEventListener("error", () => { img.hidden = true; source.hidden = true; empty.hidden = false; });
+    img.src = p.image;
+    if (p.source) {
+      const sImg = source.querySelector("img");
+      sImg.addEventListener("error", () => { source.hidden = true; });
+      sImg.src = p.source;
+      source.hidden = false;
+      card.querySelector(".from-image").hidden = false;
+    }
+    postGrid.appendChild(card);
+    return { card, p };
+  });
+  const renderPosts = () => postCards.forEach(({ card, p }) => {
+    const title = p.title ? p.title[lang] : "";
+    card.querySelector(".ai").textContent = t("ai");
+    card.querySelector(".empty strong").textContent = t("postSoon");
+    card.querySelector(".frame > img").alt = title;
+    card.querySelector(".source img").alt = t("original");
+    card.querySelector(".source figcaption").textContent = t("original");
+    card.querySelector(".from-image").textContent = t("fromImage");
+    card.querySelector("h3").textContent = title;
+    card.querySelector("p").textContent = p.note ? p.note[lang] : "";
+  });
+
+  // Contact: email if set, otherwise LinkedIn
+  const mailBtn = document.getElementById("mailBtn");
+  const mailIcon = document.getElementById("mailIcon");
+  const copyBtn = document.getElementById("copyBtn");
+  const emailText = document.getElementById("emailText");
+  if (CONFIG.email) {
+    copyBtn.hidden = false; emailText.hidden = false;
+    emailText.textContent = CONFIG.email;
+    mailBtn.removeAttribute("target");
+    copyBtn.addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(CONFIG.email); copyBtn.textContent = t("copied"); }
+      catch (e) { copyBtn.textContent = t("copyFail"); }
+      setTimeout(() => { copyBtn.textContent = t("copy"); }, 2000);
+    });
+  } else {
+    mailIcon.hidden = true;
+  }
+  const renderContact = () => {
+    if (CONFIG.email) {
+      const mailto = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent(t("subject"));
+      mailBtn.href = mailto; mailIcon.href = mailto;
+      mailBtn.textContent = t("mail"); copyBtn.textContent = t("copy");
+    } else {
+      mailBtn.href = CONFIG.linkedin; mailBtn.textContent = t("linkedin");
+    }
+  };
+
+  // Language switch
+  const langButtons = document.querySelectorAll(".lang-switch button");
+  const setLang = (next, save) => {
+    lang = next === "en" ? "en" : "nb";
+    const dict = lang === "en" ? EN : NB;
+    document.documentElement.lang = lang;
+    document.title = dict.title;
+    document.querySelectorAll("[data-i18n]").forEach(el => { const v = dict[el.dataset.i18n]; if (v != null) el.innerHTML = v; });
+    document.querySelectorAll("[data-i18n-aria]").forEach(el => { const v = dict[el.dataset.i18nAria]; if (v != null) el.setAttribute("aria-label", v); });
+    langButtons.forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"));
+    renderCards(); renderPosts(); renderContact(); paint();
+    if (save) {
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+      try {
+        const u = new URL(location.href);
+        if (lang === "en") u.searchParams.set("lang", "en"); else u.searchParams.delete("lang");
+        history.replaceState(null, "", u);
+      } catch (e) {}
+    }
+  };
+  langButtons.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang, true)));
+
+  // Start language: ?lang=en in the link, then the visitor's saved choice, otherwise Norwegian.
+  // (No browser-language detection, so search engines always see the Norwegian page.)
+  let start = "nb";
+  try {
+    const q = new URLSearchParams(location.search).get("lang");
+    start = q || localStorage.getItem("lang") || "nb";
+  } catch (e) {}
+  setLang(start, false);
+})();
+</script>
+</body>
+</html>
